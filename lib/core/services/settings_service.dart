@@ -19,7 +19,7 @@ class SettingsService {
       case 'dark':
         return ThemeMode.dark;
       default:
-        return ThemeMode.dark; // default to dark
+        return ThemeMode.light; // default to dark
     }
   }
 

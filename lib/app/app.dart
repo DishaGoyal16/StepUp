@@ -16,7 +16,7 @@ class ThaparStepUpApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'Thapar StepUp',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
+      theme: AppTheme.lightMode,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeMode,
       routerConfig: router,

@@ -263,7 +263,7 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
-          foregroundColor: Colors.black,
+          foregroundColor: Colors.white,
           minimumSize: const Size.fromHeight(52),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppRadius.md),
@@ -301,7 +301,7 @@ class AppTheme {
     );
   }
 
-  static ThemeData get lightTheme {
+  static ThemeData get lightMode {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
