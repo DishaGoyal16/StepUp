@@ -10,15 +10,15 @@ abstract class AppConstants {
   static const int maxDailyStepGoal = 30000;
 
   // Gamification — XP
-  static const int xpPerVerifiedStep = 1; // 1 XP per 10 verified steps
+  static const int xpPerVerifiedStep = 1;       // 1 XP per 10 verified steps
   static const int xpPerVerifiedStepDivisor = 10;
-  static const int xpPerRunningStep = 2; // Running earns double
+  static const int xpPerRunningStep = 2;        // Running earns double
   static const int xpPerRunningStepDivisor = 10;
   static const int xpChallengeDaily = 50;
   static const int xpChallengeWeekly = 200;
   static const int xpChallengeCampus = 500;
   static const int xpSportSession = 100;
-  static const int xpStreakBonus = 25; // per streak day
+  static const int xpStreakBonus = 25;          // per streak day
   static const int xpBetWin = 150;
 
   // Gamification — Coins
@@ -31,20 +31,20 @@ abstract class AppConstants {
 
   // Levels
   static const List<LevelConfig> levels = [
-    LevelConfig(level: 1, title: 'Fresh Starter', xpRequired: 0),
-    LevelConfig(level: 2, title: 'Active Student', xpRequired: 200),
-    LevelConfig(level: 3, title: 'Campus Walker', xpRequired: 500),
-    LevelConfig(level: 4, title: 'Fitness Grinder', xpRequired: 1000),
-    LevelConfig(level: 5, title: 'Step Warrior', xpRequired: 1800),
-    LevelConfig(level: 6, title: 'Campus Runner', xpRequired: 2800),
-    LevelConfig(level: 7, title: 'Elite Mover', xpRequired: 4000),
-    LevelConfig(level: 8, title: 'Campus Athlete', xpRequired: 5500),
-    LevelConfig(level: 9, title: 'StepUp Legend', xpRequired: 7500),
-    LevelConfig(level: 10, title: 'StepUp Champion', xpRequired: 10000),
+    LevelConfig(level: 1, title: 'Fresh Starter',     xpRequired: 0),
+    LevelConfig(level: 2, title: 'Active Student',    xpRequired: 200),
+    LevelConfig(level: 3, title: 'Campus Walker',     xpRequired: 500),
+    LevelConfig(level: 4, title: 'Fitness Grinder',   xpRequired: 1000),
+    LevelConfig(level: 5, title: 'Step Warrior',      xpRequired: 1800),
+    LevelConfig(level: 6, title: 'Campus Runner',     xpRequired: 2800),
+    LevelConfig(level: 7, title: 'Elite Mover',       xpRequired: 4000),
+    LevelConfig(level: 8, title: 'Campus Athlete',    xpRequired: 5500),
+    LevelConfig(level: 9, title: 'StepUp Legend',     xpRequired: 7500),
+    LevelConfig(level: 10, title: 'StepUp Champion',  xpRequired: 10000),
   ];
 
   // Activity integrity thresholds
-  static const double minWalkingCadence = 60.0; // steps/min
+  static const double minWalkingCadence = 60.0;    // steps/min
   static const double maxWalkingCadence = 140.0;
   static const double minRunningCadence = 140.0;
   static const double maxRunningCadence = 220.0;
@@ -77,12 +77,7 @@ abstract class AppConstants {
   // Step Battle
   static const List<int> battleTargets = [2000, 5000, 7500, 10000, 15000];
   static const List<int> battleStakes = [100, 250, 500, 1000, 2500];
-  static const List<String> battleDurations = [
-    'Today',
-    '24 hours',
-    '3 days',
-    '7 days',
-  ];
+  static const List<String> battleDurations = ['Today', '24 hours', '3 days', '7 days'];
   static const int startingWalletBalance = 1000;
 
   // Sports supported
@@ -132,34 +127,19 @@ abstract class AppConstants {
     'Other',
   ];
 
-  static const List<String> years = [
-    '1st Year',
-    '2nd Year',
-    '3rd Year',
-    '4th Year',
-    'PG',
-  ];
+  static const List<String> years = ['1st Year', '2nd Year', '3rd Year', '4th Year', 'PG'];
 
-  // Hostels
   static const List<String> hostels = [
-    'Agira Hall',
-    'Amritam Hall',
-    'Prithvi Hall',
-    'Neeram Hall',
-    'Vasudha Hall - Block E',
-    'Vyan Hall',
-    'Tejas Hall',
-    'Ambaram Hall',
-    'Viyat Hall',
-    'Anantam Hall',
-    'Vyom Hall',
-    'Hostel-FRF/G',
-    'Vasudha Hall - Block G',
-    'Ira Hall',
-    'Anahata Hall',
-    'Dhriti Hall',
-    'Vahni Hall',
-    'Hostel-Pavani Hall',
+    'Kalpana Chawla Bhawan',
+    'Sarojini Naidu Bhawan',
+    'Kasturba Bhawan',
+    'Meerabai Bhawan',
+    'Lohitya Bhawan',
+    'Ganga Bhawan',
+    'Yamuna Bhawan',
+    'Sutlej Bhawan',
+    'Beas Bhawan',
+    'Cauvery Bhawan',
     'Day Scholar',
   ];
 }
@@ -168,7 +148,6 @@ class LevelConfig {
   final int level;
   final String title;
   final int xpRequired;
-
   const LevelConfig({
     required this.level,
     required this.title,

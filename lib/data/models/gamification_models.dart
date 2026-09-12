@@ -414,6 +414,64 @@ class LeaderboardEntry extends Equatable {
     this.isCurrentUser = false,
   });
 
+
   @override
   List<Object?> get props => [userId, verifiedSteps];
+}
+// ─────────────────────────────────────────────────────────
+// LEADERBOARD MODEL
+// ─────────────────────────────────────────────────────────
+
+class LeaderboardModel extends Equatable {
+  final LeaderboardType type;
+  final List<LeaderboardEntry> entries;
+  final DateTime lastUpdated;
+
+  const LeaderboardModel({
+    required this.type,
+    required this.entries,
+    required this.lastUpdated,
+  });
+
+  Map<String, dynamic> toJson() => {
+    'type': type.name,
+    'entries': entries.map((e) => {
+      'rank': e.rank,
+      'userId': e.userId,
+      'userName': e.userName,
+      'avatarEmoji': e.avatarEmoji,
+      'department': e.department,
+      'hostel': e.hostel,
+      'verifiedSteps': e.verifiedSteps,
+      'isCurrentUser': e.isCurrentUser,
+    }).toList(),
+    'lastUpdated': lastUpdated.toIso8601String(),
+  };
+
+  factory LeaderboardModel.fromJson(Map<String, dynamic> j) {
+    return LeaderboardModel(
+      type: LeaderboardType.values.firstWhere(
+            (e) => e.name == j['type'],
+        orElse: () => LeaderboardType.friends,
+      ),
+      entries: (j['entries'] as List? ?? [])
+          .map(
+            (e) => LeaderboardEntry(
+          rank: e['rank'] as int,
+          userId: e['userId'] as String,
+          userName: e['userName'] as String,
+          avatarEmoji: e['avatarEmoji'] as String,
+          department: e['department'] as String,
+          hostel: e['hostel'] as String,
+          verifiedSteps: e['verifiedSteps'] as int,
+          isCurrentUser: e['isCurrentUser'] as bool? ?? false,
+        ),
+      )
+          .toList(),
+      lastUpdated: DateTime.parse(j['lastUpdated'] as String),
+    );
+  }
+
+  @override
+  List<Object?> get props => [type, entries, lastUpdated];
 }

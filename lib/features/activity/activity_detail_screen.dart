@@ -453,7 +453,7 @@ class _SessionDisplay extends StatelessWidget {
             color: AppColors.textPrimary,
           ),
         ).animate(onPlay: (c) => c.repeat()).shimmer(
-            duration: const Duration(seconds: 2),
+            duration: 2.seconds,
             color: AppColors.primary.withOpacity(isRunning ? 0.5 : 0)),
         const SizedBox(height: 8),
         Text('$steps steps',

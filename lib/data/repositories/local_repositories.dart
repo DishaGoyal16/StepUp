@@ -40,12 +40,12 @@ class LocalUserRepository {
 
   UserModel createDemoUser() {
     return UserModel(
-      id: _uuid.v4(),
-      name: 'Disha Goyal',
+      id: 'disha_goyal_tiet',          // stable ID so saves persist
+      name: 'Disha Goyal',             // your name — shown on Profile tab
       email: 'disha.goyal@thapar.edu',
       department: 'Computer Science (CSE)',
-      year: '3rd Year',
-      hostel: 'Vahani Hostel',
+      year: '3rd Year',                // shown below name on Profile tab
+      hostel: 'Agira Hall',
       avatarEmoji: '🏃',
       xp: 1240,
       level: 8,
@@ -129,10 +129,8 @@ class LocalActivityRepository {
   List<DailyActivitySummary> demoWeeklySummaries() {
     const weekSteps = [6800, 9200, 7100, 8900, 5500, 10200, 8642];
     const weekVerified = [6200, 8800, 6500, 8400, 5000, 9700, 7931];
-
     return List.generate(7, (i) {
       final day = DateTime.now().subtract(Duration(days: 6 - i));
-
       return DailyActivitySummary(
         date: day,
         importedSteps: weekSteps[i],
@@ -160,7 +158,6 @@ class LocalActivityRepository {
 class LocalChallengeRepository {
   List<ChallengeModel> getActiveChallenges() {
     final now = DateTime.now();
-
     return [
       ChallengeModel(
         id: _uuid.v4(),
@@ -195,8 +192,7 @@ class LocalChallengeRepository {
       ChallengeModel(
         id: _uuid.v4(),
         title: 'Thapar 100K',
-        description:
-        'Campus-wide challenge: collect 100K verified steps this month',
+        description: 'Campus-wide challenge: collect 100K verified steps this month',
         emoji: '🏛️',
         type: ChallengeType.campus,
         status: ChallengeStatus.active,
@@ -236,8 +232,7 @@ class LocalBetRepository {
 
   List<BetModel> getActiveBets(String userId) {
     return _demoBets(userId)
-        .where((b) =>
-    b.status == BetStatus.active || b.status == BetStatus.pending)
+        .where((b) => b.status == BetStatus.active || b.status == BetStatus.pending)
         .toList();
   }
 
@@ -284,11 +279,11 @@ class LocalSportBuddyRepository {
     return [
       SportMatch(
         id: 'match_1',
-        userId: 'bhavya_001',
-        userName: 'Bhavya',
-        avatarEmoji: '🏃',
+        userId: 'anvi_456',
+        userName: 'Anvi Sharma',
+        avatarEmoji: '🏸',
         department: 'Electronics (ECE)',
-        hostel: 'Amritam Hall',
+        hostel: 'Sarojini Naidu Bhawan',
         sport: sport,
         skillLevel: skillLevel,
         availableDays: ['Tue', 'Thu'],
@@ -311,11 +306,11 @@ class LocalSportBuddyRepository {
       ),
       SportMatch(
         id: 'match_2',
-        userId: 'kashish_002',
-        userName: 'Kashish',
+        userId: 'raghav_789',
+        userName: 'Raghav Bhatia',
         avatarEmoji: '🎯',
         department: 'Mechanical (ME)',
-        hostel: 'Vyan Hall',
+        hostel: 'Lohitya Bhawan',
         sport: sport,
         skillLevel: skillLevel,
         availableDays: ['Thu', 'Sat'],
@@ -338,11 +333,11 @@ class LocalSportBuddyRepository {
       ),
       SportMatch(
         id: 'match_3',
-        userId: 'anvi_003',
-        userName: 'Anvi',
+        userId: 'kashish_101',
+        userName: 'Kashish Arora',
         avatarEmoji: '⚡',
         department: 'Computer Science (CSE)',
-        hostel: 'Prithvi Hall',
+        hostel: 'Meerabai Bhawan',
         sport: sport,
         skillLevel: skillLevel,
         availableDays: ['Tue', 'Fri', 'Sun'],
@@ -371,7 +366,6 @@ class LocalSportBuddyRepository {
 class LocalSessionRepository {
   List<SportSession> getDemoSessions() {
     final now = DateTime.now();
-
     return [
       SportSession(
         id: 'session_1',
@@ -415,11 +409,11 @@ class LocalLeaderboardRepository {
     return [
       LeaderboardEntry(
         rank: 1,
-        userId: 'sanveer_001',
-        userName: 'Sanveer',
+        userId: 'anvi_456',
+        userName: 'Anvi Sharma',
         avatarEmoji: '🏸',
         department: 'Electronics (ECE)',
-        hostel: 'Agira Hall',
+        hostel: 'Kalpana Chawla Bhawan',
         verifiedSteps: 48230,
       ),
       LeaderboardEntry(
@@ -428,35 +422,35 @@ class LocalLeaderboardRepository {
         userName: 'Disha Goyal',
         avatarEmoji: '🏃',
         department: 'Computer Science (CSE)',
-        hostel: 'Vahani Hall',
+        hostel: 'Agira Hall',
         verifiedSteps: 42810,
         isCurrentUser: true,
       ),
       LeaderboardEntry(
         rank: 3,
-        userId: 'anvi_002',
-        userName: 'Anvi',
+        userId: 'raghav_789',
+        userName: 'Raghav Bhatia',
         avatarEmoji: '🎯',
         department: 'Mechanical (ME)',
-        hostel: 'Pavani Hall',
+        hostel: 'Lohitya Bhawan',
         verifiedSteps: 39400,
       ),
       LeaderboardEntry(
         rank: 4,
-        userId: 'kashish_003',
-        userName: 'Kashish',
+        userId: 'kashish_101',
+        userName: 'Kashish Arora',
         avatarEmoji: '⚡',
         department: 'Computer Science (CSE)',
-        hostel: 'Prithvi Hall',
+        hostel: 'Meerabai Bhawan',
         verifiedSteps: 35600,
       ),
       LeaderboardEntry(
         rank: 5,
-        userId: 'raghav_004',
-        userName: 'Raghav',
+        userId: 'priya_202',
+        userName: 'Priya Nair',
         avatarEmoji: '🌟',
         department: 'Biotechnology (BTECH)',
-        hostel: 'Amritam Hall',
+        hostel: 'Kasturba Bhawan',
         verifiedSteps: 31200,
       ),
     ];
@@ -471,14 +465,12 @@ class LocalWalletRepository {
 
   WalletModel getWallet() {
     final raw = _box.get('wallet');
-
     if (raw != null) {
       try {
         return WalletModel.fromJson(
             Map<String, dynamic>.from(jsonDecode(raw as String) as Map));
       } catch (_) {}
     }
-
     return _demoWallet();
   }
 
@@ -488,7 +480,6 @@ class LocalWalletRepository {
 
   WalletModel _demoWallet() {
     final now = DateTime.now();
-
     return WalletModel(
       balance: 2450,
       transactions: [
@@ -533,25 +524,25 @@ class LocalWalletRepository {
 // PROVIDER REGISTRATIONS
 // ─────────────────────────────────────────────────────────
 final localUserRepositoryProvider =
-Provider<LocalUserRepository>((_) => LocalUserRepository());
+    Provider<LocalUserRepository>((_) => LocalUserRepository());
 
 final localActivityRepositoryProvider =
-Provider<LocalActivityRepository>((_) => LocalActivityRepository());
+    Provider<LocalActivityRepository>((_) => LocalActivityRepository());
 
 final localChallengeRepositoryProvider =
-Provider<LocalChallengeRepository>((_) => LocalChallengeRepository());
+    Provider<LocalChallengeRepository>((_) => LocalChallengeRepository());
 
 final localBetRepositoryProvider =
-Provider<LocalBetRepository>((_) => LocalBetRepository());
+    Provider<LocalBetRepository>((_) => LocalBetRepository());
 
 final localSportBuddyRepositoryProvider =
-Provider<LocalSportBuddyRepository>((_) => LocalSportBuddyRepository());
+    Provider<LocalSportBuddyRepository>((_) => LocalSportBuddyRepository());
 
 final localSessionRepositoryProvider =
-Provider<LocalSessionRepository>((_) => LocalSessionRepository());
+    Provider<LocalSessionRepository>((_) => LocalSessionRepository());
 
 final localLeaderboardRepositoryProvider =
-Provider<LocalLeaderboardRepository>((_) => LocalLeaderboardRepository());
+    Provider<LocalLeaderboardRepository>((_) => LocalLeaderboardRepository());
 
 final localWalletRepositoryProvider =
-Provider<LocalWalletRepository>((_) => LocalWalletRepository());
+    Provider<LocalWalletRepository>((_) => LocalWalletRepository());

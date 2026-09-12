@@ -19,7 +19,7 @@ class SettingsService {
       case 'dark':
         return ThemeMode.dark;
       default:
-        return ThemeMode.light; // default to dark
+        return ThemeMode.light; // default to fitness light
     }
   }
 
@@ -76,7 +76,7 @@ final settingsServiceAsyncProvider =
 });
 
 final themeModeProvider = StateProvider<ThemeMode>((ref) {
-  return ThemeMode.dark;
+  return ThemeMode.light; // fitness light theme by default
 });
 
 final dailyStepGoalProvider = StateProvider<int>((ref) => 10000);
