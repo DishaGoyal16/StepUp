@@ -267,6 +267,108 @@
     .wk-btn:hover{background:rgba(30,92,30,0.06);color:var(--forest)}
     .wk-btn.done{background:rgba(30,92,30,0.05);border-color:rgba(30,92,30,0.18);color:var(--sage)}
     .wk-btn.active{background:rgba(30,92,30,0.1);border-color:var(--forest);color:var(--forest);font-weight:700}
+
+    /* ── PROTOTYPE ── */
+    .proto-hero{background:linear-gradient(155deg,#E0EDD8 0%,#F3F7F0 100%);border-bottom:1px solid var(--border-sub);padding:56px 0 40px}
+    .proto-toggle{display:inline-flex;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:3px;gap:3px}
+    .proto-toggle button{border:none;background:transparent;padding:8px 18px;border-radius:7px;font-family:var(--f-sans);font-size:12.5px;font-weight:700;color:var(--text-muted);cursor:pointer;transition:all .15s}
+    .proto-toggle button:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
+    .proto-toggle button.active{background:var(--forest);color:#fff;box-shadow:0 2px 8px rgba(30,92,30,0.25)}
+    .proto-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--sh);text-align:center}
+    .proto-stat-val{font-family:var(--f-sans);font-size:1.5rem;font-weight:800;color:var(--forest);line-height:1.1}
+    .proto-stat-lbl{font-size:10.5px;color:var(--text-muted);margin-top:5px;font-family:var(--f-mono);letter-spacing:.05em;text-transform:uppercase}
+    .pbar-wrap{height:8px;background:var(--bg-elevated);border-radius:4px;overflow:hidden;margin:8px 0}
+    .pbar-fill{height:100%;background:linear-gradient(90deg,var(--sage),var(--forest));border-radius:4px;transition:width .6s ease}
+    .feed-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-sub);font-size:13px}
+    .feed-item:last-child{border-bottom:none}
+    .badge-chip{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--bg-elevated);border:1px solid var(--border-sub);border-radius:10px;padding:14px 8px;text-align:center}
+    .badge-chip .ic{font-size:24px}
+    .badge-chip .nm{font-size:10.5px;font-weight:600;color:var(--text-muted)}
+    .buddy-card{border:1px solid var(--border);border-radius:var(--r);padding:16px;background:var(--bg-card);box-shadow:var(--sh)}
+    .lb-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;border-bottom:1px solid var(--border-sub)}
+    .lb-row.you{background:rgba(30,92,30,0.06);border:1px solid rgba(30,92,30,0.2)}
+    .wkc-grid{display:flex;gap:8px;align-items:flex-end;height:110px;padding-top:10px}
+    .wkc-bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;height:100%}
+    .wkc-fill{width:100%;min-height:4px;background:linear-gradient(180deg,var(--mint),var(--sage));border-radius:4px 4px 0 0;transition:height .6s ease}
+    .wkc-lbl{font-family:var(--f-mono);font-size:9.5px;color:var(--text-dim)}
+    .proto-select{padding:9px 10px;border-radius:8px;border:1px solid var(--border);font-family:var(--f-sans);font-size:12.5px;color:var(--text);background:var(--bg-card);width:100%}
+    .proto-select:focus-visible{outline:2px solid var(--forest);outline-offset:1px}
+    .sim-tag{font-family:var(--f-mono);font-size:9px;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase}
+    .proto-toast{background:var(--forest);color:#fff;padding:11px 18px;border-radius:8px;font-family:var(--f-sans);font-size:12.5px;font-weight:600;box-shadow:var(--sh-lg);transition:opacity .3s;max-width:290px}
+    @media(max-width:600px){.wkc-grid{height:80px}}
+
+    /* ── PROTOTYPE STORY (Intro / Problem / Solution) ── */
+    .story-flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:28px 0 8px}
+    .story-flow-step{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:10px 20px;
+      font-family:var(--f-mono);font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--forest);box-shadow:var(--sh)}
+    .story-flow-arr{color:var(--sage);font-size:16px;font-weight:700}
+    @media(max-width:600px){.story-flow{flex-direction:column}.story-flow-arr{transform:rotate(90deg)}}
+
+    .story-step-mini{display:flex;flex-direction:column;align-items:center;gap:6px;margin:20px 0;font-family:var(--f-mono);
+      font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
+    .story-step-mini .sm-arr{color:var(--mint);font-size:13px}
+
+    .problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rl);padding:32px;box-shadow:var(--sh)}
+    .problem-num{font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--rust);margin-bottom:10px}
+    .problem-flow{display:flex;flex-direction:column;gap:0;margin:18px 0;align-items:flex-start}
+    .problem-flow-item{font-family:var(--f-mono);font-size:12px;color:var(--text-muted);padding:4px 0}
+    .problem-flow-arr{color:var(--sage);font-size:13px;padding-left:2px}
+
+    .solution-stage{display:flex;flex-direction:column;align-items:center;gap:14px}
+    .solution-stage-card{width:100%;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rl);
+      padding:26px 28px;box-shadow:var(--sh);display:flex;align-items:center;gap:20px;transition:transform .2s,box-shadow .2s}
+    .solution-stage-card:hover{transform:translateY(-2px);box-shadow:var(--sh-lg)}
+    .solution-stage-num{font-family:var(--f-serif);font-size:2.4rem;font-style:italic;color:var(--leaf);line-height:1;flex-shrink:0;min-width:56px}
+    .solution-stage-arr{color:var(--sage);font-size:18px}
+
+    .ps-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-sub)}
+    .ps-row:last-child{border-bottom:none}
+    .ps-problem{font-size:13px;color:var(--text-muted);text-align:right}
+    .ps-solution{font-size:13px;font-weight:600;color:var(--forest)}
+    .ps-arr{font-size:15px;color:var(--sage)}
+    @media(max-width:700px){.ps-row{grid-template-columns:1fr;text-align:left;gap:4px}.ps-problem{text-align:left}.ps-arr{display:none}}
+
+    .story-cta{background:linear-gradient(155deg,#1E5C1E 0%,#2A7A2A 100%);border-radius:var(--rl);padding:56px 40px;
+      text-align:center;color:#fff;box-shadow:var(--sh-lg)}
+    .story-cta h2{color:#fff}
+    .story-cta p{color:rgba(255,255,255,0.82);max-width:520px;margin:10px auto 26px}
+    .story-cta .btn-p{background:#fff;color:var(--forest)}
+    .story-cta .btn-s{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.3)}
+
+    .highlight-quote{border-left:3px solid var(--forest);padding:14px 22px;margin:28px 0;font-family:var(--f-serif);
+      font-style:italic;font-size:1.15rem;color:var(--text);background:rgba(30,92,30,0.04);border-radius:0 10px 10px 0}
+
+    /* ── COMPACT PROTOTYPE STORY ── */
+    .proto-story-compact .section{padding:48px 0}
+    .proto-story-compact .sec-hdr{margin-bottom:28px!important}
+    .proto-story-compact .story-flow{margin:18px 0 4px}
+    .proto-story-compact .g4{gap:14px}
+    .proto-story-compact .card,.proto-story-compact .problem-card{padding:20px}
+    .proto-story-compact .solution-stage-card{padding:18px 22px}
+
+    /* ── UML USE CASE DIAGRAMS ── */
+    .uml-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .uml-grid .uml-half-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media (max-width:800px){.uml-grid .uml-half-row{grid-template-columns:1fr}}
+    .uml-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:16px;display:flex;flex-direction:column;gap:10px}
+    .uml-card img{display:block;width:100%;height:auto;max-width:100%;border-radius:8px;border:1px solid var(--border-sub);cursor:zoom-in}
+    .uml-caption{text-align:center;font-size:13px;font-weight:600;color:var(--text-muted)}
+    .uml-lightbox{position:fixed;inset:0;background:rgba(10,20,10,0.82);z-index:999;display:none;align-items:center;justify-content:center;padding:24px}
+    .uml-lightbox.open{display:flex}
+    .uml-lightbox img{max-width:92vw;max-height:88vh;width:auto;height:auto;border-radius:10px;box-shadow:var(--sh-lg);background:#fff}
+    .uml-lightbox-close{position:absolute;top:18px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);color:var(--text);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh)}
+
+    /* ── PROTOTYPE DIAGRAMS / UML DOCUMENTATION (fixed-size cards) ── */
+    .uml-doc-subhdr{font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border-sub)}
+    .uml-doc-subhdr:first-of-type{margin-top:0}
+    .uml-doc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:8px}
+    @media (max-width:800px){.uml-doc-grid{grid-template-columns:1fr}}
+    .uml-doc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:16px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s,transform .2s}
+    .uml-doc-card:hover{border-color:rgba(30,92,30,0.3);box-shadow:var(--sh-lg);transform:translateY(-2px)}
+    .uml-doc-frame{width:100%;height:380px;display:flex;align-items:center;justify-content:center;background:var(--bg-elevated);border-radius:8px;border:1px solid var(--border-sub);overflow:hidden}
+    .uml-doc-frame img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;cursor:zoom-in;border-radius:4px}
+    @media (max-width:520px){.uml-doc-frame{height:260px}}
+    .uml-doc-caption{text-align:center;font-size:13px;font-weight:600;color:var(--text-muted)}
   </style>
 </head>
 <body>
@@ -278,6 +380,7 @@
     <ul class="nav-links" id="nl">
       <li><a href="#" onclick="go('home')">Home</a></li>
       <li><a href="#" onclick="go('project')">Project</a></li>
+      <li><a href="#" onclick="go('prototype')">Prototype</a></li>
       <li><a href="#" onclick="go('arch')">Architecture</a></li>
       <li><a href="#" onclick="go('progress')">Progress</a></li>
       <li><a href="#" onclick="go('team')">Team</a></li>
@@ -292,6 +395,11 @@
 </nav>
 
 <div id="app"></div>
+
+<div class="uml-lightbox" id="umlLightbox" onclick="if(event.target===this)closeUmlLightbox()">
+  <button class="uml-lightbox-close" onclick="closeUmlLightbox()" aria-label="Close">✕</button>
+  <img id="umlLightboxImg" src="" alt=""/>
+</div>
 
 <footer id="ft" style="display:none">
   <div class="ft-in">
@@ -478,7 +586,7 @@ function go(p,m=null){
 
 function navActive(){
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-  const map={home:0,project:1,arch:2,progress:3,team:4,github:5,ppts:6,docs:7,changelog:8,deploy:9};
+  const map={home:0,project:1,prototype:2,arch:3,progress:4,team:5,github:6,ppts:7,docs:8,changelog:9,deploy:10};
   const links=document.querySelectorAll('.nav-links a');
   if(map[curPage]!==undefined) links[map[curPage]]?.classList.add('active');
 }
@@ -486,7 +594,7 @@ function toggleNav(){ document.getElementById('nl').classList.toggle('open'); }
 function closeNav(){ document.getElementById('nl').classList.remove('open'); }
 function render(){
   const app=document.getElementById('app'), ft=document.getElementById('ft');
-  const pages={home:rHome,project:rProject,arch:rArch,progress:rProgress,team:rTeam,member:rMember,github:rGithub,ppts:rPpts,docs:rDocs,changelog:rChangelog,deploy:rDeploy};
+  const pages={home:rHome,project:rProject,prototype:rPrototype,arch:rArch,progress:rProgress,team:rTeam,member:rMember,github:rGithub,ppts:rPpts,docs:rDocs,changelog:rChangelog,deploy:rDeploy};
   app.innerHTML=(pages[curPage]||r404)();
   ft.style.display='block';
   if(curPage==='github') fetchGH();
@@ -880,6 +988,7 @@ function rProgress(){
   </div></div></div>`;
 }
 function toWeek(w){ document.getElementById('wk'+w)?.scrollIntoView({behavior:'smooth',block:'start'}); }
+function protoScrollTo(id){ document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'}); }
 
 // ══════════════════════════════════════════════
 //  TEAM
@@ -1627,6 +1736,559 @@ function rDeploy(){
       </p>
     </div>
   </div></div></div>`;
+}
+
+// ══════════════════════════════════════════════
+//  PROTOTYPE — interactive frontend simulation
+//  (mock data only — no backend, no real APIs)
+// ══════════════════════════════════════════════
+let PROTO={
+  mode:'student',
+  xp:2840, stepcoin:1240, streak:12, weeklySteps:42680, badges:8, rank:4,
+  activityType:'Walking',
+  feed:[
+    {ic:'✓',t:'7-Day Challenge — Completed',x:250},
+    {ic:'✓',t:'Badminton — 45 min',x:100},
+    {ic:'✓',t:'Walking — 8,642 steps',x:80},
+    {ic:'✓',t:'Running — 3.8 km',x:120}
+  ],
+  health:{steps:8642,dist:5.7,active:64,syncing:false},
+  integ:{activity:'Running',duration:32,distance:3.8,score:94,status:'Verified',checking:false},
+  buddySport:'Football',buddySkill:'Beginner',buddyTime:'Morning',buddyArea:'Main Campus',
+  buddyResults:null,buddySearching:false,
+  challenges:[
+    {id:'walk7',title:'7-Day Walking Challenge',goal:50000,unit:'steps',progress:36420,xp:150,joined:true},
+    {id:'runner',title:'Campus Runner',goal:20,unit:'km',progress:14.2,xp:200,joined:true},
+    {id:'weekend',title:'Weekend Warrior',goal:3,unit:'activities',progress:2,xp:100,joined:false}
+  ],
+  battleJoined:false, battleYou:42680, battleOpp:38920,
+  weekVals:[7,9,5,10,7,11,6]
+};
+const PROTO_LB=[
+  {name:'Aarav Sharma',xp:5420,streak:9},
+  {name:'Riya Mehta',xp:4980,streak:14},
+  {name:'Ananya Singh',xp:4620,streak:6},
+  {name:'Kashish Singhal',xp:2840,streak:12,you:true},
+  {name:'Raghav Sharma',xp:2710,streak:5}
+];
+const PROTO_BADGES=[{ic:'🏃',nm:'First Run'},{ic:'🔥',nm:'7-Day Streak'},{ic:'👟',nm:'10K Steps'},{ic:'🏆',nm:'Challenge Winner'},{ic:'⚡',nm:'Step Warrior'}];
+const PROTO_ADMIN={students:284,activities:1426,suspicious:23,challenges:8};
+
+function pbar(pct){ return `<div class="pbar-wrap"><div class="pbar-fill" style="width:${Math.max(0,Math.min(100,pct))}%"></div></div>`; }
+
+// ── Prototype tab: Diagrams / UML Documentation ──
+const PROTO_DIAGRAM_GROUPS=[
+  {group:'UML Use Case Diagrams', items:[
+    {src:'./uml1.png', caption:'Use Case Diagram 1'},
+    {src:'./uml2.png', caption:'Use Case Diagram 2'},
+    {src:'./uml3.png', caption:'Use Case Diagram 3'},
+    {src:'./uml4.png', caption:'Use Case Diagram 4'}
+  ]},
+  {group:'Sequence Diagrams', items:[
+    {src:'./sequence1.png', caption:'User Login'},
+    {src:'./sequence2.png', caption:'Connect Health Connect & Retrieve Steps'},
+    {src:'./sequence3.png', caption:'Genuine/Fake Step Detection'},
+    {src:'./sequence4.png', caption:'Dashboard & Activity Insights'},
+    {src:'./sequence5.png', caption:'Suspicious Activity Alert'}
+  ]},
+  {group:'Class Diagram', items:[
+    {src:'./classdiagram.png', caption:'StepUp Class Diagram'}
+  ]}
+];
+
+function rProtoDiagrams(){
+  return `
+    <div class="section" id="proto-diagrams"><div class="wrap">
+      <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:760px">
+        <div class="lbl" style="justify-content:center;display:flex">Documentation</div>
+        <h2 style="margin:10px 0 4px">Diagrams &amp; UML Documentation</h2>
+        <p class="tm">Full set of UML use case, sequence, and class diagrams documenting the StepUp system design — click any diagram to view it full-screen.</p>
+      </div>
+      ${PROTO_DIAGRAM_GROUPS.map(g=>`
+        <div class="uml-doc-subhdr">${g.group}</div>
+        <div class="uml-doc-grid">
+          ${g.items.map(it=>`
+            <div class="uml-doc-card">
+              <div class="uml-doc-frame"><img src="${it.src}" alt="${it.caption}" loading="lazy" onclick="openUmlLightbox(this.src,this.alt)"/></div>
+              <div class="uml-doc-caption">${it.caption}</div>
+            </div>`).join('')}
+        </div>`).join('')}
+    </div></div>`;
+}
+
+function openUmlLightbox(src,alt){
+  const lb=document.getElementById('umlLightbox'), img=document.getElementById('umlLightboxImg');
+  if(!lb||!img) return;
+  img.src=src; img.alt=alt||'';
+  lb.classList.add('open');
+}
+function closeUmlLightbox(){
+  const lb=document.getElementById('umlLightbox');
+  if(lb) lb.classList.remove('open');
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeUmlLightbox(); });
+
+function showPrototypeToast(msg){
+  let wrap=document.getElementById('toastWrap');
+  if(!wrap){wrap=document.createElement('div');wrap.id='toastWrap';wrap.setAttribute('role','status');wrap.setAttribute('aria-live','polite');wrap.style.cssText='position:fixed;bottom:22px;right:22px;z-index:999;display:flex;flex-direction:column;gap:8px;align-items:flex-end';document.body.appendChild(wrap);}
+  const t=document.createElement('div');t.className='proto-toast';t.textContent=msg;wrap.appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),300);},2600);
+}
+
+// Re-render just the current (prototype) page in place, preserving scroll position
+function refreshProto(){ if(curPage==='prototype'){ const y=window.scrollY; render(); window.scrollTo(0,y); } }
+
+function switchPrototypeMode(m){ PROTO.mode=m; refreshProto(); }
+function setPrototypeActivityType(t){ PROTO.activityType=t; refreshProto(); }
+function setBuddyField(field,val){ PROTO[field]=val; }
+
+function submitPrototypeActivity(){
+  const t=PROTO.activityType;
+  const presets={
+    Walking:{dist:'4.2 km',xp:80},
+    Running:{dist:'3.8 km',xp:120},
+    Cycling:{dist:'9.4 km',xp:100},
+    Other:{dist:'1.5 km',xp:60}
+  }[t];
+  PROTO.feed.unshift({ic:'✓',t:`${t} — ${presets.dist}`,x:presets.xp});
+  PROTO.xp+=presets.xp;
+  PROTO.weeklySteps+=Math.floor(Math.random()*1500)+500;
+  showPrototypeToast('Activity submitted successfully ✓');
+  refreshProto();
+}
+
+function syncPrototypeFitness(){
+  PROTO.health.syncing=true; refreshProto();
+  setTimeout(()=>{
+    PROTO.health.syncing=false;
+    PROTO.health.steps+=Math.floor(Math.random()*400)+100;
+    PROTO.health.dist=+(PROTO.health.dist+Math.random()*0.6).toFixed(1);
+    PROTO.health.active+=Math.floor(Math.random()*8)+2;
+    showPrototypeToast('Fitness data synced successfully ✓');
+    refreshProto();
+  },1100);
+}
+
+function runIntegrityCheck(){
+  PROTO.integ.checking=true; refreshProto();
+  setTimeout(()=>{
+    PROTO.integ.checking=false;
+    const score=Math.floor(Math.random()*20)+78;
+    PROTO.integ.score=score;
+    PROTO.integ.status=score>=85?'Verified':'Suspicious';
+    if(score>=85){ PROTO.xp+=40; showPrototypeToast('Activity verified ✓'); }
+    else{ showPrototypeToast('Activity flagged for review'); }
+    refreshProto();
+  },1200);
+}
+
+function findPrototypeBuddy(){
+  PROTO.buddySearching=true; refreshProto();
+  const pool=[['Aarav','Intermediate'],['Meera','Beginner'],['Vihaan','Advanced'],['Isha','Intermediate']];
+  setTimeout(()=>{
+    PROTO.buddySearching=false;
+    PROTO.buddyResults=pool.map(([n,sk])=>({
+      name:n, sport:PROTO.buddySport, skill:sk,
+      match:Math.floor(Math.random()*20)+75,
+      time:PROTO.buddyTime, area:PROTO.buddyArea, connected:false
+    }));
+    refreshProto();
+  },900);
+}
+function connectPrototypeBuddy(i){
+  PROTO.buddyResults[i].connected=true;
+  showPrototypeToast('Sport buddy connection request sent ✓');
+  refreshProto();
+}
+
+function joinPrototypeChallenge(id){
+  const c=PROTO.challenges.find(x=>x.id===id);
+  if(c&&!c.joined){ c.joined=true; showPrototypeToast('Challenge joined ✓'); refreshProto(); }
+}
+function joinStepBattle(){
+  if(!PROTO.battleJoined){ PROTO.battleJoined=true; showPrototypeToast('Step battle joined ✓'); refreshProto(); }
+}
+
+function rProtoStory(){
+  return `
+    <div class="proto-story-compact">
+    <!-- ═══ 1. INTRODUCTION — STEPUP ═══ -->
+    <div class="section" id="story-intro">
+      <div class="wrap">
+        <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:760px">
+          <div class="lbl" style="justify-content:center;display:flex">Prototype Walkthrough</div>
+          <h2 style="margin:10px 0 4px">Introduction — StepUp</h2>
+          <p class="tm">Thapar StepUp is a campus fitness and gamification platform designed to encourage students to stay physically active through challenges, rewards, social interaction, and verified fitness activity.</p>
+        </div>
+        <div class="story-flow" aria-hidden="true">
+          <div class="story-flow-step">TRACK</div><div class="story-flow-arr">→</div>
+          <div class="story-flow-step">VERIFY</div><div class="story-flow-arr">→</div>
+          <div class="story-flow-step">REWARD</div><div class="story-flow-arr">→</div>
+          <div class="story-flow-step">CONNECT</div>
+        </div>
+        <div class="g4" style="margin-top:36px">
+          <div class="card card-green tc">
+            <div class="feat-icon" style="margin-bottom:8px">📱</div>
+            <h3>Activity Tracking</h3>
+            <p class="tm mt8" style="font-size:13px">Track steps and fitness activities.</p>
+          </div>
+          <div class="card card-green tc">
+            <div class="feat-icon" style="margin-bottom:8px">🛡️</div>
+            <h3>Activity Integrity</h3>
+            <p class="tm mt8" style="font-size:13px">Verify submitted activities and identify suspicious activity.</p>
+          </div>
+          <div class="card card-green tc">
+            <div class="feat-icon" style="margin-bottom:8px">🏆</div>
+            <h3>Gamification</h3>
+            <p class="tm mt8" style="font-size:13px">Earn XP, StepCoin, badges, streaks, and challenge rewards.</p>
+          </div>
+          <div class="card card-green tc">
+            <div class="feat-icon" style="margin-bottom:8px">🤝</div>
+            <h3>Sport Buddy Matching</h3>
+            <p class="tm mt8" style="font-size:13px">Find students with similar sports and activity preferences.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap"><div class="divider"></div></div>
+
+    <!-- ═══ 2. THE PROBLEM ═══ -->
+    <div class="section section-green" id="story-problem">
+      <div class="wrap">
+        <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:700px">
+          <div class="lbl" style="justify-content:center;display:flex">The Challenge</div>
+          <h2 style="margin:10px 0 4px">The Problem</h2>
+          <p class="tm">Two unsolved problems stand between students and a fair, motivating fitness experience.</p>
+        </div>
+        <div class="g2">
+          <div class="problem-card">
+            <div class="problem-num">Problem 01 — Activity Integrity</div>
+            <h3 style="margin-bottom:10px">Can we trust the activity data?</h3>
+            <p class="tm" style="font-size:14px">Simply counting submitted steps or activities does not guarantee that the activity is genuine. Fitness data may contain inaccurate, duplicated, or suspicious activity.</p>
+            <div class="problem-flow">
+              <div class="problem-flow-item">Activity Submitted</div>
+              <div class="problem-flow-arr">↓</div>
+              <div class="problem-flow-item">Is the activity genuine?</div>
+              <div class="problem-flow-arr">↓</div>
+              <div class="problem-flow-item">Verification Required</div>
+            </div>
+            <span class="badge b-earth">Activity Integrity Challenge</span>
+          </div>
+          <div class="problem-card">
+            <div class="problem-num">Problem 02 — Fitness Engagement</div>
+            <h3 style="margin-bottom:10px">How do we keep students motivated?</h3>
+            <p class="tm" style="font-size:14px">Students may struggle to maintain consistent physical activity when there is limited social motivation, competition, and campus-level engagement.</p>
+            <div class="problem-flow">
+              <div class="problem-flow-item">Low Motivation</div>
+              <div class="problem-flow-arr">↓</div>
+              <div class="problem-flow-item">Inconsistent Activity</div>
+              <div class="problem-flow-arr">↓</div>
+              <div class="problem-flow-item">Reduced Engagement</div>
+            </div>
+            <span class="badge b-plum">Student Engagement Challenge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap"><div class="divider"></div></div>
+
+    <!-- ═══ 3. WHY THIS PROBLEM MATTERS ═══ -->
+    <div class="section" id="story-why">
+      <div class="wrap">
+        <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:700px">
+          <div class="lbl" style="justify-content:center;display:flex">Why It Matters</div>
+          <h2 style="margin:10px 0 4px">Why This Problem Matters</h2>
+        </div>
+        <div class="g4">
+          <div class="card tc">
+            <div class="feat-icon" style="margin-bottom:8px">⚖️</div>
+            <h3>Fairness</h3>
+            <p class="tm mt8" style="font-size:13px">Unverified activity can make fitness competitions, leaderboards, and rewards unfair.</p>
+          </div>
+          <div class="card tc">
+            <div class="feat-icon" style="margin-bottom:8px">🎯</div>
+            <h3>Trust</h3>
+            <p class="tm mt8" style="font-size:13px">Reliable activity data is important when XP, StepCoin, badges, and rankings depend on fitness performance.</p>
+          </div>
+          <div class="card tc">
+            <div class="feat-icon" style="margin-bottom:8px">🔥</div>
+            <h3>Motivation</h3>
+            <p class="tm mt8" style="font-size:13px">Students are more likely to stay active when fitness includes challenges, streaks, rewards, and friendly competition.</p>
+          </div>
+          <div class="card tc">
+            <div class="feat-icon" style="margin-bottom:8px">🤝</div>
+            <h3>Community</h3>
+            <p class="tm mt8" style="font-size:13px">Finding students with similar sports and activity interests can make fitness more social and engaging.</p>
+          </div>
+        </div>
+        <div class="highlight-quote tc" style="margin-left:auto;margin-right:auto;max-width:680px">“StepUp is not just about counting steps — it is about creating a trusted and engaging campus fitness ecosystem.”</div>
+      </div>
+    </div>
+
+    <div class="wrap"><div class="divider"></div></div>
+
+    <!-- ═══ 4. OUR PROPOSED SOLUTION ═══ -->
+    <div class="section section-leaf" id="story-solution">
+      <div class="wrap">
+        <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:700px">
+          <div class="lbl" style="justify-content:center;display:flex">The Solution</div>
+          <h2 style="margin:10px 0 4px">Our Proposed Solution</h2>
+          <p class="tm">StepUp is the integrated answer to both problems — one continuous loop from raw activity to social connection.</p>
+        </div>
+        <div class="solution-stage" style="max-width:640px;margin:0 auto">
+          <div class="solution-stage-card">
+            <div class="solution-stage-num">01</div>
+            <div><h3>Track</h3><p class="tm mt8" style="font-size:13.5px">Collect fitness activity through Health Connect.</p></div>
+          </div>
+          <div class="solution-stage-arr">↓</div>
+          <div class="solution-stage-card">
+            <div class="solution-stage-num">02</div>
+            <div><h3>Verify</h3><p class="tm mt8" style="font-size:13.5px">Use activity-integrity checks to identify suspicious or unreliable activity.</p></div>
+          </div>
+          <div class="solution-stage-arr">↓</div>
+          <div class="solution-stage-card">
+            <div class="solution-stage-num">03</div>
+            <div><h3>Reward</h3><p class="tm mt8" style="font-size:13.5px">Convert verified activity into XP, StepCoin, badges, streaks, challenges, and leaderboard progress.</p></div>
+          </div>
+          <div class="solution-stage-arr">↓</div>
+          <div class="solution-stage-card">
+            <div class="solution-stage-num">04</div>
+            <div><h3>Connect</h3><p class="tm mt8" style="font-size:13.5px">Help students find sport buddies and participate in group activities.</p></div>
+          </div>
+        </div>
+
+        <div class="g4" style="margin-top:48px">
+          <div class="card">
+            <h3 style="margin-bottom:6px">Activity Tracking</h3>
+            <p class="tm" style="font-size:13px;margin-bottom:14px">Track and submit walking, running, cycling, and other fitness activities.</p>
+            <button class="btn btn-s" style="font-size:12px" onclick="protoScrollTo('proto-track')">Explore Activity Tracking ${I.arr}</button>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:6px">Activity Integrity Detection</h3>
+            <p class="tm" style="font-size:13px;margin-bottom:14px">Validate activity and identify suspicious patterns before rewards are granted.</p>
+            <button class="btn btn-s" style="font-size:12px" onclick="protoScrollTo('proto-integrity')">Run Integrity Demo ${I.arr}</button>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:6px">Gamification</h3>
+            <p class="tm" style="font-size:13px;margin-bottom:14px">Earn XP, StepCoin, badges, and streaks while participating in challenges and Step Battles.</p>
+            <button class="btn btn-s" style="font-size:12px" onclick="protoScrollTo('proto-gamification')">Explore Gamification ${I.arr}</button>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:6px">Sport Group Matching</h3>
+            <p class="tm" style="font-size:13px;margin-bottom:14px">Find compatible sport buddies based on sport, skill level, preferred time, and campus location.</p>
+            <button class="btn btn-s" style="font-size:12px" onclick="protoScrollTo('proto-buddy')">Find a Sport Buddy ${I.arr}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap"><div class="divider"></div></div>
+    </div>
+  `;
+}
+
+function rPrototype(){
+  const p=PROTO, isAdmin=p.mode==='admin';
+  return `<div class="page">
+    ${rProtoStory()}
+    <div class="proto-hero" id="proto-dashboard"><div class="wrap">
+      <div class="lbl mb8">Interactive Prototype</div>
+      <h1 style="margin-bottom:10px">StepUp Prototype</h1>
+      <p class="tm" style="max-width:640px;margin-bottom:16px">Experience the core student fitness, activity integrity, sport-group matching, and gamification workflow.</p>
+      <div class="flex fw g12" style="align-items:center;margin-bottom:20px">
+        <span class="badge b-green">● Prototype / POC</span>
+        <span class="sim-tag">Frontend simulation — demonstrates the planned user journey ahead of the full Flutter implementation</span>
+      </div>
+      <div class="proto-toggle" role="tablist" aria-label="Prototype perspective">
+        <button role="tab" aria-selected="${!isAdmin}" class="${!isAdmin?'active':''}" onclick="switchPrototypeMode('student')">Student Prototype</button>
+        <button role="tab" aria-selected="${isAdmin}" class="${isAdmin?'active':''}" onclick="switchPrototypeMode('admin')">Admin Prototype</button>
+      </div>
+    </div></div>
+
+    <div class="section" id="proto-workflow"><div class="wrap">
+      <div class="lbl mb16">Prototype Workflow</div>
+      <div class="pipe" style="margin-bottom:56px">
+        ${['Login','Track / Submit Activity','Sync Fitness Data','Verify Activity','Earn XP / Badges / Streaks','Join Challenges / Step Battles','Find Sport Buddy','View Analytics / Leaderboard'].map((s,i,a)=>`<div class="pipe-step">${s}</div>${i<a.length-1?'<div class="pipe-arr"></div>':''}`).join('')}
+      </div>
+      ${isAdmin?rProtoAdmin():rProtoStudent()}
+    </div></div>
+
+    ${rProtoDiagrams()}
+  </div>`;
+}
+
+function rProtoStudent(){
+  const p=PROTO;
+  return `
+  <div class="lbl mb16">Student Dashboard</div>
+  <div class="card card-green" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-bottom:24px">
+    <div style="width:72px;height:72px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--f-sans);font-size:26px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--forest),var(--sage));box-shadow:var(--sh-lg)" aria-hidden="true">KS</div>
+    <div><div style="font-weight:800;font-size:1.2rem">Kashish Singhal</div><div class="tm" style="font-size:13px">Student · Level 7 — Active Walker</div></div>
+  </div>
+  <div class="g4" style="margin-bottom:48px">
+    <div class="proto-stat"><div class="proto-stat-val">${p.stepcoin.toLocaleString()}</div><div class="proto-stat-lbl">StepCoin</div></div>
+    <div class="proto-stat"><div class="proto-stat-val">${p.xp.toLocaleString()}</div><div class="proto-stat-lbl">XP</div></div>
+    <div class="proto-stat"><div class="proto-stat-val">${p.streak}d</div><div class="proto-stat-lbl">Current Streak</div></div>
+    <div class="proto-stat"><div class="proto-stat-val">${p.weeklySteps.toLocaleString()}</div><div class="proto-stat-lbl">Weekly Steps</div></div>
+    <div class="proto-stat"><div class="proto-stat-val">${p.badges}</div><div class="proto-stat-lbl">Badges</div></div>
+    <div class="proto-stat"><div class="proto-stat-val">#${p.rank}</div><div class="proto-stat-lbl">Leaderboard Rank</div></div>
+  </div>
+
+  <div class="divider" style="margin-bottom:48px"></div>
+
+  <div class="g2" style="gap:24px;margin-bottom:48px" id="proto-track">
+    <div class="card">
+      <div class="flex aic g8 mb16" style="justify-content:space-between"><h3>Track / Submit Activity</h3><span class="sim-tag">Prototype Simulation</span></div>
+      <div class="flex fw g8 mb16" role="group" aria-label="Activity type">
+        ${['Walking','Running','Cycling','Other'].map(t=>`<button class="btn ${p.activityType===t?'btn-p':'btn-s'}" style="font-size:12px" aria-pressed="${p.activityType===t}" onclick="setPrototypeActivityType('${t}')">${t}</button>`).join('')}
+      </div>
+      <div style="background:var(--bg-elevated);border-radius:8px;padding:14px;font-size:12.5px;color:var(--text-muted);display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
+        <div>Steps: <strong style="color:var(--text)">6,240</strong></div>
+        <div>Duration: <strong style="color:var(--text)">28 min</strong></div>
+        <div>Distance: <strong style="color:var(--text)">3.8 km</strong></div>
+        <div>Calories: <strong style="color:var(--text)">220 kcal</strong></div>
+      </div>
+      <button class="btn btn-p" style="width:100%;justify-content:center" onclick="submitPrototypeActivity()">Submit Activity</button>
+    </div>
+
+    <div class="card">
+      <div class="flex aic g8 mb16" style="justify-content:space-between"><h3>Health Connect</h3><span class="badge b-green">Connected</span></div>
+      <p class="tm" style="font-size:13px;margin-bottom:14px">Sync fitness data from your connected health platform.</p>
+      <div style="background:var(--bg-elevated);border-radius:8px;padding:14px;font-size:12.5px;color:var(--text-muted);display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
+        <div>Steps: <strong style="color:var(--text)">${p.health.steps.toLocaleString()}</strong></div>
+        <div>Active Time: <strong style="color:var(--text)">${p.health.active} min</strong></div>
+        <div>Distance: <strong style="color:var(--text)">${p.health.dist} km</strong></div>
+      </div>
+      <button class="btn btn-leaf" style="width:100%;justify-content:center" onclick="syncPrototypeFitness()" ${p.health.syncing?'disabled aria-busy="true"':''}>${p.health.syncing?'Syncing…':'Sync Fitness Data'}</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:48px" id="proto-integrity">
+    <div class="flex aic g8 mb16" style="justify-content:space-between"><h3>Activity Integrity Check</h3><span class="sim-tag">Prototype Simulation</span></div>
+    <p class="tm" style="font-size:13px;margin-bottom:20px">StepUp verifies submitted activity to reduce fake or suspicious activity.</p>
+    <div class="pipe" style="margin-bottom:24px">
+      ${['Activity Submitted','Data Validation','Integrity Check','Verified Activity','XP / Badge Reward'].map((s,i,a)=>`<div class="pipe-step ${i===2&&p.integ.checking?'hl':''}">${s}</div>${i<a.length-1?'<div class="pipe-arr"></div>':''}`).join('')}
+    </div>
+    <div class="g3" style="margin-bottom:20px">
+      <div><div class="lbl" style="font-size:9px">Activity</div><div style="font-weight:700">${p.integ.activity}</div></div>
+      <div><div class="lbl" style="font-size:9px">Duration / Distance</div><div style="font-weight:700">${p.integ.duration} min · ${p.integ.distance} km</div></div>
+      <div><div class="lbl" style="font-size:9px">Integrity Score</div><div style="font-weight:700">${p.integ.checking?'Checking…':p.integ.score+'%'}</div></div>
+    </div>
+    <div class="flex aic g12 fw">
+      <span class="badge ${p.integ.status==='Verified'?'b-green':'b-earth'}">${p.integ.checking?'⏳ Checking':p.integ.status==='Verified'?'✓ Verified':'⚠ Suspicious'}</span>
+      <button class="btn btn-s" onclick="runIntegrityCheck()" ${p.integ.checking?'disabled':''}>${p.integ.checking?'Checking…':'Run Integrity Check'}</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:48px" id="proto-buddy">
+    <h3 style="margin-bottom:6px">Find Your Sport Buddy</h3>
+    <p class="tm" style="font-size:13px;margin-bottom:16px">Match with compatible students by sport, skill level, time, and campus area.</p>
+    <div class="g4" style="margin-bottom:16px">
+      <select class="proto-select" aria-label="Sport" onchange="setBuddyField('buddySport',this.value)">${['Football','Cricket','Basketball','Badminton','Running','Gym','Cycling','Other'].map(s=>`<option ${p.buddySport===s?'selected':''}>${s}</option>`).join('')}</select>
+      <select class="proto-select" aria-label="Skill level" onchange="setBuddyField('buddySkill',this.value)">${['Beginner','Intermediate','Advanced'].map(s=>`<option ${p.buddySkill===s?'selected':''}>${s}</option>`).join('')}</select>
+      <select class="proto-select" aria-label="Preferred time" onchange="setBuddyField('buddyTime',this.value)">${['Morning','Afternoon','Evening'].map(s=>`<option ${p.buddyTime===s?'selected':''}>${s}</option>`).join('')}</select>
+      <select class="proto-select" aria-label="Campus area" onchange="setBuddyField('buddyArea',this.value)">${['Main Campus','Hostel Area','Sports Complex'].map(s=>`<option ${p.buddyArea===s?'selected':''}>${s}</option>`).join('')}</select>
+    </div>
+    <button class="btn btn-p" style="margin-bottom:16px" onclick="findPrototypeBuddy()" ${p.buddySearching?'disabled':''}>${p.buddySearching?'Searching…':'Find Sport Buddy'}</button>
+    ${p.buddyResults?`<div class="g2" style="gap:14px">
+      ${p.buddyResults.map((b,i)=>`<div class="buddy-card">
+        <div class="flex aic g8" style="justify-content:space-between;margin-bottom:8px"><strong>${b.name}</strong><span class="badge b-forest">${b.match}% Match</span></div>
+        <div class="tm" style="font-size:12.5px;line-height:1.8">${b.sport} · ${b.skill}<br>${b.time} · ${b.area}</div>
+        <button class="btn ${b.connected?'btn-leaf':'btn-s'}" style="width:100%;justify-content:center;font-size:12px;margin-top:8px" ${b.connected?'disabled':''} onclick="connectPrototypeBuddy(${i})">${b.connected?'Request Sent ✓':'Connect'}</button>
+      </div>`).join('')}
+    </div>`:''}
+  </div>
+
+  <div class="g2" style="gap:24px;margin-bottom:48px" id="proto-gamification">
+    <div class="card">
+      <h3 style="margin-bottom:14px">Challenges</h3>
+      ${p.challenges.map(c=>`<div style="margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border-sub)">
+        <div class="flex aic g8" style="justify-content:space-between"><strong style="font-size:13px">${c.title}</strong><span class="badge b-sage">+${c.xp} XP</span></div>
+        ${pbar(c.progress/c.goal*100)}
+        <div class="flex aic g8 fw" style="justify-content:space-between">
+          <span class="tm" style="font-size:11.5px">${c.progress.toLocaleString()} / ${c.goal.toLocaleString()} ${c.unit}</span>
+          <button class="btn ${c.joined?'btn-leaf':'btn-s'}" style="font-size:11.5px;padding:5px 12px" ${c.joined?'disabled':''} onclick="joinPrototypeChallenge('${c.id}')">${c.joined?'Joined ✓':'Join'}</button>
+        </div>
+      </div>`).join('')}
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:14px">Step Battle</h3>
+      <div class="flex" style="justify-content:space-between;font-size:13px;margin-bottom:6px"><span>You</span><strong>${p.battleYou.toLocaleString()} steps</strong></div>
+      ${pbar(p.battleYou/(p.battleYou+p.battleOpp)*100)}
+      <div class="flex" style="justify-content:space-between;font-size:13px;margin:14px 0 6px"><span>Opponent</span><strong>${p.battleOpp.toLocaleString()} steps</strong></div>
+      ${pbar(p.battleOpp/(p.battleYou+p.battleOpp)*100)}
+      <div class="badge b-green" style="margin:14px 0 16px">${p.battleYou>p.battleOpp?'You are leading!':'Opponent is leading'}</div>
+      <button class="btn ${p.battleJoined?'btn-leaf':'btn-p'}" style="width:100%;justify-content:center;display:block" ${p.battleJoined?'disabled':''} onclick="joinStepBattle()">${p.battleJoined?'Battle Joined ✓':'Join Step Battle'}</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:48px">
+    <h3 style="margin-bottom:14px">Campus Leaderboard</h3>
+    <div style="overflow-x:auto">
+      ${PROTO_LB.map((r,i)=>`<div class="lb-row ${r.you?'you':''}">
+        <span class="mono" style="width:24px;color:var(--text-dim)">#${i+1}</span>
+        <span style="flex:1;font-weight:${r.you?'700':'500'};min-width:120px">${r.name}${r.you?' (You)':''}</span>
+        <span class="mono" style="font-size:12px;color:var(--forest);white-space:nowrap">${r.xp.toLocaleString()} XP</span>
+        <span class="mono" style="font-size:11px;color:var(--text-dim);white-space:nowrap">🔥${r.streak}d</span>
+      </div>`).join('')}
+    </div>
+  </div>
+
+  <div class="g2" style="gap:24px;margin-bottom:48px">
+    <div class="card">
+      <h3 style="margin-bottom:14px">XP, Level & Streak</h3>
+      <div class="g3">
+        <div><div class="proto-stat-val" style="font-size:1.3rem">${p.xp.toLocaleString()}</div><div class="proto-stat-lbl">XP</div></div>
+        <div><div class="proto-stat-val" style="font-size:1.3rem">Lvl 7</div><div class="proto-stat-lbl">Active Walker</div></div>
+        <div><div class="proto-stat-val" style="font-size:1.3rem">${p.streak}d</div><div class="proto-stat-lbl">Streak</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:14px">Badges</h3>
+      <div class="g4" style="gap:10px">${PROTO_BADGES.map(b=>`<div class="badge-chip"><div class="ic" aria-hidden="true">${b.ic}</div><div class="nm">${b.nm}</div></div>`).join('')}</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:48px">
+    <h3 style="margin-bottom:10px">Recent Activity</h3>
+    ${p.feed.slice(0,8).map(f=>`<div class="feed-item"><span>${f.ic} ${f.t}</span><span class="mono" style="color:var(--forest);white-space:nowrap">+${f.x} XP</span></div>`).join('')}
+  </div>
+
+  <div class="card">
+    <h3 style="margin-bottom:16px">Analytics</h3>
+    <div class="g4" style="margin-bottom:24px">
+      <div class="proto-stat"><div class="proto-stat-val">${p.weeklySteps.toLocaleString()}</div><div class="proto-stat-lbl">Weekly Steps</div></div>
+      <div class="proto-stat"><div class="proto-stat-val">6/7</div><div class="proto-stat-lbl">Active Days</div></div>
+      <div class="proto-stat"><div class="proto-stat-val">14</div><div class="proto-stat-lbl">Activities</div></div>
+      <div class="proto-stat"><div class="proto-stat-val">2,840</div><div class="proto-stat-lbl">Calories (kcal)</div></div>
+    </div>
+    <div class="lbl mb8" style="font-size:9px">Weekly Activity</div>
+    <div class="wkc-grid">
+      ${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((d,i)=>`<div class="wkc-bar"><div class="wkc-fill" style="height:${p.weekVals[i]/12*100}%"></div><div class="wkc-lbl">${d}</div></div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function rProtoAdmin(){
+  const a=PROTO_ADMIN;
+  return `
+  <div class="lbl mb16">Admin Dashboard</div>
+  <div class="g4" style="margin-bottom:48px">
+    <div class="proto-stat"><div class="proto-stat-val">${a.students}</div><div class="proto-stat-lbl">Active Students</div></div>
+    <div class="proto-stat"><div class="proto-stat-val">${a.activities.toLocaleString()}</div><div class="proto-stat-lbl">Activities This Week</div></div>
+    <div class="proto-stat"><div class="proto-stat-val" style="color:var(--rust)">${a.suspicious}</div><div class="proto-stat-lbl">Suspicious Activities</div></div>
+    <div class="proto-stat"><div class="proto-stat-val">${a.challenges}</div><div class="proto-stat-lbl">Active Challenges</div></div>
+  </div>
+  <div class="g2" style="gap:24px">
+    ${[['Monitor Activities','Review live activity submissions and flag anomalies across campus.'],
+       ['Verify Suspicious Activities','Manually review activities flagged by the integrity pipeline.'],
+       ['Create / Manage Challenges','Configure new campus-wide challenges and edit active ones.'],
+       ['Manage Users','View and manage student and admin accounts.'],
+       ['View Campus Analytics','Explore aggregate step, XP, and engagement trends.']].map(([t,d])=>`
+    <div class="card"><h3 style="margin-bottom:6px">${t}</h3><p class="tm" style="font-size:13px;margin-bottom:14px">${d}</p><button class="btn btn-s" style="font-size:12px" onclick="showPrototypeToast('${t} — Prototype Simulation ✓')">Open ${I.arr}</button></div>`).join('')}
+  </div>`;
 }
 
 // 404
