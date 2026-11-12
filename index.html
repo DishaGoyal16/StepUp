@@ -267,108 +267,6 @@
     .wk-btn:hover{background:rgba(30,92,30,0.06);color:var(--forest)}
     .wk-btn.done{background:rgba(30,92,30,0.05);border-color:rgba(30,92,30,0.18);color:var(--sage)}
     .wk-btn.active{background:rgba(30,92,30,0.1);border-color:var(--forest);color:var(--forest);font-weight:700}
-
-    /* ── PROTOTYPE ── */
-    .proto-hero{background:linear-gradient(155deg,#E0EDD8 0%,#F3F7F0 100%);border-bottom:1px solid var(--border-sub);padding:56px 0 40px}
-    .proto-toggle{display:inline-flex;background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:3px;gap:3px}
-    .proto-toggle button{border:none;background:transparent;padding:8px 18px;border-radius:7px;font-family:var(--f-sans);font-size:12.5px;font-weight:700;color:var(--text-muted);cursor:pointer;transition:all .15s}
-    .proto-toggle button:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
-    .proto-toggle button.active{background:var(--forest);color:#fff;box-shadow:0 2px 8px rgba(30,92,30,0.25)}
-    .proto-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--sh);text-align:center}
-    .proto-stat-val{font-family:var(--f-sans);font-size:1.5rem;font-weight:800;color:var(--forest);line-height:1.1}
-    .proto-stat-lbl{font-size:10.5px;color:var(--text-muted);margin-top:5px;font-family:var(--f-mono);letter-spacing:.05em;text-transform:uppercase}
-    .pbar-wrap{height:8px;background:var(--bg-elevated);border-radius:4px;overflow:hidden;margin:8px 0}
-    .pbar-fill{height:100%;background:linear-gradient(90deg,var(--sage),var(--forest));border-radius:4px;transition:width .6s ease}
-    .feed-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-sub);font-size:13px}
-    .feed-item:last-child{border-bottom:none}
-    .badge-chip{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--bg-elevated);border:1px solid var(--border-sub);border-radius:10px;padding:14px 8px;text-align:center}
-    .badge-chip .ic{font-size:24px}
-    .badge-chip .nm{font-size:10.5px;font-weight:600;color:var(--text-muted)}
-    .buddy-card{border:1px solid var(--border);border-radius:var(--r);padding:16px;background:var(--bg-card);box-shadow:var(--sh)}
-    .lb-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;border-bottom:1px solid var(--border-sub)}
-    .lb-row.you{background:rgba(30,92,30,0.06);border:1px solid rgba(30,92,30,0.2)}
-    .wkc-grid{display:flex;gap:8px;align-items:flex-end;height:110px;padding-top:10px}
-    .wkc-bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;height:100%}
-    .wkc-fill{width:100%;min-height:4px;background:linear-gradient(180deg,var(--mint),var(--sage));border-radius:4px 4px 0 0;transition:height .6s ease}
-    .wkc-lbl{font-family:var(--f-mono);font-size:9.5px;color:var(--text-dim)}
-    .proto-select{padding:9px 10px;border-radius:8px;border:1px solid var(--border);font-family:var(--f-sans);font-size:12.5px;color:var(--text);background:var(--bg-card);width:100%}
-    .proto-select:focus-visible{outline:2px solid var(--forest);outline-offset:1px}
-    .sim-tag{font-family:var(--f-mono);font-size:9px;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase}
-    .proto-toast{background:var(--forest);color:#fff;padding:11px 18px;border-radius:8px;font-family:var(--f-sans);font-size:12.5px;font-weight:600;box-shadow:var(--sh-lg);transition:opacity .3s;max-width:290px}
-    @media(max-width:600px){.wkc-grid{height:80px}}
-
-    /* ── PROTOTYPE STORY (Intro / Problem / Solution) ── */
-    .story-flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:28px 0 8px}
-    .story-flow-step{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:10px 20px;
-      font-family:var(--f-mono);font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--forest);box-shadow:var(--sh)}
-    .story-flow-arr{color:var(--sage);font-size:16px;font-weight:700}
-    @media(max-width:600px){.story-flow{flex-direction:column}.story-flow-arr{transform:rotate(90deg)}}
-
-    .story-step-mini{display:flex;flex-direction:column;align-items:center;gap:6px;margin:20px 0;font-family:var(--f-mono);
-      font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
-    .story-step-mini .sm-arr{color:var(--mint);font-size:13px}
-
-    .problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rl);padding:32px;box-shadow:var(--sh)}
-    .problem-num{font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--rust);margin-bottom:10px}
-    .problem-flow{display:flex;flex-direction:column;gap:0;margin:18px 0;align-items:flex-start}
-    .problem-flow-item{font-family:var(--f-mono);font-size:12px;color:var(--text-muted);padding:4px 0}
-    .problem-flow-arr{color:var(--sage);font-size:13px;padding-left:2px}
-
-    .solution-stage{display:flex;flex-direction:column;align-items:center;gap:14px}
-    .solution-stage-card{width:100%;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rl);
-      padding:26px 28px;box-shadow:var(--sh);display:flex;align-items:center;gap:20px;transition:transform .2s,box-shadow .2s}
-    .solution-stage-card:hover{transform:translateY(-2px);box-shadow:var(--sh-lg)}
-    .solution-stage-num{font-family:var(--f-serif);font-size:2.4rem;font-style:italic;color:var(--leaf);line-height:1;flex-shrink:0;min-width:56px}
-    .solution-stage-arr{color:var(--sage);font-size:18px}
-
-    .ps-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-sub)}
-    .ps-row:last-child{border-bottom:none}
-    .ps-problem{font-size:13px;color:var(--text-muted);text-align:right}
-    .ps-solution{font-size:13px;font-weight:600;color:var(--forest)}
-    .ps-arr{font-size:15px;color:var(--sage)}
-    @media(max-width:700px){.ps-row{grid-template-columns:1fr;text-align:left;gap:4px}.ps-problem{text-align:left}.ps-arr{display:none}}
-
-    .story-cta{background:linear-gradient(155deg,#1E5C1E 0%,#2A7A2A 100%);border-radius:var(--rl);padding:56px 40px;
-      text-align:center;color:#fff;box-shadow:var(--sh-lg)}
-    .story-cta h2{color:#fff}
-    .story-cta p{color:rgba(255,255,255,0.82);max-width:520px;margin:10px auto 26px}
-    .story-cta .btn-p{background:#fff;color:var(--forest)}
-    .story-cta .btn-s{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.3)}
-
-    .highlight-quote{border-left:3px solid var(--forest);padding:14px 22px;margin:28px 0;font-family:var(--f-serif);
-      font-style:italic;font-size:1.15rem;color:var(--text);background:rgba(30,92,30,0.04);border-radius:0 10px 10px 0}
-
-    /* ── COMPACT PROTOTYPE STORY ── */
-    .proto-story-compact .section{padding:48px 0}
-    .proto-story-compact .sec-hdr{margin-bottom:28px!important}
-    .proto-story-compact .story-flow{margin:18px 0 4px}
-    .proto-story-compact .g4{gap:14px}
-    .proto-story-compact .card,.proto-story-compact .problem-card{padding:20px}
-    .proto-story-compact .solution-stage-card{padding:18px 22px}
-
-    /* ── UML USE CASE DIAGRAMS ── */
-    .uml-grid{display:grid;grid-template-columns:1fr;gap:20px}
-    .uml-grid .uml-half-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    @media (max-width:800px){.uml-grid .uml-half-row{grid-template-columns:1fr}}
-    .uml-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:16px;display:flex;flex-direction:column;gap:10px}
-    .uml-card img{display:block;width:100%;height:auto;max-width:100%;border-radius:8px;border:1px solid var(--border-sub);cursor:zoom-in}
-    .uml-caption{text-align:center;font-size:13px;font-weight:600;color:var(--text-muted)}
-    .uml-lightbox{position:fixed;inset:0;background:rgba(10,20,10,0.82);z-index:999;display:none;align-items:center;justify-content:center;padding:24px}
-    .uml-lightbox.open{display:flex}
-    .uml-lightbox img{max-width:92vw;max-height:88vh;width:auto;height:auto;border-radius:10px;box-shadow:var(--sh-lg);background:#fff}
-    .uml-lightbox-close{position:absolute;top:18px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);color:var(--text);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh)}
-
-    /* ── PROTOTYPE DIAGRAMS / UML DOCUMENTATION (fixed-size cards) ── */
-    .uml-doc-subhdr{font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border-sub)}
-    .uml-doc-subhdr:first-of-type{margin-top:0}
-    .uml-doc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:8px}
-    @media (max-width:800px){.uml-doc-grid{grid-template-columns:1fr}}
-    .uml-doc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:16px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s,transform .2s}
-    .uml-doc-card:hover{border-color:rgba(30,92,30,0.3);box-shadow:var(--sh-lg);transform:translateY(-2px)}
-    .uml-doc-frame{width:100%;height:380px;display:flex;align-items:center;justify-content:center;background:var(--bg-elevated);border-radius:8px;border:1px solid var(--border-sub);overflow:hidden}
-    .uml-doc-frame img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;cursor:zoom-in;border-radius:4px}
-    @media (max-width:520px){.uml-doc-frame{height:260px}}
-    .uml-doc-caption{text-align:center;font-size:13px;font-weight:600;color:var(--text-muted)}
   </style>
 </head>
 <body>
@@ -380,7 +278,6 @@
     <ul class="nav-links" id="nl">
       <li><a href="#" onclick="go('home')">Home</a></li>
       <li><a href="#" onclick="go('project')">Project</a></li>
-      <li><a href="#" onclick="go('prototype')">Prototype</a></li>
       <li><a href="#" onclick="go('arch')">Architecture</a></li>
       <li><a href="#" onclick="go('progress')">Progress</a></li>
       <li><a href="#" onclick="go('team')">Team</a></li>
@@ -395,11 +292,6 @@
 </nav>
 
 <div id="app"></div>
-
-<div class="uml-lightbox" id="umlLightbox" onclick="if(event.target===this)closeUmlLightbox()">
-  <button class="uml-lightbox-close" onclick="closeUmlLightbox()" aria-label="Close">✕</button>
-  <img id="umlLightboxImg" src="" alt=""/>
-</div>
 
 <footer id="ft" style="display:none">
   <div class="ft-in">
@@ -423,11 +315,47 @@
 </footer>
 
 <script>
+
+// ── Helpers ──
+// Format file size
+function fmtSize(bytes) {
+  if (!bytes) return "";
+  if (bytes < 1024) return bytes + " B";
+  if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + " KB";
+  return (bytes/(1024*1024)).toFixed(1) + " MB";
+}
+function fmtDate(d) {
+  if (!d) return "";
+  return new Date(d).toLocaleDateString("en-IN", { year:"numeric", month:"short", day:"numeric" });
+}
+function parseAuthors(str) {
+  if (!str) return [];
+  try { return JSON.parse(str); } catch { return [str]; }
+}
+
+// ── Loading/Error helpers ────────────────────────────────────────
+function showLoading(id) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = `<div style="padding:32px;text-align:center;color:var(--text-dim)">
+    <div style="font-size:24px;margin-bottom:8px">🌿</div>
+    <div style="font-family:var(--f-mono);font-size:12px">Loading…</div>
+  </div>`;
+}
+
+function showError(id, msg) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = `<div style="padding:20px;background:rgba(176,74,30,0.07);border:1px solid rgba(176,74,30,0.2);border-radius:var(--r);color:var(--rust);font-size:13px">
+    ⚠ ${msg}
+  </div>`;
+}
+
+// ══════════════════════════════════════════════════════════════════
+
 // ══════════════════════════════════════════════
 //  DATA LAYER
 // ══════════════════════════════════════════════
 
-const PS = { week:3, phase:"Website & Project Setup", progress:58, status:"In Progress" };
+const PS = { week:3, phase:"Website & Project Setup", progress:17, status:"In Progress" };
 
 // ORDER: Disha, Kashish, Anvi, Raghav
 const TEAM = [
@@ -586,7 +514,7 @@ function go(p,m=null){
 
 function navActive(){
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-  const map={home:0,project:1,prototype:2,arch:3,progress:4,team:5,github:6,ppts:7,docs:8,changelog:9,deploy:10};
+  const map={home:0,project:1,arch:2,progress:3,team:4,github:5,ppts:6,docs:7,changelog:8,deploy:9,};
   const links=document.querySelectorAll('.nav-links a');
   if(map[curPage]!==undefined) links[map[curPage]]?.classList.add('active');
 }
@@ -594,11 +522,11 @@ function toggleNav(){ document.getElementById('nl').classList.toggle('open'); }
 function closeNav(){ document.getElementById('nl').classList.remove('open'); }
 function render(){
   const app=document.getElementById('app'), ft=document.getElementById('ft');
-  const pages={home:rHome,project:rProject,prototype:rPrototype,arch:rArch,progress:rProgress,team:rTeam,member:rMember,github:rGithub,ppts:rPpts,docs:rDocs,changelog:rChangelog,deploy:rDeploy};
+  const pages={home:rHome,project:rProject,arch:rArch,progress:rProgress,team:rTeam,member:rMember,github:rGithub,ppts:rPptsApi,docs:rDocs,changelog:rChangelog,deploy:rDeploy,};
   app.innerHTML=(pages[curPage]||r404)();
   ft.style.display='block';
   if(curPage==='github') fetchGH();
-  if(curPage==='ppts') loadGitHubPresentations();
+  if(curPage==='ppts') initPptsApi();
 }
 
 // ── ICONS ──
@@ -988,7 +916,6 @@ function rProgress(){
   </div></div></div>`;
 }
 function toWeek(w){ document.getElementById('wk'+w)?.scrollIntoView({behavior:'smooth',block:'start'}); }
-function protoScrollTo(id){ document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'}); }
 
 // ══════════════════════════════════════════════
 //  TEAM
@@ -1439,156 +1366,924 @@ async function fetchGH(){
 
 function escHtml(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 
-// ══════════════════════════════════════════════
-// ══════════════════════════════════════════════
-//  PRESENTATIONS — GitHub repository sync
-//  Upload presentation files to /presentations in the
-//  Team_Website branch. This page discovers them automatically.
-// ══════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════════
+//  PRESENTATIONS PAGE — no backend needed
+//  Two sources are merged:
+//   1) the PRESENTATIONS list below (edit it to add entries), and
+//   2) every file in the "presentations/" folder of the GitHub repo that hosts
+//      this site (add a file there and it appears automatically).
+// ══════════════════════════════════════════════════════════════════
+const PPT_FOLDER = "presentations";
+const PRESENTATIONS = [
+  // Example (remove the // to use):
+  // { title:"Week 3 — Project Setup", date:"2026-11-10", authors:["IRIS Team"],
+  //   description:"Kick-off deck: scope, architecture and plan.", url:"presentations/week3.pdf" },
+];
 
-const GH_PRESENTATIONS_PATH = 'presentations';
-
-function githubFilePageUrl(item){
-  const parts = String(item.path || `${GH_PRESENTATIONS_PATH}/${item.name}`)
-    .split('/')
-    .map(encodeURIComponent);
-  return new URL(parts.join('/'), document.baseURI).href;
+function pEsc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c =>
+    ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
 }
 
-function isPresentationFile(name){
-  return /\.(pdf|ppt|pptx|png|jpg|jpeg|gif|webp)$/i.test(name || '');
+// Which repo hosts the site? On <owner>.github.io/<repo>/ we can tell; otherwise use GH.
+function pptRepoInfo() {
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/i);
+  const seg = location.pathname.split("/").filter(Boolean)[0];
+  if (m && seg && !/\.html?$/i.test(seg)) return { owner: m[1], repo: seg, same: true };
+  return { owner: GH.owner, repo: GH.repo, same: false };
 }
 
-function presentationKind(name){
-  const ext=(name.split('.').pop()||'').toLowerCase();
-  if(ext==='pdf') return 'PDF';
-  if(ext==='ppt' || ext==='pptx') return 'PowerPoint';
-  return 'Image';
+function pptTitleFromFile(name) {
+  return name.replace(/\.[^.]+$/, "").replace(/[_]+/g, " ").replace(/\s*-\s*/g, " — ").replace(/\s+/g, " ").trim();
 }
 
-function presentationTitle(name){
-  return name.replace(/\.[^.]+$/, '').replace(/[_-]+/g,' ').replace(/\b\w/g,m=>m.toUpperCase());
-}
-
-function githubPresentationViewer(item){
-  const url=githubFilePageUrl(item);
-  const name=item.name || 'Presentation';
-  const ext=(name.split('.').pop()||'').toLowerCase();
-  let viewer='';
-
-  if(ext==='pdf'){
-    viewer=`<iframe src="${escHtml(url)}" style="width:100%;height:100%;border:none" allowfullscreen></iframe>`;
-  } else if(ext==='ppt' || ext==='pptx'){
-    const office=`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(url)}`;
-    viewer=`<iframe src="${escHtml(office)}" style="width:100%;height:100%;border:none" allowfullscreen></iframe>`;
-  } else if(/\.(png|jpg|jpeg|gif|webp)$/i.test(name)){
-    viewer=`<img src="${escHtml(url)}" style="width:100%;height:100%;object-fit:contain" alt="${escHtml(name)}">`;
-  }
-
-  return `<div class="ppt-embed">${viewer}</div>
-    <div class="flex aic g8 mt12" style="flex-wrap:wrap">
-      <div style="font-size:12px;color:var(--text-dim)">📎 ${escHtml(name)} · ${presentationKind(name)}</div>
-      <a href="${escHtml(url)}" target="_blank" rel="noopener" class="btn btn-leaf" style="font-size:12px;margin-left:auto">⬇ Open / Download</a>
-    </div>`;
-}
-
-function githubPresentationCard(item){
-  const name=item.name || 'Presentation';
-  return `<div class="card mb20" style="margin-bottom:20px">
-    <div class="flex aic g8 mb10" style="flex-wrap:wrap">
-      <h3>${escHtml(presentationTitle(name))}</h3>
-      <span class="badge b-forest">${presentationKind(name)}</span>
-      <div class="mono" style="font-size:10px;color:var(--text-dim);margin-left:auto">GitHub · Team_Website</div>
-    </div>
-    <p class="tm" style="font-size:13px;margin-bottom:14px">Automatically loaded from <code class="mono">/${GH_PRESENTATIONS_PATH}/${escHtml(name)}</code>.</p>
-    ${githubPresentationViewer(item)}
-  </div>`;
-}
-
-async function loadGitHubPresentations(){
-  const box=document.getElementById('github-presentation-list');
-  if(!box) return;
-  box.innerHTML='<div class="card"><p class="td" style="font-size:13px">Loading presentations from GitHub…</p></div>';
-
-  const api=`https://api.github.com/repos/${encodeURIComponent(GH.owner)}/${encodeURIComponent(GH.repo)}/contents/${GH_PRESENTATIONS_PATH}?ref=Team_Website`;
-  try{
-    const r=await fetch(api,{headers:{Accept:'application/vnd.github+json'}});
-    if(!r.ok) throw new Error(`GitHub returned ${r.status}`);
-    const files=await r.json();
-    const items=Array.isArray(files)
-      ? files.filter(x=>x.type==='file' && isPresentationFile(x.name))
-      : [];
-
-    items.sort((a,b)=>a.name.localeCompare(b.name,undefined,{numeric:true,sensitivity:'base'}));
-
-    if(!items.length){
-      box.innerHTML='<div class="card"><p class="td" style="font-size:13px">No PDF, PPT, PPTX, or image files found in the GitHub <code class="mono">/presentations</code> folder.</p></div>';
-      return;
-    }
-
-    box.innerHTML=items.map(githubPresentationCard).join('');
-  }catch(err){
-    console.error('GitHub presentations:',err);
-    box.innerHTML=`<div class="card"><p class="td" style="font-size:13px">Could not load the GitHub presentations folder. Check that <code class="mono">/${GH_PRESENTATIONS_PATH}</code> exists in the <code class="mono">Team_Website</code> branch and that the repository is public.</p></div>`;
-  }
-}
-
-function renderPptEmpty(id){
-  return `<div style="background:var(--bg-elevated);border:2px dashed var(--border);border-radius:10px;padding:28px;text-align:center">
-    <div style="font-size:30px;margin-bottom:8px">📁</div>
-    <div style="font-weight:700;margin-bottom:5px">GitHub Presentation Folder</div>
-    <p class="td" style="font-size:12px;margin-bottom:12px">Upload your PDF, PPT, PPTX, or image to the repository folder <code class="mono">/presentations</code> on the <code class="mono">Team_Website</code> branch, then refresh this page.</p>
-    <a href="https://github.com/${encodeURIComponent(GH.owner)}/${encodeURIComponent(GH.repo)}/tree/Team_Website/${GH_PRESENTATIONS_PATH}" target="_blank" rel="noopener" class="btn btn-p" style="font-size:12px">Open GitHub Folder ${I.ext}</a>
-  </div>`;
-}
-
-function rPpts(){
-  const tBadge={Planning:'b-forest','Progress Review':'b-sage',Demo:'b-sky',Review:'b-earth',Results:'b-earth',Final:'b-forest'};
-  const done=PPTS.filter(p=>p.status==='done');
-  const upcoming=PPTS.filter(p=>p.status==='upcoming');
-
+function rPptsApi() {
   return `<div class="page"><div class="section"><div class="wrap">
     <div class="lbl mb8">Presentations</div>
     <h1 style="margin-bottom:8px">Presentation Archive</h1>
-    <p class="tm" style="margin-bottom:32px">Presentations are loaded automatically from the GitHub <code class="mono">/presentations</code> folder on the <code class="mono">Team_Website</code> branch.</p>
-
-    <div style="background:rgba(30,92,30,0.04);border:1px solid rgba(30,92,30,0.15);border-radius:var(--r);padding:18px;margin-bottom:32px">
-      <div class="lbl mb8" style="font-size:9px">📎 HOW TO ADD A PRESENTATION</div>
-      <div class="g3" style="gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
-        <div><div style="font-weight:700;font-size:13px;margin-bottom:4px">① Upload to GitHub</div><p style="font-size:12px;color:var(--text-muted)">Open the <code class="mono">presentations</code> folder in the <code class="mono">Team_Website</code> branch and upload your PDF, PPT, PPTX, or image.</p></div>
-        <div><div style="font-weight:700;font-size:13px;margin-bottom:4px">② Commit</div><p style="font-size:12px;color:var(--text-muted)">Commit the uploaded file to <code class="mono">Team_Website</code>. GitHub Pages will publish the file automatically.</p></div>
-        <div><div style="font-weight:700;font-size:13px;margin-bottom:4px">③ Refresh</div><p style="font-size:12px;color:var(--text-muted)">Refresh this Presentations page. The new file is discovered from GitHub automatically—no index.html edit is required.</p></div>
-      </div>
-      <div style="margin-top:14px"><a href="https://github.com/${encodeURIComponent(GH.owner)}/${encodeURIComponent(GH.repo)}/tree/Team_Website/${GH_PRESENTATIONS_PATH}" target="_blank" rel="noopener" class="btn btn-p" style="font-size:12px">Open GitHub Presentations Folder ${I.ext}</a></div>
-    </div>
-
-    <div class="lbl mb16">Files in GitHub /presentations</div>
-    <div id="github-presentation-list">${renderPptEmpty('github')}</div>
-
-    <div class="lbl mb16 mt48" style="margin-top:48px">Presentation Schedule</div>
-    ${done.map(p=>`
-      <div class="card mb20" style="margin-bottom:20px">
-        <div class="flex aic g8 mb10" style="flex-wrap:wrap">
-          <h3>${p.title}</h3>
-          <span class="badge b-forest">${p.type}</span>
-          <div class="mono" style="font-size:10px;color:var(--text-dim);margin-left:auto">${p.date}</div>
-        </div>
-        <p class="tm" style="font-size:13px;margin-bottom:6px">${p.desc}</p>
-        <div class="mono" style="font-size:10px;color:var(--text-dim)">Authors: ${p.authors.join(' · ')}</div>
-      </div>`).join('')}
-
-    <div class="lbl mb16 mt48" style="margin-top:48px">Upcoming Presentations</div>
-    ${upcoming.map(p=>`
-      <div class="card mb16" style="border-left:3px solid var(--leaf)">
-        <div class="flex aic g8 mb8" style="flex-wrap:wrap">
-          <h3 style="color:var(--text-muted)">${p.title}</h3>
-          <span class="badge ${tBadge[p.type]||'b-sage'}">${p.type}</span>
-          <span class="coming" style="margin-left:auto">${p.date}</span>
-        </div>
-        <p class="tm" style="font-size:13px;margin-bottom:12px">${p.desc}</p>
-      </div>`).join('')}
+    <p class="tm" style="margin-bottom:32px">Project presentations and slide decks from the IRIS team.</p>
+    <div id="ppts-api-list"><div class="tm" style="font-size:13px">Loading…</div></div>
   </div></div></div>`;
 }
+
+async function initPptsApi() {
+  const listEl = document.getElementById("ppts-api-list");
+  if (!listEl) return;
+  const items = PRESENTATIONS.map(p => ({ ...p }));
+  let note = "";
+  const info = pptRepoInfo();
+
+  try {
+    const res = await fetch(`https://api.github.com/repos/${info.owner}/${info.repo}/contents/${PPT_FOLDER}`);
+    if (res.ok) {
+      const files = await res.json();
+      (Array.isArray(files) ? files : [])
+        .filter(f => f.type === "file" && !f.name.startsWith(".") && !/^readme/i.test(f.name))
+        .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))
+        .forEach(f => {
+          const url = info.same ? `${PPT_FOLDER}/${encodeURIComponent(f.name)}` : f.html_url;
+          if (!items.some(i => i.url === url)) {
+            items.push({ title: pptTitleFromFile(f.name), url, size: f.size, ext: (f.name.split(".").pop() || "").toUpperCase(), direct: info.same });
+          }
+        });
+    } else if (res.status === 403) {
+      note = "GitHub's request limit was reached, so only the built-in list is shown. Please try again later.";
+    } // 404 simply means the folder does not exist yet.
+  } catch (e) {
+    note = "Could not reach GitHub, so only the built-in list is shown.";
+  }
+
+  if (!items.length) {
+    listEl.innerHTML = `<div class="card" style="text-align:center;padding:40px">
+      <div style="font-size:40px;margin-bottom:12px">📄</div>
+      <p class="td">No presentations have been added yet.</p>
+      <p class="td" style="font-size:12px;margin-top:8px">Team: put your slides (PDF or PPTX) in the <code class="mono">${PPT_FOLDER}/</code> folder of the repository and they will show up here automatically.</p>
+      ${note ? `<p class="td" style="font-size:12px;margin-top:8px">${pEsc(note)}</p>` : ""}
+    </div>`;
+    return;
+  }
+
+  listEl.innerHTML = (note ? `<p class="td" style="font-size:12px;margin-bottom:16px">⚠ ${pEsc(note)}</p>` : "") +
+    items.map(p => {
+      const ext = (p.ext || (p.url || "").split("?")[0].split(".").pop() || "").toUpperCase();
+      const authors = Array.isArray(p.authors) ? p.authors : (p.authors ? [p.authors] : []);
+      const safeUrl = pEsc(p.url || "#");
+      return `<div class="card mb16" style="margin-bottom:16px">
+        <div class="flex aic g8 mb10" style="flex-wrap:wrap;margin-bottom:12px">
+          <h3>${pEsc(p.title)}</h3>
+          ${ext && ext.length <= 5 ? `<span class="badge b-forest">${pEsc(ext)}</span>` : ""}
+          ${p.date ? `<span class="td" style="font-size:11px;font-family:var(--f-mono)">${pEsc(p.date)}</span>` : ""}
+          ${p.size ? `<span class="td" style="font-size:11px;font-family:var(--f-mono)">${pEsc(fmtSize(p.size))}</span>` : ""}
+        </div>
+        ${authors.length ? `<div class="td" style="font-size:12px;margin-bottom:8px">Authors: ${authors.map(pEsc).join(" · ")}</div>` : ""}
+        ${p.description ? `<p class="tm" style="font-size:13px;margin-bottom:12px">${pEsc(p.description)}</p>` : ""}
+        <div class="flex g8" style="flex-wrap:wrap">
+          <a href="${safeUrl}" target="_blank" rel="noopener" class="btn btn-p" style="font-size:12px">Open</a>
+          ${p.direct !== false && p.url && !/^https?:/i.test(p.url) || p.direct ? `<a href="${safeUrl}" download class="btn btn-s" style="font-size:12px">⬇ Download</a>` : ""}
+        </div>
+      </div>`;
+    }).join("");
+}
+
+// ── TEAM CARDS ──
+function teamCards(){
+  return TEAM.map(m=>`
+    <div class="team-card ${m.leader?'leader':''}">
+      ${PHOTOS[m.id]
+        ? `<div class="t-avatar" style="padding:0;overflow:hidden;background:none;border:3px solid var(--bg);box-shadow:0 4px 16px rgba(30,92,30,0.2)"><img src="${PHOTOS[m.id]}" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="${m.name}"/></div>`
+        : `<div class="t-avatar" style="background:linear-gradient(135deg,${m.color},${m.color}bb)">${m.init}</div>`
+      }
+      <div class="t-name">${m.full}</div>
+      ${m.leader?'<div class="t-leader">TEAM LEADER</div>':''}
+      <div class="t-role">${m.role}</div>
+      <div class="t-roll">Roll: ${m.roll}</div>
+      <div class="soc">
+        <a href="${m.github}" target="_blank" title="GitHub">${I.gh}</a>
+        <a href="${m.linkedin}" target="_blank" title="LinkedIn">${I.li}</a>
+        <a href="mailto:${m.email}" title="Email">${I.mail}</a>
+      </div>
+      <button class="btn btn-s" style="width:100%;justify-content:center;font-size:12px;margin-top:4px" onclick="go('member','${m.id}')">View Profile ${I.arr}</button>
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════════════
+//  HOME
+// ══════════════════════════════════════════════
+function rHome(){
+  return `<div class="page">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <!-- Decorative SVG nature layer -->
+    <svg class="hero-svg" viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <!-- Large background leaf shapes -->
+      <ellipse cx="1200" cy="100" rx="280" ry="180" fill="rgba(125,184,125,0.08)" transform="rotate(-25,1200,100)"/>
+      <ellipse cx="100" cy="600" rx="220" ry="140" fill="rgba(78,139,78,0.07)" transform="rotate(20,100,600)"/>
+      <ellipse cx="700" cy="650" rx="350" ry="120" fill="rgba(168,213,168,0.1)" transform="rotate(-5,700,650)"/>
+      <!-- Leaf veins -->
+      <path d="M1100,50 Q1200,180 1350,220" stroke="rgba(125,184,125,0.15)" stroke-width="2" fill="none"/>
+      <path d="M50,500 Q120,600 200,640" stroke="rgba(78,139,78,0.12)" stroke-width="2" fill="none"/>
+      <!-- Small scattered dots (seeds) -->
+      <circle cx="300" cy="120" r="3" fill="rgba(46,122,46,0.12)"/>
+      <circle cx="320" cy="105" r="2" fill="rgba(46,122,46,0.1)"/>
+      <circle cx="1050" cy="500" r="4" fill="rgba(125,184,125,0.1)"/>
+      <circle cx="1070" cy="520" r="2.5" fill="rgba(125,184,125,0.08)"/>
+      <circle cx="800" cy="80" r="3" fill="rgba(78,139,78,0.1)"/>
+      <!-- Running figure outline (subtle) -->
+      <g transform="translate(80,80)" opacity="0.06">
+        <circle cx="30" cy="12" r="8" fill="#1E5C1E"/>
+        <path d="M30,20 L25,45 L15,65 M30,20 L35,45 L48,62 M20,35 L10,50 M38,35 L52,48" stroke="#1E5C1E" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- Steps/footprints (subtle) -->
+      <ellipse cx="1280" cy="580" rx="12" ry="7" fill="rgba(30,92,30,0.06)" transform="rotate(-20,1280,580)"/>
+      <ellipse cx="1260" cy="560" rx="12" ry="7" fill="rgba(30,92,30,0.05)" transform="rotate(-20,1260,560)"/>
+      <ellipse cx="1300" cy="555" rx="12" ry="7" fill="rgba(30,92,30,0.04)" transform="rotate(-20,1300,555)"/>
+    </svg>
+    <div class="hero-content">
+      <h2 style="font-family:var(--f-mono);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--forest);margin-bottom:10px">Team Name — IRIS</h2>
+      <div class="hero-pill"><span class="dot"></span><span>UCS503 · TIET PATIALA · SEMESTER 2026</span></div>
+      <div class="hero-big">Step<em>Up</em></div>
+      <div class="hero-tagline">Move more. Move honestly. Move together.</div>
+      <div class="hero-sub">Activity Integrity Detection & Sport Group Matching · Team of 4 · 17 Weeks</div>
+      <div class="hero-ctas">
+        <button class="btn btn-p" onclick="go('project')">Explore Project ${I.arr}</button>
+        <button class="btn btn-s" onclick="go('progress')">Weekly Progress</button>
+        <button class="btn btn-s" onclick="go('team')">Meet the Team</button>
+        <a href="https://github.com/DishaGoyal16/StepUp/" target="_blank" class="btn btn-s">${I.gh} GitHub</a>
+      </div>
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        <span>Week ${PS.week} of 17 · ${PS.phase} · ${PS.status}</span>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-val">${PS.week}</div><div class="hero-stat-lbl">Current Week</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">${PS.progress}%</div><div class="hero-stat-lbl">Complete</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">2</div><div class="hero-stat-lbl">Problem Tracks</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-lbl">Team Members</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">17</div><div class="hero-stat-lbl">Total Weeks</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURE STRIP -->
+  <div class="wrap" style="padding-top:0;margin-top:-20px;position:relative;z-index:3">
+    <div class="feat-strip">
+      <div class="feat-item"><div class="feat-icon">🏃</div><div class="feat-title">Activity Integrity</div><div class="feat-desc">Detect fake steps, duplicate syncs & vehicle travel using on-device ML</div></div>
+      <div class="feat-item"><div class="feat-icon">🤝</div><div class="feat-title">Smart Matching</div><div class="feat-desc">Form sport groups by skill, availability, reliability & preference</div></div>
+      <div class="feat-item"><div class="feat-icon">📱</div><div class="feat-title">Flutter App</div><div class="feat-desc">Cross-platform Android & iOS with Health Connect integration</div></div>
+      <div class="feat-item"><div class="feat-icon">🔒</div><div class="feat-title">Privacy First</div><div class="feat-desc">On-device processing · Coarse location · Explicit consent</div></div>
+    </div>
+  </div>
+
+  <!-- WHAT IS STEPUP -->
+  <div class="section section-green">
+    <div class="wrap">
+      <div class="sec-hdr">
+        <div class="lbl">01 — Overview</div>
+        <h2>What is StepUp?</h2>
+        <p>A campus fitness project at TIET tackling two unsolved technical problems in student health and social sport.</p>
+      </div>
+      <div class="g2">
+        <div class="card card-green">
+          <div class="lbl lbl-earth mb8">Track 1</div>
+          <h3>Activity Integrity Detection</h3>
+          <p class="tm mt8" style="font-size:14px">Fitness apps import activity data without verifying authenticity. StepUp classifies activity as <strong>genuine</strong> or <strong>suspicious</strong> using Health Connect + on-device sensor signals.</p>
+          <div class="flex fw g8 mt16"><span class="badge b-forest">ML Classifier</span><span class="badge b-sage">On-device</span><span class="badge b-sky">Health Connect</span></div>
+        </div>
+        <div class="card">
+          <div class="lbl lbl-earth mb8">Track 2</div>
+          <h3>Sport Group Matching</h3>
+          <p class="tm mt8" style="font-size:14px">A constrained group-formation problem — not a simple nearby search. Students matched by sport, skill, time, group size, and <strong>reliability</strong> from past attendance.</p>
+          <div class="flex fw g8 mt16"><span class="badge b-forest">Constraint-based</span><span class="badge b-earth">Reliability Score</span><span class="badge b-plum">Group Formation</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- PIPELINE -->
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-hdr">
+        <div class="lbl">02 — Pipeline</div>
+        <h2>Activity Integrity Pipeline</h2>
+        <p>Conceptual architecture for detecting whether activity records are plausibly genuine.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+        <div class="pipe">
+          ${['Health Connect + SensorManager','Activity / Sensor Data','Source Attribution','Duplicate Handling','Feature Extraction','Plausibility Checks','Activity Integrity Detector','Confidence / Classification','Evaluation & Analytics']
+            .map((s,i)=>`<div class="pipe-step${i===6?' hl':''}">${s}</div>${i<8?'<div class="pipe-arr"></div>':''}`).join('')}
+        </div>
+        <div>
+          <div class="card mb16">
+            <div class="lbl mb8">Data Sources</div>
+            <p class="tm" style="font-size:13px"><strong style="color:var(--text)">Health Connect</strong> — steps, cadence, distance, speed, exercise sessions, timestamps, source attribution. Used for duplicate handling and plausibility checks.</p>
+            <p class="tm mt8" style="font-size:13px"><strong style="color:var(--text)">SensorManager</strong> — accelerometer, gyroscope, step counter during consent-based sessions. Classifies genuine activity vs. phone shaking vs. vehicle travel.</p>
+          </div>
+          <div class="card">
+            <div class="lbl mb8">Activity Classes</div>
+            ${['Genuine walking','Genuine running','Phone shaking / fake steps','Duplicate sync','Vehicle travel'].map(c=>`
+              <div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border-sub)">
+                <div style="width:7px;height:7px;border-radius:50% 0 50% 0;background:var(--forest);transform:rotate(45deg);flex-shrink:0"></div>
+                <span style="font-size:13px">${c}</span>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- TEAM -->
+  <div class="section section-leaf">
+    <div class="wrap">
+      <div class="sec-hdr">
+        <div class="lbl">03 — Team</div>
+        <h2>Meet the Team</h2>
+        <p>Four CSE students at Thapar Institute of Engineering & Technology, Patiala.</p>
+      </div>
+      <div class="g4">${teamCards()}</div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ROADMAP -->
+  <div class="section">
+    <div class="wrap">
+      <div class="sec-hdr">
+        <div class="lbl">04 — Roadmap</div>
+        <h2>17-Week Journey</h2>
+        <p>Semester-long plan from idea submission through evaluation.</p>
+      </div>
+      ${ROADMAP.map(r=>`
+        <div class="rm-phase">
+          <div class="rm-hdr">
+            <div>
+              <div class="rm-title" style="color:${r.active?r.color:'var(--text)'}">${r.phase}${r.active?` <span class="badge b-forest" style="margin-left:8px">Current</span>`:''}</div>
+              <div class="rm-weeks">Weeks ${r.weeks}</div>
+            </div>
+            <span style="font-family:var(--f-mono);font-size:11px;color:var(--text-dim)">${r.pct>0?Math.round(r.pct)+'%':'Upcoming'}</span>
+          </div>
+          <div class="rm-bar"><div class="rm-fill" style="width:${r.pct}%;background:${r.color}cc"></div></div>
+        </div>`).join('')}
+      <div class="tc mt24"><button class="btn btn-s" onclick="go('progress')">Full Progress Journal ${I.arr}</button></div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- LATEST UPDATES -->
+  <div class="section section-green">
+    <div class="wrap">
+      <div class="sec-hdr">
+        <div class="lbl">05 — Updates</div>
+        <h2>Latest Week Updates</h2>
+      </div>
+      ${WEEKLY.slice(-3).reverse().map(w=>`
+        <div class="card mb16">
+          <div class="flex aic" style="justify-content:space-between;margin-bottom:10px">
+            <div class="lbl">Week ${w.week} · ${w.date}</div>
+            <span class="badge ${w.status==='done'?'b-green':w.status==='current'?'b-forest':'b-earth'}">${w.status==='done'?'Completed':w.status==='current'?'In Progress':'Upcoming'}</span>
+          </div>
+          <h3 style="margin-bottom:6px">${w.title}</h3>
+          <p class="tm" style="font-size:13px">${w.summary}</p>
+          ${w.done.length?`<div class="mt12">
+            ${w.done.slice(0,3).map(d=>`<div style="font-size:12px;color:#2A7A2A;display:flex;gap:5px;padding:2px 0">${I.chk} ${d}</div>`).join('')}
+          </div>`:''}
+        </div>`).join('')}
+      <button class="btn btn-s" onclick="go('progress')">All Weekly Updates ${I.arr}</button>
+    </div>
+  </div>
+  </div>`;
+}
+
+// ══════════════════════════════════════════════
+//  PROJECT
+// ══════════════════════════════════════════════
+function rProject(){
+  return `<div class="page"><div class="section"><div class="wrap">
+    <div class="lbl mb8">Project</div>
+    <h1 style="margin-bottom:12px">StepUp</h1>
+    <p class="tm" style="font-size:1.05rem;max-width:600px;margin-bottom:48px">A TIET university project addressing two distinct technical problems in student fitness data authenticity and social sport participation.</p>
+
+    <div class="sec-hdr"><div class="lbl">Problem Statement</div><h2>Two Unsolved Problems</h2></div>
+    <div class="g2 mb24" style="margin-bottom:48px">
+      <div class="card"><div style="font-family:var(--f-sans);font-size:2.8rem;font-weight:800;color:rgba(30,92,30,0.1);line-height:1;margin-bottom:8px">01</div><h3>Can Activity Data Be Trusted?</h3><p class="tm mt8">Phone shaking, duplicate sync records, vehicle-recorded movement — fitness apps import these without verification.</p></div>
+      <div class="card"><div style="font-family:var(--f-sans);font-size:2.8rem;font-weight:800;color:rgba(58,125,158,0.1);line-height:1;margin-bottom:8px">02</div><h3>Can Students Find Sport Partners?</h3><p class="tm mt8">Campus sport-group formation is ad-hoc. StepUp treats it as a constrained group-formation problem with reliability scoring.</p></div>
+    </div>
+
+    <div class="divider" style="margin-bottom:48px"></div>
+    <div class="lbl mb8">Track 1</div><h2 style="margin-bottom:24px">Activity Integrity Detection</h2>
+    <div class="g2" style="gap:24px;margin-bottom:48px">
+      <div>
+        <div class="card mb16"><div style="font-weight:700;margin-bottom:6px">Health Connect</div><p class="tm" style="font-size:13px">Steps, cadence, distance, speed, exercise sessions, timestamps, source attribution. Duplicate handling and plausibility checks. Does not provide continuous raw accelerometer.</p></div>
+        <div class="card"><div style="font-weight:700;margin-bottom:6px">Android SensorManager</div><p class="tm" style="font-size:13px">Consent-based: accelerometer, gyroscope, step counter. Classifies genuine activity, phone shaking, vehicle travel.</p></div>
+      </div>
+      <div class="card">
+        <div class="lbl mb8" style="font-size:10px">Baseline</div>
+        <p class="tm" style="font-size:13px">Rule-based using cadence, variance, speed thresholds.</p>
+        <div class="lbl mt16 mb8" style="font-size:10px">Proposed Model</div>
+        <p class="tm" style="font-size:13px">On-device ML classifier. Train/test split by participant — not session — to prevent data leakage.</p>
+        <div class="lbl mt16 mb8" style="font-size:10px">Evaluation Metrics</div>
+        ${['Precision','Recall','F1 Score','False Positive Rate','On-device Latency','Model Size','Battery Cost'].map(m=>`<div style="font-size:12px;color:var(--text-muted);padding:3px 0;display:flex;justify-content:space-between"><span>${m}</span><span class="coming">TBE</span></div>`).join('')}
+      </div>
+    </div>
+
+    <div class="divider" style="margin-bottom:48px"></div>
+    <div class="lbl mb8">Track 2</div><h2 style="margin-bottom:24px">Sport Group Matching</h2>
+    <div class="g2" style="gap:24px;margin-bottom:48px">
+      <div class="card"><h3 style="margin-bottom:14px">Hard Constraints</h3>
+        ${['Same sport','Compatible skill band','Time slot overlap','Group-size compatibility','Coarse location'].map(c=>`<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border-sub);font-size:13px"><div style="width:6px;height:6px;border-radius:50%;background:var(--sage)"></div>${c}</div>`).join('')}
+      </div>
+      <div class="card"><h3 style="margin-bottom:14px">Optimization</h3>
+        <div style="background:rgba(30,92,30,0.05);border:1px solid rgba(30,92,30,0.12);border-radius:8px;padding:14px;font-family:var(--f-mono);font-size:12px;color:var(--forest);text-align:center;margin-bottom:14px">Best Match = Skill Fit + Reliability + Preference Fit</div>
+        <p class="tm" style="font-size:13px">Reliability: Rᵢ ← αRᵢ + (1−α)outcome, where outcome = 1 (attended) or 0 (no-show).</p>
+      </div>
+    </div>
+
+    <div class="divider" style="margin-bottom:48px"></div>
+    <div class="lbl mb8">Privacy</div><h2 style="margin-bottom:24px">Privacy by Design</h2>
+    <div class="g3">
+      ${[['🔐 Explicit Consent','All sensor collection requires explicit user consent'],['📍 Coarse Location','Hostel/zone level — no continuous GPS trails'],['📱 On-device','Raw sensor data processed on-device, discarded after'],['🗑️ Deletable','Activity data and match history deletable anytime'],['🚫 No Background','SensorManager only during active consented sessions'],['👁️ Visibility Controls','Users control what match partners can see']].map(([t,d])=>`<div class="card"><div style="font-weight:700;margin-bottom:4px">${t}</div><p class="tm" style="font-size:12px">${d}</p></div>`).join('')}
+    </div>
+  </div></div></div>`;
+}
+
+// ══════════════════════════════════════════════
+//  ARCHITECTURE
+// ══════════════════════════════════════════════
+function rArch(){
+  return `<div class="page"><div class="section"><div class="wrap">
+    <div class="lbl mb8">Architecture</div>
+    <h1 style="margin-bottom:8px">System Architecture</h1>
+    <p class="tm" style="margin-bottom:48px">Conceptual design reference for the StepUp system.</p>
+    <div class="arch-wrap">
+      <svg viewBox="0 0 720 580" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;width:100%">
+        <defs>
+          <marker id="a" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1E5C1E" opacity=".65"/></marker>
+          <marker id="b" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3A7D9E" opacity=".65"/></marker>
+        </defs>
+        <rect x="260" y="20" width="200" height="52" rx="10" fill="#EDF4E9" stroke="#1E5C1E" stroke-width="1.5"/>
+        <text x="360" y="43" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Mobile App</text>
+        <text x="360" y="59" text-anchor="middle" fill="#4E8B4E" font-family="JetBrains Mono" font-size="9">Flutter · Android + iOS</text>
+        <rect x="60" y="120" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#3A7D9E" stroke-width="1.5"/>
+        <text x="150" y="143" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Health Connect</text>
+        <text x="150" y="159" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9">Steps · Cadence · Distance</text>
+        <rect x="480" y="120" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#3A7D9E" stroke-width="1.5"/>
+        <text x="570" y="143" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">SensorManager</text>
+        <text x="570" y="159" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9">Accel · Gyro · StepCounter</text>
+        <rect x="260" y="225" width="200" height="52" rx="10" fill="#EDF4E9" stroke="#1E5C1E" stroke-width="2"/>
+        <text x="360" y="248" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Activity Integrity</text>
+        <text x="360" y="264" text-anchor="middle" fill="#1E5C1E" font-family="JetBrains Mono" font-size="9">AI/ML · On-device Classifier</text>
+        <rect x="260" y="325" width="200" height="52" rx="10" fill="#F3F7F0" stroke="#7A5C1E" stroke-width="1.5"/>
+        <text x="360" y="348" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Backend API</text>
+        <text x="360" y="364" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9">REST · Auth · Data Layer</text>
+        <rect x="60" y="425" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#2A7A2A" stroke-width="1.5"/>
+        <text x="150" y="448" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Matching Engine</text>
+        <text x="150" y="464" text-anchor="middle" fill="#2A7A2A" font-family="JetBrains Mono" font-size="9">Constraints · Optimize</text>
+        <rect x="480" y="425" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#2A7A2A" stroke-width="1.5"/>
+        <text x="570" y="448" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Database</text>
+        <text x="570" y="464" text-anchor="middle" fill="#2A7A2A" font-family="JetBrains Mono" font-size="9">PostgreSQL · Persistent</text>
+        <rect x="260" y="525" width="200" height="45" rx="10" fill="#F3F7F0" stroke="#5C3A7A" stroke-width="1.5"/>
+        <text x="360" y="547" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Analytics Dashboard</text>
+        <text x="360" y="561" text-anchor="middle" fill="#5C3A7A" font-family="JetBrains Mono" font-size="9">Web · Monitoring · Eval</text>
+        <line x1="260" y1="46" x2="150" y2="120" stroke="#1E5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
+        <line x1="460" y1="46" x2="570" y2="120" stroke="#1E5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
+        <line x1="200" y1="160" x2="305" y2="225" stroke="#3A7D9E" stroke-width="1" stroke-opacity=".5" marker-end="url(#b)"/>
+        <line x1="520" y1="160" x2="415" y2="225" stroke="#3A7D9E" stroke-width="1" stroke-opacity=".5" marker-end="url(#b)"/>
+        <line x1="360" y1="277" x2="360" y2="325" stroke="#1E5C1E" stroke-width="1.5" stroke-opacity=".6" marker-end="url(#a)"/>
+        <line x1="305" y1="360" x2="200" y2="425" stroke="#7A5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
+        <line x1="415" y1="360" x2="520" y2="425" stroke="#7A5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
+        <line x1="200" y1="460" x2="305" y2="525" stroke="#2A7A2A" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
+        <line x1="520" y1="460" x2="415" y2="525" stroke="#2A7A2A" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
+      </svg>
+    </div>
+    <div class="g3 mt48">
+      ${[['Mobile App','Flutter','Cross-platform Android & iOS. Health Connect surface and SensorManager sessions.','#1E5C1E'],['Activity Integrity','AI/ML','On-device classifier: genuine vs. suspicious. Returns confidence scores.','#2A7A2A'],['Backend API','REST','Auth, matching, session verification, evaluation logging.','#7A5C1E'],['Matching Engine','Algorithm','Constraint-based formation with reliability scoring.','#2A7A2A'],['Database','PostgreSQL','Profiles, match history, session records, analytics.','#2A7A2A'],['Analytics','Web Dashboard','Monitoring and evaluation interface for metrics.','#5C3A7A']].map(([t,tag,d,c])=>`
+        <div class="card"><div class="flex aic g8 mb8"><span style="font-weight:700">${t}</span><span class="badge b-forest" style="color:${c};border-color:${c}33;background:${c}12">${tag}</span></div><p class="tm" style="font-size:12px">${d}</p></div>`).join('')}
+    </div>
+  </div></div></div>`;
+}
+
+// ══════════════════════════════════════════════
+//  PROGRESS
+// ══════════════════════════════════════════════
+function rProgress(){
+  return `<div class="page"><div class="section"><div class="wrap">
+    <div class="lbl mb8">Progress</div>
+    <h1 style="margin-bottom:8px">Project Journal</h1>
+    <p class="tm" style="margin-bottom:40px">Week-by-week record. Updated every week throughout the semester.</p>
+
+    <div class="card mb24" style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px">
+      <div><div class="stat-val">${PS.week}</div><div class="stat-lbl">Current Week</div></div>
+      <div><div class="stat-val" style="color:var(--sage)">17</div><div class="stat-lbl">Total Weeks</div></div>
+      <div><div class="stat-val" style="color:#2A7A2A">${PS.progress}%</div><div class="stat-lbl">Progress</div></div>
+      <div><div class="stat-val" style="font-size:1rem;color:var(--earth);max-width:200px">${PS.phase}</div><div class="stat-lbl">Current Phase</div></div>
+    </div>
+
+    <div class="wk-grid">
+      ${Array.from({length:17},(_,i)=>{const w=i+1,ia=w===PS.week,id=w<PS.week,u=WEEKLY.find(x=>x.week===w);return`<button class="wk-btn ${ia?'active':id?'done':''}" onclick="toWeek(${w})" title="Week ${w}${u?' — '+u.title:''}">W${w}</button>`}).join('')}
+    </div>
+
+    <div class="timeline">
+      ${Array.from({length:17},(_,i)=>{
+        const w=i+1,u=WEEKLY.find(x=>x.week===w),ia=w===PS.week,id=w<PS.week;
+        return`<div class="tl-item" id="wk${w}">
+          <div class="tl-dot ${ia?'active':id?'done':''}"></div>
+          <div class="lbl" style="margin-bottom:4px">Week ${w}${u?' · '+u.date:''}</div>
+          <div class="card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+              <h3>${u?u.title:ia?'In Progress':w>PS.week?'Upcoming':'—'}</h3>
+              <span class="badge ${ia?'b-forest':id?'b-green':'b-earth'}">${ia?'Current':id?'Done':'Upcoming'}</span>
+            </div>
+            ${u?`<p class="tm" style="font-size:13px;margin-bottom:14px">${u.summary}</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:12px">
+              <div><div class="lbl mb8" style="font-size:9px">Planned</div>${u.planned.map(p=>`<div class="tm" style="padding:2px 0">→ ${p}</div>`).join('')}</div>
+              <div><div class="lbl mb8" style="font-size:9px">Completed</div>${u.done.length?u.done.map(d=>`<div style="color:#2A7A2A;padding:2px 0;display:flex;gap:4px">${I.chk}${d}</div>`).join(''):'<span class="coming">In Progress</span>'}</div>
+            </div>
+            ${Object.keys(u.contribs).length?`<div class="mt16"><div class="lbl mb8" style="font-size:9px">Individual Contributions</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:7px">
+              ${Object.entries(u.contribs).map(([m,cs])=>`<div class="contrib-block"><div class="contrib-hdr" style="text-transform:capitalize">${m}</div><div class="contrib-body">${cs.map(c=>`<div class="contrib-line">${c}</div>`).join('')}</div></div>`).join('')}
+            </div></div>`:''}
+            ${u.next.length?`<div class="mt16"><div class="lbl mb8" style="font-size:9px">Next Goals</div>${u.next.map(g=>`<div class="tm" style="font-size:12px">→ ${g}</div>`).join('')}</div>`:''}`
+            :`<p class="tm" style="font-size:13px">${ia?"This week's update is in progress.":'Week '+w+' is upcoming.'}</p>`}
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div></div></div>`;
+}
+function toWeek(w){ document.getElementById('wk'+w)?.scrollIntoView({behavior:'smooth',block:'start'}); }
+
+// ══════════════════════════════════════════════
+//  TEAM
+// ══════════════════════════════════════════════
+function rTeam(){
+  // Matrix columns: Disha, Kashish, Anvi, Raghav
+  const rows=[
+    ['Flutter Mobile App', ['★','','','']],
+    ['Android App',        ['★','','','']],
+    ['Project Coordination',['★','','','']],
+    ['Documentation',      ['★','','','']],
+    ['AI/ML Dataset',      ['','★','','']],
+    ['Activity Integrity', ['','★','','']],
+    ['Health Connect',     ['','★','','']],
+    ['Backend API',        ['','','★','']],
+    ['Matching Engine',    ['','','★','']],
+    ['Frontend',           ['','','','★']],
+    ['Backend Integration',['','','','★']],
+  ];
+  return `<div class="page"><div class="section section-leaf"><div class="wrap">
+    <div class="lbl mb8">Team</div>
+    <h1 style="margin-bottom:8px">The Team</h1>
+    <p class="tm" style="margin-bottom:48px">Four CSE students building StepUp for UCS503 at Thapar Institute of Engineering & Technology.</p>
+    <div class="g4">${teamCards()}</div>
+
+    <div class="divider mt48" style="margin-bottom:48px"></div>
+    <div class="lbl mb16">Responsibility Matrix</div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:10px 12px;font-family:var(--f-mono);font-size:10px;color:var(--text-dim);font-weight:500">Area</th>
+            ${TEAM.map(m=>`<th style="text-align:center;padding:10px 12px;font-family:var(--f-sans);font-size:12px;font-weight:700;color:${m.color}">${m.name}${m.leader?'<br><span style="font-size:9px;color:var(--text-dim);font-family:var(--f-mono);font-weight:400">LEADER</span>':''}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(([a,ms])=>`<tr style="border-bottom:1px solid var(--border-sub)">
+            <td style="padding:10px 12px;color:var(--text-muted)">${a}</td>
+            ${ms.map(m=>`<td style="text-align:center;padding:10px 12px;font-size:16px;color:var(--forest)">${m}</td>`).join('')}
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  </div></div></div>`;
+}
+
+// ══════════════════════════════════════════════
+//  MEMBER PROFILE
+// ══════════════════════════════════════════════
+function rMember(){
+  const m=TEAM.find(t=>t.id===curMember); if(!m) return r404();
+  const myWeeks=WEEKLY.filter(w=>w.contribs[m.id]?.length>0);
+  return `<div class="page">
+    <div class="prof-hero">
+      <div class="prof-in">
+        ${PHOTOS[m.id]
+          ? `<div class="prof-av" style="padding:0;overflow:hidden;background:none"><img src="${PHOTOS[m.id]}" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="${m.full}"/></div>`
+          : `<div class="prof-av" style="background:linear-gradient(135deg,${m.color},${m.color}aa)">${m.init}</div>`
+        }
+        <div style="flex:1">
+          <a href="#" onclick="go('team')" class="back-link">${I.bk} Back to Team</a>
+          <div class="prof-name">${m.full}</div>
+          ${m.leader?'<div class="t-leader" style="margin-bottom:10px">TEAM LEADER</div>':''}
+          <div class="prof-role">${m.role}</div>
+          <div class="flex fw g8 mt8"><span class="badge b-forest">UCS503</span><span class="mono" style="font-size:10.5px;color:var(--text-dim)">Roll: ${m.roll}</span><span class="mono" style="font-size:10.5px;color:var(--text-dim)">${m.email}</span></div>
+          <div class="soc mt16">
+            <a href="${m.github}" target="_blank">${I.gh}</a>
+            <a href="${m.linkedin}" target="_blank">${I.li}</a>
+            <a href="mailto:${m.email}">${I.mail}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section"><div class="wrap">
+      <div class="g2" style="gap:32px">
+        <div>
+          <div class="lbl mb8">About</div>
+          <div class="card mb16"><p class="tm" style="font-size:14px">${m.bio}</p></div>
+          ${m.id==='disha'?`
+          <div class="lbl mb8">Leadership</div>
+          <div class="card mb16"><h3 style="margin-bottom:7px">Project Coordination</h3><p class="tm" style="font-size:13px">${m.leadership}</p></div>
+          <div class="lbl mb8">Mobile Development</div>
+          <div class="card mb16"><h3 style="margin-bottom:7px">Flutter</h3><p class="tm" style="font-size:13px">${m.mobileDev}</p></div>`:''}
+          <div class="lbl mb8">Responsibilities</div>
+          <div class="card mb16">${m.resp.map(r=>`<div style="display:flex;gap:8px;padding:7px 0;border-bottom:1px solid var(--border-sub)"><div style="width:5px;height:5px;border-radius:50%;background:${m.color};flex-shrink:0;margin-top:8px"></div><span style="font-size:13px;color:var(--text-muted)">${r}</span></div>`).join('')}</div>
+          <div class="lbl mb8">Contact</div>
+          <div class="card">
+            <div style="font-size:13px;margin-bottom:6px"><strong>Email:</strong> <a href="mailto:${m.email}" style="color:var(--forest)">${m.email}</a></div>
+            <div style="font-size:13px;margin-bottom:12px"><strong>Roll:</strong> <span class="mono">${m.roll}</span></div>
+            <div class="flex g8">
+              <a href="${m.github}" target="_blank" class="btn btn-s" style="font-size:12px">${I.gh} GitHub</a>
+              <a href="${m.linkedin}" target="_blank" class="btn btn-s" style="font-size:12px">${I.li} LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="lbl mb8">Weekly Contributions</div>
+          ${myWeeks.length?myWeeks.map(w=>`
+            <div class="contrib-block mb16">
+              <div class="contrib-hdr"><span style="font-family:var(--f-mono);font-size:10px;color:var(--forest)">Week ${w.week}</span> · ${w.title}</div>
+              <div class="contrib-body">${w.contribs[m.id].map(c=>`<div class="contrib-line">${c}</div>`).join('')}</div>
+            </div>`).join(''):`<div class="card"><p class="tm" style="font-size:13px">Contributions will appear here as the project progresses.</p></div>`}
+        </div>
+      </div>
+    </div></div>
+  </div>`;
+}
+
+// ══════════════════════════════════════════════
+//  GITHUB — ENHANCED LIVE SECTION
+// ══════════════════════════════════════════════
+function rGithub(){
+  return `<div class="page"><div class="section"><div class="wrap">
+    <div class="lbl mb8">GitHub</div>
+    <h1 style="margin-bottom:8px">Repository Activity</h1>
+    <p class="tm" style="margin-bottom:28px">Live feed from <a href="https://github.com/${GH.owner}/${GH.repo}/" target="_blank" style="color:var(--forest);font-weight:700">github.com/${GH.owner}/${GH.repo}</a> · Auto-refreshes on load</p>
+
+    <!-- Top repo card -->
+    <div class="card card-green mb24" style="margin-bottom:24px" id="gh-repo-card">
+      <div class="flex aic g12 mb12" style="flex-wrap:wrap">
+        <div style="width:9px;height:9px;border-radius:50%;background:#3CAF3C;animation:pulse 2s infinite"></div>
+        <span class="mono" style="font-size:10px;color:var(--forest);font-weight:600">LIVE · ${GH.owner}/${GH.repo}</span>
+        <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap">
+          <a href="https://github.com/${GH.owner}/${GH.repo}/" target="_blank" class="btn btn-p" style="font-size:12px">${I.gh} Open on GitHub ${I.ext}</a>
+          <a href="https://github.com/${GH.owner}/${GH.repo}/archive/refs/heads/main.zip" target="_blank" class="btn btn-s" style="font-size:12px">⬇ Download ZIP</a>
+        </div>
+      </div>
+      <div id="gh-desc" class="tm" style="font-size:13px;margin-bottom:10px">Loading…</div>
+      <div class="flex fw g8" id="gh-topics"></div>
+      <div class="flex fw g16 mt12" id="gh-repo-meta" style="font-size:12px;color:var(--text-dim)"></div>
+    </div>
+
+    <!-- 4-stat row -->
+    <div class="g4 mb24" style="margin-bottom:24px" id="gh-stats">
+      ${['Stars','Forks','Open Issues','Watchers'].map(l=>`<div class="stat-box"><div class="stat-val" style="font-size:1.6rem">—</div><div class="stat-lbl">${l}</div></div>`).join('')}
+    </div>
+
+    <!-- Commit activity heatmap -->
+    <div class="card mb24" style="margin-bottom:24px">
+      <div class="lbl mb12">Commit Activity (Last 52 Weeks)</div>
+      <div id="gh-heatmap" style="overflow-x:auto">
+        <div style="font-size:12px;color:var(--text-dim)">Loading activity data…</div>
+      </div>
+      <div class="flex aic g8 mt10" style="font-size:11px;color:var(--text-dim)">
+        <span>Less</span>
+        ${['rgba(30,92,30,0.08)','rgba(30,92,30,0.25)','rgba(30,92,30,0.5)','rgba(30,92,30,0.75)','#1E5C1E'].map(c=>`<div style="width:13px;height:13px;border-radius:3px;background:${c}"></div>`).join('')}
+        <span>More</span>
+      </div>
+    </div>
+
+    <!-- Languages bar -->
+    <div class="card mb24" style="margin-bottom:24px" id="gh-lang-wrap">
+      <div class="lbl mb12">Languages</div>
+      <div id="gh-lang-bar" style="height:12px;border-radius:6px;overflow:hidden;background:var(--bg-elevated);margin-bottom:10px;display:flex"></div>
+      <div id="gh-lang-list" class="flex fw g12 tm" style="font-size:12px">Loading…</div>
+    </div>
+
+    <!-- Commits + Branches (side by side) -->
+    <div class="g2 mb24" style="margin-bottom:24px;gap:20px">
+      <div>
+        <div class="lbl mb10">Recent Commits</div>
+        <div class="card" id="gh-commits" style="max-height:360px;overflow-y:auto"><div class="tm" style="font-size:13px">Loading…</div></div>
+        <div id="gh-commit-count" class="td mt8" style="font-size:11px;font-family:var(--f-mono)"></div>
+      </div>
+      <div>
+        <div class="lbl mb10">Branches</div>
+        <div class="card" id="gh-branches"><div class="tm" style="font-size:13px">Loading…</div></div>
+        <div class="lbl mt16 mb10">Releases / Tags</div>
+        <div class="card" id="gh-releases"><div class="tm" style="font-size:13px">Loading…</div></div>
+      </div>
+    </div>
+
+    <!-- Issues + PRs -->
+    <div class="g2 mb24" style="margin-bottom:24px;gap:20px">
+      <div>
+        <div class="lbl mb10">Open Issues</div>
+        <div class="card" id="gh-issues"><div class="tm" style="font-size:13px">Loading…</div></div>
+      </div>
+      <div>
+        <div class="lbl mb10">Pull Requests</div>
+        <div class="card" id="gh-prs"><div class="tm" style="font-size:13px">Loading…</div></div>
+      </div>
+    </div>
+
+    <!-- File tree -->
+    <div class="card mb24" style="margin-bottom:24px">
+      <div class="lbl mb12">Repository Files</div>
+      <div id="gh-tree" class="tm" style="font-size:13px">Loading…</div>
+    </div>
+
+    <!-- Contributors with bar charts -->
+    <div class="card mb24" style="margin-bottom:24px">
+      <div class="lbl mb12">Contributors</div>
+      <div id="gh-contribs"><div class="tm" style="font-size:13px">Loading…</div></div>
+    </div>
+
+    <!-- Recent workflow runs (if Actions are set up) -->
+    <div class="card mb24" style="margin-bottom:24px">
+      <div class="lbl mb12">GitHub Actions (CI/CD)</div>
+      <div id="gh-actions"><div class="tm" style="font-size:13px">Loading…</div></div>
+    </div>
+
+    <!-- Team profiles -->
+    <div class="lbl mb12">Team GitHub Profiles</div>
+    <div class="g4 mb24" style="margin-bottom:24px">
+      ${TEAM.map(m=>`<div class="card" style="text-align:center">
+        ${PHOTOS[m.id]
+          ? `<div class="t-avatar" style="margin:0 auto 10px;width:48px;height:48px;padding:0;overflow:hidden;background:none"><img src="${PHOTOS[m.id]}" style="width:100%;height:100%;object-fit:cover;object-position:top center" alt="${m.name}"/></div>`
+          : `<div class="t-avatar" style="margin:0 auto 10px;width:48px;height:48px;font-size:16px;background:linear-gradient(135deg,${m.color},${m.color}bb)">${m.init}</div>`
+        }
+        <div style="font-weight:700;font-size:13px;margin-bottom:2px">${m.name}</div>
+        <div class="mono td" style="font-size:10px;margin-bottom:10px">@${m.ghUser}</div>
+        <a href="${m.github}" target="_blank" class="btn btn-s" style="width:100%;justify-content:center;font-size:12px">${I.gh} Profile</a>
+      </div>`).join('')}
+    </div>
+
+    <!-- Config guide -->
+    <div style="background:rgba(30,92,30,0.04);border:1px solid rgba(30,92,30,0.12);border-radius:var(--r);padding:20px">
+      <div class="lbl mb8" style="font-size:9px">⚙ GITHUB CONFIG — HOW TO UPDATE</div>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.7">
+        Find <code class="mono" style="color:var(--forest)">const GH</code> near the top of the script tag.<br>
+        • <strong>Public repo</strong>: only set <code class="mono">owner</code> and <code class="mono">repo</code> — all data loads without a token.<br>
+        • <strong>Private repo</strong>: also set <code class="mono">token</code> to a GitHub Personal Access Token (Settings → Developer Settings → Fine-grained tokens → read-only, <em>Contents</em> + <em>Metadata</em> scopes).<br>
+        • <strong>Never commit a token to a public repo</strong>. For production use a backend proxy.<br>
+        • GitHub API rate-limit for unauthenticated requests is 60/hour per IP. Authenticated is 5000/hour.
+      </p>
+    </div>
+  </div></div></div>`;
+}
+
+// Language colour map
+
+function fileIcon(name, isDir){
+  if(isDir) return FILE_ICONS.folder;
+  const ext=(name.split('.').pop()||'').toLowerCase();
+  return FILE_ICONS[ext]||FILE_ICONS.default;
+}
+
+function ghErr(id, msg){ const el=document.getElementById(id); if(el) el.innerHTML=`<p class="td" style="font-size:12px;padding:8px 0">${msg}</p>`; }
+
+async function fetchGH(){
+  const base=`https://api.github.com/repos/${GH.owner}/${GH.repo}`;
+  const h=GH.token?{Authorization:`token ${GH.token}`}:{};
+  const safe=async url=>{
+    try{
+      const r=await fetch(url,{headers:h});
+      if(r.status===403){const d=await r.json();if(d.message?.includes('rate limit'))return '__RATE_LIMIT__';}
+      return r.ok?r.json():null;
+    }catch{return null}
+  };
+
+  // Parallel fetch — everything at once
+  const [repo,commits,contribs,issues,prs,branches,langs,releases,tree,activity,actions]=await Promise.all([
+    safe(base),
+    safe(`${base}/commits?per_page=10`),
+    safe(`${base}/contributors?per_page=10`),
+    safe(`${base}/issues?state=open&per_page=8`),
+    safe(`${base}/pulls?state=open&per_page=6`),
+    safe(`${base}/branches?per_page=10`),
+    safe(`${base}/languages`),
+    safe(`${base}/releases?per_page=5`),
+    safe(`${base}/contents/`),
+    safe(`${base}/stats/commit_activity`),
+    safe(`${base}/actions/runs?per_page=5`)
+  ]);
+
+  const rateMsg='<span style="color:var(--earth)">⚠ GitHub API rate limit reached. Add a token in GH.token for 5000 req/hr.</span>';
+
+  // ── Repo overview ──
+  if(repo==='__RATE_LIMIT__'){
+    ghErr('gh-desc', rateMsg);
+  } else if(repo?.name){
+    document.getElementById('gh-desc').innerHTML=
+      `<strong style="font-size:14px">${repo.description||'No description set.'}</strong>`;
+    document.getElementById('gh-repo-meta').innerHTML=[
+      repo.homepage?`<a href="${repo.homepage}" target="_blank" style="color:var(--forest)">🌐 ${escHtml(repo.homepage)}</a>`:'',
+      repo.language?`<span>📝 ${escHtml(repo.language)}</span>`:'',
+      `<span>📅 Created ${new Date(repo.created_at).toLocaleDateString()}</span>`,
+      `<span>🔄 Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>`,
+      repo.license?.name?`<span>⚖ ${escHtml(repo.license.name)}</span>`:''
+    ].filter(Boolean).join('');
+    document.getElementById('gh-stats').innerHTML=`
+      <div class="stat-box"><div class="stat-val">${repo.stargazers_count??0}</div><div class="stat-lbl">${I.star} Stars</div></div>
+      <div class="stat-box"><div class="stat-val">${repo.forks_count??0}</div><div class="stat-lbl">${I.fork} Forks</div></div>
+      <div class="stat-box"><div class="stat-val">${repo.open_issues_count??0}</div><div class="stat-lbl">${I.issue} Issues</div></div>
+      <div class="stat-box"><div class="stat-val">${repo.subscribers_count??repo.watchers_count??0}</div><div class="stat-lbl">👁 Watchers</div></div>`;
+    if(repo.topics?.length)
+      document.getElementById('gh-topics').innerHTML=repo.topics.map(t=>`<span class="badge b-sky">${t}</span>`).join('');
+  }
+
+  // ── Commit activity heatmap ──
+  if(Array.isArray(activity)&&activity.length){
+    const weeks=activity.slice(-26); // last 26 weeks
+    const maxDay=Math.max(...weeks.flatMap(w=>w.days));
+    const dayLabels=['Su','Mo','Tu','We','Th','Fr','Sa'];
+    let html=`<div style="display:flex;gap:4px;overflow-x:auto;padding-bottom:4px">`;
+    weeks.forEach(w=>{
+      html+=`<div style="display:flex;flex-direction:column;gap:3px">`;
+      w.days.forEach(d=>{
+        const intensity=maxDay>0?d/maxDay:0;
+        const bg=intensity===0?'rgba(30,92,30,0.07)':
+          intensity<0.25?'rgba(30,92,30,0.22)':
+          intensity<0.5?'rgba(30,92,30,0.45)':
+          intensity<0.75?'rgba(30,92,30,0.7)':'#1E5C1E';
+        html+=`<div title="${d} commits" style="width:13px;height:13px;border-radius:3px;background:${bg}"></div>`;
+      });
+      html+=`</div>`;
+    });
+    html+=`</div><div class="flex g8 mt6" style="font-size:10px;color:var(--text-dim)">${dayLabels.map(d=>`<span style="width:13px;text-align:center">${d}</span>`).join('')}</div>`;
+    document.getElementById('gh-heatmap').innerHTML=html;
+  } else {
+    document.getElementById('gh-heatmap').innerHTML='<p class="td" style="font-size:12px">No activity data yet — push some commits to see the heatmap.</p>';
+  }
+
+  // ── Languages ──
+  if(langs&&langs!=='__RATE_LIMIT__'&&Object.keys(langs).length){
+    const total=Object.values(langs).reduce((a,b)=>a+b,0);
+    const items=Object.entries(langs).sort((a,b)=>b[1]-a[1]);
+    document.getElementById('gh-lang-bar').innerHTML=
+      items.map(([l,v])=>`<div style="width:${(v/total*100).toFixed(1)}%;background:${LANG_COLORS[l]||'#8B8B8B'};height:100%;transition:width .5s"></div>`).join('');
+    document.getElementById('gh-lang-list').innerHTML=
+      items.map(([l,v])=>`<div class="flex aic g8"><span class="gh-lang-dot" style="background:${LANG_COLORS[l]||'#8B8B8B'}"></span><strong>${l}</strong><span class="td">${(v/total*100).toFixed(1)}%</span></div>`).join('');
+  } else {
+    document.getElementById('gh-lang-wrap').innerHTML=
+      '<div class="lbl mb8">Languages</div><p class="td" style="font-size:12px">Push code to the repo to see language breakdown.</p>';
+  }
+
+  // ── Commits ──
+  if(commits==='__RATE_LIMIT__') ghErr('gh-commits', rateMsg);
+  else if(Array.isArray(commits)&&commits.length){
+    document.getElementById('gh-commits').innerHTML=commits.map(c=>`
+      <div class="commit-item">
+        <img src="${c.author?.avatar_url||'https://github.com/identicons/'+c.commit.author.name+'.png'}" width="26" height="26" style="border-radius:50%;flex-shrink:0;object-fit:cover" onerror="this.style.display='none'"/>
+        <div style="flex:1;min-width:0">
+          <div class="c-msg" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(c.commit.message.split('\n')[0].slice(0,72))}</div>
+          <div class="c-meta">${escHtml(c.commit.author.name)} · ${new Date(c.commit.author.date).toLocaleDateString()}</div>
+        </div>
+        <a href="${c.html_url}" target="_blank" class="c-sha" style="text-decoration:none;flex-shrink:0">${c.sha.slice(0,7)} ${I.ext}</a>
+      </div>`).join('');
+    document.getElementById('gh-commit-count').textContent=`Showing ${commits.length} most recent commits`;
+  } else ghErr('gh-commits','No commits yet, or repo is private. Add a GitHub token to GH.token.');
+
+  // ── Branches ──
+  if(Array.isArray(branches)&&branches.length){
+    const defaultBranch=repo?.default_branch||'main';
+    document.getElementById('gh-branches').innerHTML=branches.map(b=>`
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border-sub)">
+        <span>${b.name===defaultBranch?'🌿':'🌱'}</span>
+        <div style="flex:1">
+          <div style="font-weight:600;font-size:13px">${escHtml(b.name)}</div>
+          <div class="mono td" style="font-size:10px">${b.commit.sha.slice(0,7)}</div>
+        </div>
+        ${b.name===defaultBranch?'<span class="badge b-forest">default</span>':''}
+        <a href="https://github.com/${GH.owner}/${GH.repo}/tree/${b.name}" target="_blank" style="color:var(--text-dim)">${I.ext}</a>
+      </div>`).join('');
+  } else ghErr('gh-branches','No branches yet.');
+
+  // ── Releases / Tags ──
+  if(Array.isArray(releases)&&releases.length){
+    document.getElementById('gh-releases').innerHTML=releases.map(r=>`
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border-sub)">
+        <span>🏷</span>
+        <div style="flex:1">
+          <div style="font-weight:600;font-size:13px">${escHtml(r.tag_name)}${r.prerelease?' <span class="badge b-earth">pre</span>':''}</div>
+          <div class="mono td" style="font-size:10px">${new Date(r.published_at).toLocaleDateString()}</div>
+        </div>
+        <a href="${r.html_url}" target="_blank" style="color:var(--text-dim)">${I.ext}</a>
+      </div>`).join('');
+  } else {
+    document.getElementById('gh-releases').innerHTML='<p class="td" style="font-size:12px;padding:8px 0">No releases yet. <a href="https://github.com/'+GH.owner+'/'+GH.repo+'/releases/new" target="_blank" style="color:var(--forest)">Create one →</a></p>';
+  }
+
+  // ── Issues ──
+  const realIssues=Array.isArray(issues)?issues.filter(i=>!i.pull_request):[];
+  if(realIssues.length){
+    document.getElementById('gh-issues').innerHTML=realIssues.map(i=>`
+      <div class="issue-item">
+        <span style="color:#3CAF3C;flex-shrink:0">${I.issue}</span>
+        <div style="flex:1">
+          <div class="issue-title"><a href="${i.html_url}" target="_blank" style="color:var(--text);text-decoration:none">${escHtml(i.title)}</a></div>
+          <div class="c-meta">#${i.number} · ${escHtml(i.user.login)} · ${new Date(i.created_at).toLocaleDateString()}</div>
+          ${i.labels?.length?`<div class="flex fw g4 mt4">${i.labels.map(l=>`<span class="badge" style="background:#${l.color}22;color:#${l.color};border:1px solid #${l.color}44;font-size:9px">${escHtml(l.name)}</span>`).join('')}</div>`:''}
+        </div>
+        <a href="${i.html_url}" target="_blank" style="color:var(--text-dim)">${I.ext}</a>
+      </div>`).join('');
+  } else ghErr('gh-issues','No open issues — great work! 🎉');
+
+  // ── PRs ──
+  if(Array.isArray(prs)&&prs.length){
+    document.getElementById('gh-prs').innerHTML=prs.map(p=>`
+      <div class="pr-item">
+        <span style="color:var(--plum)">${I.pr}</span>
+        <div style="flex:1"><a href="${p.html_url}" target="_blank" style="color:var(--text);text-decoration:none;font-weight:600;font-size:13px">${escHtml(p.title)}</a>
+          <div class="c-meta">#${p.number} · ${escHtml(p.user.login)} · ${p.head.ref} → ${p.base.ref}</div>
+        </div>
+        <a href="${p.html_url}" target="_blank" style="color:var(--text-dim)">${I.ext}</a>
+      </div>`).join('');
+  } else ghErr('gh-prs','No open pull requests.');
+
+  // ── File tree ──
+  if(Array.isArray(tree)&&tree.length){
+    const sorted=[...tree].sort((a,b)=>(a.type==='dir'?-1:1)-(b.type==='dir'?-1:1));
+    document.getElementById('gh-tree').innerHTML=`<div style="font-family:var(--f-mono);font-size:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px">
+      ${sorted.map(f=>`<a href="${f.html_url||`https://github.com/${GH.owner}/${GH.repo}/blob/main/${f.name}`}" target="_blank" style="display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px;background:var(--bg-elevated);color:var(--text);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(30,92,30,0.08)'" onmouseout="this.style.background='var(--bg-elevated)'">
+        <span>${fileIcon(f.name,f.type==='dir')}</span>
+        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml(f.name)}</span>
+      </a>`).join('')}
+    </div>`;
+  } else ghErr('gh-tree','Repository appears empty or is private.');
+
+  // ── Contributors with mini bar chart ──
+  if(Array.isArray(contribs)&&contribs.length){
+    const maxC=Math.max(...contribs.map(c=>c.contributions));
+    document.getElementById('gh-contribs').innerHTML=contribs.map(c=>`
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border-sub)">
+        <img src="${c.avatar_url}" width="36" height="36" style="border-radius:50%;object-fit:cover;flex-shrink:0" onerror="this.src='https://github.com/identicons/${c.login}.png'"/>
+        <div style="flex:1;min-width:0">
+          <div style="font-weight:700;font-size:13px">${c.login}</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+            <div style="flex:1;height:6px;border-radius:3px;background:var(--bg-elevated)">
+              <div style="width:${(c.contributions/maxC*100).toFixed(0)}%;height:100%;border-radius:3px;background:var(--forest);transition:width .6s"></div>
+            </div>
+            <span class="mono td" style="font-size:10px;white-space:nowrap">${c.contributions} commits</span>
+          </div>
+        </div>
+        <a href="${c.html_url}" target="_blank" class="btn btn-s" style="font-size:11px;padding:6px 10px">${I.ext}</a>
+      </div>`).join('');
+  } else ghErr('gh-contribs','No contributor data yet.');
+
+  // ── GitHub Actions ──
+  if(actions?.workflow_runs?.length){
+    const statusIcon={completed:'✅',failure:'❌',in_progress:'⏳',queued:'🟡',cancelled:'⛔'};
+    document.getElementById('gh-actions').innerHTML=actions.workflow_runs.map(r=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border-sub)">
+        <span style="font-size:16px">${statusIcon[r.conclusion||r.status]||'🔵'}</span>
+        <div style="flex:1">
+          <div style="font-weight:600;font-size:13px">${escHtml(r.name)} <span class="mono td" style="font-size:10px">#${r.run_number}</span></div>
+          <div class="c-meta">${escHtml(r.head_branch)} · ${new Date(r.created_at).toLocaleDateString()} · ${r.conclusion||r.status}</div>
+        </div>
+        <a href="${r.html_url}" target="_blank" style="color:var(--text-dim)">${I.ext}</a>
+      </div>`).join('');
+  } else {
+    document.getElementById('gh-actions').innerHTML='<p class="td" style="font-size:12px">No GitHub Actions configured yet. <a href="https://github.com/'+GH.owner+'/'+GH.repo+'/actions" target="_blank" style="color:var(--forest)">Set up CI/CD →</a></p>';
+  }
+}
+
+function escHtml(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
 
 //  DOCS
 // ══════════════════════════════════════════════
@@ -1732,563 +2427,11 @@ function rDeploy(){
       <div class="lbl mb10" style="font-size:9px">📋 RECOMMENDATION FOR YOUR PROJECT</div>
       <p style="font-size:13px;color:var(--text-muted);line-height:1.7">
         <strong>Best for you: GitHub Pages (Option 1)</strong> — it's free, uses the same repo you already have, requires no new account, and is commonly accepted for academic projects. Your URL will be <code class="mono" style="color:var(--forest)">https://DishaGoyal16.github.io/StepUp/</code>.<br><br>
-        Simply push <code class="mono">index.html</code> to your repo root and enable Pages in Settings. Done in 2 minutes.
+        Simply push <code class="mono">index.html</code> to your repo root and enable Pages in Settings.<br><br>
+        This site is fully static — no backend needed. To add presentations, put PDF/PPTX files in a <code class="mono">presentations/</code> folder of the repo.
       </p>
     </div>
   </div></div></div>`;
-}
-
-// ══════════════════════════════════════════════
-//  PROTOTYPE — interactive frontend simulation
-//  (mock data only — no backend, no real APIs)
-// ══════════════════════════════════════════════
-let PROTO={
-  mode:'student',
-  xp:2840, stepcoin:1240, streak:12, weeklySteps:42680, badges:8, rank:4,
-  activityType:'Walking',
-  feed:[
-    {ic:'✓',t:'7-Day Challenge — Completed',x:250},
-    {ic:'✓',t:'Badminton — 45 min',x:100},
-    {ic:'✓',t:'Walking — 8,642 steps',x:80},
-    {ic:'✓',t:'Running — 3.8 km',x:120}
-  ],
-  health:{steps:8642,dist:5.7,active:64,syncing:false},
-  integ:{activity:'Running',duration:32,distance:3.8,score:94,status:'Verified',checking:false},
-  buddySport:'Football',buddySkill:'Beginner',buddyTime:'Morning',buddyArea:'Main Campus',
-  buddyResults:null,buddySearching:false,
-  challenges:[
-    {id:'walk7',title:'7-Day Walking Challenge',goal:50000,unit:'steps',progress:36420,xp:150,joined:true},
-    {id:'runner',title:'Campus Runner',goal:20,unit:'km',progress:14.2,xp:200,joined:true},
-    {id:'weekend',title:'Weekend Warrior',goal:3,unit:'activities',progress:2,xp:100,joined:false}
-  ],
-  battleJoined:false, battleYou:42680, battleOpp:38920,
-  weekVals:[7,9,5,10,7,11,6]
-};
-const PROTO_LB=[
-  {name:'Aarav Sharma',xp:5420,streak:9},
-  {name:'Riya Mehta',xp:4980,streak:14},
-  {name:'Ananya Singh',xp:4620,streak:6},
-  {name:'Kashish Singhal',xp:2840,streak:12,you:true},
-  {name:'Raghav Sharma',xp:2710,streak:5}
-];
-const PROTO_BADGES=[{ic:'🏃',nm:'First Run'},{ic:'🔥',nm:'7-Day Streak'},{ic:'👟',nm:'10K Steps'},{ic:'🏆',nm:'Challenge Winner'},{ic:'⚡',nm:'Step Warrior'}];
-const PROTO_ADMIN={students:284,activities:1426,suspicious:23,challenges:8};
-
-function pbar(pct){ return `<div class="pbar-wrap"><div class="pbar-fill" style="width:${Math.max(0,Math.min(100,pct))}%"></div></div>`; }
-
-// ── Prototype tab: Diagrams / UML Documentation ──
-const PROTO_DIAGRAM_GROUPS=[
-  {group:'UML Use Case Diagrams', items:[
-    {src:'./uml1.png', caption:'Use Case Diagram 1'},
-    {src:'./uml2.png', caption:'Use Case Diagram 2'},
-    {src:'./uml3.png', caption:'Use Case Diagram 3'},
-    {src:'./uml4.png', caption:'Use Case Diagram 4'}
-  ]},
-  {group:'Sequence Diagrams', items:[
-    {src:'./sequence1.png', caption:'User Login'},
-    {src:'./sequence2.png', caption:'Connect Health Connect & Retrieve Steps'},
-    {src:'./sequence3.png', caption:'Genuine/Fake Step Detection'},
-    {src:'./sequence4.png', caption:'Dashboard & Activity Insights'},
-    {src:'./sequence5.png', caption:'Suspicious Activity Alert'}
-  ]},
-  {group:'Class Diagram', items:[
-    {src:'./classdiagram.png', caption:'StepUp Class Diagram'}
-  ]}
-];
-
-function rProtoDiagrams(){
-  return `
-    <div class="section" id="proto-diagrams"><div class="wrap">
-      <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:760px">
-        <div class="lbl" style="justify-content:center;display:flex">Documentation</div>
-        <h2 style="margin:10px 0 4px">Diagrams &amp; UML Documentation</h2>
-        <p class="tm">Full set of UML use case, sequence, and class diagrams documenting the StepUp system design — click any diagram to view it full-screen.</p>
-      </div>
-      ${PROTO_DIAGRAM_GROUPS.map(g=>`
-        <div class="uml-doc-subhdr">${g.group}</div>
-        <div class="uml-doc-grid">
-          ${g.items.map(it=>`
-            <div class="uml-doc-card">
-              <div class="uml-doc-frame"><img src="${it.src}" alt="${it.caption}" loading="lazy" onclick="openUmlLightbox(this.src,this.alt)"/></div>
-              <div class="uml-doc-caption">${it.caption}</div>
-            </div>`).join('')}
-        </div>`).join('')}
-    </div></div>`;
-}
-
-function openUmlLightbox(src,alt){
-  const lb=document.getElementById('umlLightbox'), img=document.getElementById('umlLightboxImg');
-  if(!lb||!img) return;
-  img.src=src; img.alt=alt||'';
-  lb.classList.add('open');
-}
-function closeUmlLightbox(){
-  const lb=document.getElementById('umlLightbox');
-  if(lb) lb.classList.remove('open');
-}
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeUmlLightbox(); });
-
-function showPrototypeToast(msg){
-  let wrap=document.getElementById('toastWrap');
-  if(!wrap){wrap=document.createElement('div');wrap.id='toastWrap';wrap.setAttribute('role','status');wrap.setAttribute('aria-live','polite');wrap.style.cssText='position:fixed;bottom:22px;right:22px;z-index:999;display:flex;flex-direction:column;gap:8px;align-items:flex-end';document.body.appendChild(wrap);}
-  const t=document.createElement('div');t.className='proto-toast';t.textContent=msg;wrap.appendChild(t);
-  setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),300);},2600);
-}
-
-// Re-render just the current (prototype) page in place, preserving scroll position
-function refreshProto(){ if(curPage==='prototype'){ const y=window.scrollY; render(); window.scrollTo(0,y); } }
-
-function switchPrototypeMode(m){ PROTO.mode=m; refreshProto(); }
-function setPrototypeActivityType(t){ PROTO.activityType=t; refreshProto(); }
-function setBuddyField(field,val){ PROTO[field]=val; }
-
-function submitPrototypeActivity(){
-  const t=PROTO.activityType;
-  const presets={
-    Walking:{dist:'4.2 km',xp:80},
-    Running:{dist:'3.8 km',xp:120},
-    Cycling:{dist:'9.4 km',xp:100},
-    Other:{dist:'1.5 km',xp:60}
-  }[t];
-  PROTO.feed.unshift({ic:'✓',t:`${t} — ${presets.dist}`,x:presets.xp});
-  PROTO.xp+=presets.xp;
-  PROTO.weeklySteps+=Math.floor(Math.random()*1500)+500;
-  showPrototypeToast('Activity submitted successfully ✓');
-  refreshProto();
-}
-
-function syncPrototypeFitness(){
-  PROTO.health.syncing=true; refreshProto();
-  setTimeout(()=>{
-    PROTO.health.syncing=false;
-    PROTO.health.steps+=Math.floor(Math.random()*400)+100;
-    PROTO.health.dist=+(PROTO.health.dist+Math.random()*0.6).toFixed(1);
-    PROTO.health.active+=Math.floor(Math.random()*8)+2;
-    showPrototypeToast('Fitness data synced successfully ✓');
-    refreshProto();
-  },1100);
-}
-
-function runIntegrityCheck(){
-  PROTO.integ.checking=true; refreshProto();
-  setTimeout(()=>{
-    PROTO.integ.checking=false;
-    const score=Math.floor(Math.random()*20)+78;
-    PROTO.integ.score=score;
-    PROTO.integ.status=score>=85?'Verified':'Suspicious';
-    if(score>=85){ PROTO.xp+=40; showPrototypeToast('Activity verified ✓'); }
-    else{ showPrototypeToast('Activity flagged for review'); }
-    refreshProto();
-  },1200);
-}
-
-function findPrototypeBuddy(){
-  PROTO.buddySearching=true; refreshProto();
-  const pool=[['Aarav','Intermediate'],['Meera','Beginner'],['Vihaan','Advanced'],['Isha','Intermediate']];
-  setTimeout(()=>{
-    PROTO.buddySearching=false;
-    PROTO.buddyResults=pool.map(([n,sk])=>({
-      name:n, sport:PROTO.buddySport, skill:sk,
-      match:Math.floor(Math.random()*20)+75,
-      time:PROTO.buddyTime, area:PROTO.buddyArea, connected:false
-    }));
-    refreshProto();
-  },900);
-}
-function connectPrototypeBuddy(i){
-  PROTO.buddyResults[i].connected=true;
-  showPrototypeToast('Sport buddy connection request sent ✓');
-  refreshProto();
-}
-
-function joinPrototypeChallenge(id){
-  const c=PROTO.challenges.find(x=>x.id===id);
-  if(c&&!c.joined){ c.joined=true; showPrototypeToast('Challenge joined ✓'); refreshProto(); }
-}
-function joinStepBattle(){
-  if(!PROTO.battleJoined){ PROTO.battleJoined=true; showPrototypeToast('Step battle joined ✓'); refreshProto(); }
-}
-
-function rProtoStory(){
-  return `
-    <div class="proto-story-compact">
-    <!-- ═══ 1. INTRODUCTION — STEPUP ═══ -->
-    <div class="section" id="story-intro">
-      <div class="wrap">
-        <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:760px">
-          <div class="lbl" style="justify-content:center;display:flex">Prototype Walkthrough</div>
-          <h2 style="margin:10px 0 4px">Introduction — StepUp</h2>
-          <p class="tm">Thapar StepUp is a campus fitness and gamification platform designed to encourage students to stay physically active through challenges, rewards, social interaction, and verified fitness activity.</p>
-        </div>
-        <div class="story-flow" aria-hidden="true">
-          <div class="story-flow-step">TRACK</div><div class="story-flow-arr">→</div>
-          <div class="story-flow-step">VERIFY</div><div class="story-flow-arr">→</div>
-          <div class="story-flow-step">REWARD</div><div class="story-flow-arr">→</div>
-          <div class="story-flow-step">CONNECT</div>
-        </div>
-        <div class="g4" style="margin-top:36px">
-          <div class="card card-green tc">
-            <div class="feat-icon" style="margin-bottom:8px">📱</div>
-            <h3>Activity Tracking</h3>
-            <p class="tm mt8" style="font-size:13px">Track steps and fitness activities.</p>
-          </div>
-          <div class="card card-green tc">
-            <div class="feat-icon" style="margin-bottom:8px">🛡️</div>
-            <h3>Activity Integrity</h3>
-            <p class="tm mt8" style="font-size:13px">Verify submitted activities and identify suspicious activity.</p>
-          </div>
-          <div class="card card-green tc">
-            <div class="feat-icon" style="margin-bottom:8px">🏆</div>
-            <h3>Gamification</h3>
-            <p class="tm mt8" style="font-size:13px">Earn XP, StepCoin, badges, streaks, and challenge rewards.</p>
-          </div>
-          <div class="card card-green tc">
-            <div class="feat-icon" style="margin-bottom:8px">🤝</div>
-            <h3>Sport Buddy Matching</h3>
-            <p class="tm mt8" style="font-size:13px">Find students with similar sports and activity preferences.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap"><div class="divider"></div></div>
-
-    <!-- ═══ 2. THE PROBLEM ═══ -->
-    <div class="section section-green" id="story-problem">
-      <div class="wrap">
-        <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:700px">
-          <div class="lbl" style="justify-content:center;display:flex">The Challenge</div>
-          <h2 style="margin:10px 0 4px">The Problem</h2>
-          <p class="tm">Two unsolved problems stand between students and a fair, motivating fitness experience.</p>
-        </div>
-        <div class="g2">
-          <div class="problem-card">
-            <div class="problem-num">Problem 01 — Activity Integrity</div>
-            <h3 style="margin-bottom:10px">Can we trust the activity data?</h3>
-            <p class="tm" style="font-size:14px">Simply counting submitted steps or activities does not guarantee that the activity is genuine. Fitness data may contain inaccurate, duplicated, or suspicious activity.</p>
-            <div class="problem-flow">
-              <div class="problem-flow-item">Activity Submitted</div>
-              <div class="problem-flow-arr">↓</div>
-              <div class="problem-flow-item">Is the activity genuine?</div>
-              <div class="problem-flow-arr">↓</div>
-              <div class="problem-flow-item">Verification Required</div>
-            </div>
-            <span class="badge b-earth">Activity Integrity Challenge</span>
-          </div>
-          <div class="problem-card">
-            <div class="problem-num">Problem 02 — Fitness Engagement</div>
-            <h3 style="margin-bottom:10px">How do we keep students motivated?</h3>
-            <p class="tm" style="font-size:14px">Students may struggle to maintain consistent physical activity when there is limited social motivation, competition, and campus-level engagement.</p>
-            <div class="problem-flow">
-              <div class="problem-flow-item">Low Motivation</div>
-              <div class="problem-flow-arr">↓</div>
-              <div class="problem-flow-item">Inconsistent Activity</div>
-              <div class="problem-flow-arr">↓</div>
-              <div class="problem-flow-item">Reduced Engagement</div>
-            </div>
-            <span class="badge b-plum">Student Engagement Challenge</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap"><div class="divider"></div></div>
-
-    <!-- ═══ 3. WHY THIS PROBLEM MATTERS ═══ -->
-    <div class="section" id="story-why">
-      <div class="wrap">
-        <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:700px">
-          <div class="lbl" style="justify-content:center;display:flex">Why It Matters</div>
-          <h2 style="margin:10px 0 4px">Why This Problem Matters</h2>
-        </div>
-        <div class="g4">
-          <div class="card tc">
-            <div class="feat-icon" style="margin-bottom:8px">⚖️</div>
-            <h3>Fairness</h3>
-            <p class="tm mt8" style="font-size:13px">Unverified activity can make fitness competitions, leaderboards, and rewards unfair.</p>
-          </div>
-          <div class="card tc">
-            <div class="feat-icon" style="margin-bottom:8px">🎯</div>
-            <h3>Trust</h3>
-            <p class="tm mt8" style="font-size:13px">Reliable activity data is important when XP, StepCoin, badges, and rankings depend on fitness performance.</p>
-          </div>
-          <div class="card tc">
-            <div class="feat-icon" style="margin-bottom:8px">🔥</div>
-            <h3>Motivation</h3>
-            <p class="tm mt8" style="font-size:13px">Students are more likely to stay active when fitness includes challenges, streaks, rewards, and friendly competition.</p>
-          </div>
-          <div class="card tc">
-            <div class="feat-icon" style="margin-bottom:8px">🤝</div>
-            <h3>Community</h3>
-            <p class="tm mt8" style="font-size:13px">Finding students with similar sports and activity interests can make fitness more social and engaging.</p>
-          </div>
-        </div>
-        <div class="highlight-quote tc" style="margin-left:auto;margin-right:auto;max-width:680px">“StepUp is not just about counting steps — it is about creating a trusted and engaging campus fitness ecosystem.”</div>
-      </div>
-    </div>
-
-    <div class="wrap"><div class="divider"></div></div>
-
-    <!-- ═══ 4. OUR PROPOSED SOLUTION ═══ -->
-    <div class="section section-leaf" id="story-solution">
-      <div class="wrap">
-        <div class="sec-hdr tc" style="margin:0 auto 40px;max-width:700px">
-          <div class="lbl" style="justify-content:center;display:flex">The Solution</div>
-          <h2 style="margin:10px 0 4px">Our Proposed Solution</h2>
-          <p class="tm">StepUp is the integrated answer to both problems — one continuous loop from raw activity to social connection.</p>
-        </div>
-        <div class="solution-stage" style="max-width:640px;margin:0 auto">
-          <div class="solution-stage-card">
-            <div class="solution-stage-num">01</div>
-            <div><h3>Track</h3><p class="tm mt8" style="font-size:13.5px">Collect fitness activity through Health Connect.</p></div>
-          </div>
-          <div class="solution-stage-arr">↓</div>
-          <div class="solution-stage-card">
-            <div class="solution-stage-num">02</div>
-            <div><h3>Verify</h3><p class="tm mt8" style="font-size:13.5px">Use activity-integrity checks to identify suspicious or unreliable activity.</p></div>
-          </div>
-          <div class="solution-stage-arr">↓</div>
-          <div class="solution-stage-card">
-            <div class="solution-stage-num">03</div>
-            <div><h3>Reward</h3><p class="tm mt8" style="font-size:13.5px">Convert verified activity into XP, StepCoin, badges, streaks, challenges, and leaderboard progress.</p></div>
-          </div>
-          <div class="solution-stage-arr">↓</div>
-          <div class="solution-stage-card">
-            <div class="solution-stage-num">04</div>
-            <div><h3>Connect</h3><p class="tm mt8" style="font-size:13.5px">Help students find sport buddies and participate in group activities.</p></div>
-          </div>
-        </div>
-
-        <div class="g4" style="margin-top:48px">
-          <div class="card">
-            <h3 style="margin-bottom:6px">Activity Tracking</h3>
-            <p class="tm" style="font-size:13px;margin-bottom:14px">Track and submit walking, running, cycling, and other fitness activities.</p>
-            <button class="btn btn-s" style="font-size:12px" onclick="protoScrollTo('proto-track')">Explore Activity Tracking ${I.arr}</button>
-          </div>
-          <div class="card">
-            <h3 style="margin-bottom:6px">Activity Integrity Detection</h3>
-            <p class="tm" style="font-size:13px;margin-bottom:14px">Validate activity and identify suspicious patterns before rewards are granted.</p>
-            <button class="btn btn-s" style="font-size:12px" onclick="protoScrollTo('proto-integrity')">Run Integrity Demo ${I.arr}</button>
-          </div>
-          <div class="card">
-            <h3 style="margin-bottom:6px">Gamification</h3>
-            <p class="tm" style="font-size:13px;margin-bottom:14px">Earn XP, StepCoin, badges, and streaks while participating in challenges and Step Battles.</p>
-            <button class="btn btn-s" style="font-size:12px" onclick="protoScrollTo('proto-gamification')">Explore Gamification ${I.arr}</button>
-          </div>
-          <div class="card">
-            <h3 style="margin-bottom:6px">Sport Group Matching</h3>
-            <p class="tm" style="font-size:13px;margin-bottom:14px">Find compatible sport buddies based on sport, skill level, preferred time, and campus location.</p>
-            <button class="btn btn-s" style="font-size:12px" onclick="protoScrollTo('proto-buddy')">Find a Sport Buddy ${I.arr}</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap"><div class="divider"></div></div>
-    </div>
-  `;
-}
-
-function rPrototype(){
-  const p=PROTO, isAdmin=p.mode==='admin';
-  return `<div class="page">
-    ${rProtoStory()}
-    <div class="proto-hero" id="proto-dashboard"><div class="wrap">
-      <div class="lbl mb8">Interactive Prototype</div>
-      <h1 style="margin-bottom:10px">StepUp Prototype</h1>
-      <p class="tm" style="max-width:640px;margin-bottom:16px">Experience the core student fitness, activity integrity, sport-group matching, and gamification workflow.</p>
-      <div class="flex fw g12" style="align-items:center;margin-bottom:20px">
-        <span class="badge b-green">● Prototype / POC</span>
-        <span class="sim-tag">Frontend simulation — demonstrates the planned user journey ahead of the full Flutter implementation</span>
-      </div>
-      <div class="proto-toggle" role="tablist" aria-label="Prototype perspective">
-        <button role="tab" aria-selected="${!isAdmin}" class="${!isAdmin?'active':''}" onclick="switchPrototypeMode('student')">Student Prototype</button>
-        <button role="tab" aria-selected="${isAdmin}" class="${isAdmin?'active':''}" onclick="switchPrototypeMode('admin')">Admin Prototype</button>
-      </div>
-    </div></div>
-
-    <div class="section" id="proto-workflow"><div class="wrap">
-      <div class="lbl mb16">Prototype Workflow</div>
-      <div class="pipe" style="margin-bottom:56px">
-        ${['Login','Track / Submit Activity','Sync Fitness Data','Verify Activity','Earn XP / Badges / Streaks','Join Challenges / Step Battles','Find Sport Buddy','View Analytics / Leaderboard'].map((s,i,a)=>`<div class="pipe-step">${s}</div>${i<a.length-1?'<div class="pipe-arr"></div>':''}`).join('')}
-      </div>
-      ${isAdmin?rProtoAdmin():rProtoStudent()}
-    </div></div>
-
-    ${rProtoDiagrams()}
-  </div>`;
-}
-
-function rProtoStudent(){
-  const p=PROTO;
-  return `
-  <div class="lbl mb16">Student Dashboard</div>
-  <div class="card card-green" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-bottom:24px">
-    <div style="width:72px;height:72px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--f-sans);font-size:26px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--forest),var(--sage));box-shadow:var(--sh-lg)" aria-hidden="true">KS</div>
-    <div><div style="font-weight:800;font-size:1.2rem">Kashish Singhal</div><div class="tm" style="font-size:13px">Student · Level 7 — Active Walker</div></div>
-  </div>
-  <div class="g4" style="margin-bottom:48px">
-    <div class="proto-stat"><div class="proto-stat-val">${p.stepcoin.toLocaleString()}</div><div class="proto-stat-lbl">StepCoin</div></div>
-    <div class="proto-stat"><div class="proto-stat-val">${p.xp.toLocaleString()}</div><div class="proto-stat-lbl">XP</div></div>
-    <div class="proto-stat"><div class="proto-stat-val">${p.streak}d</div><div class="proto-stat-lbl">Current Streak</div></div>
-    <div class="proto-stat"><div class="proto-stat-val">${p.weeklySteps.toLocaleString()}</div><div class="proto-stat-lbl">Weekly Steps</div></div>
-    <div class="proto-stat"><div class="proto-stat-val">${p.badges}</div><div class="proto-stat-lbl">Badges</div></div>
-    <div class="proto-stat"><div class="proto-stat-val">#${p.rank}</div><div class="proto-stat-lbl">Leaderboard Rank</div></div>
-  </div>
-
-  <div class="divider" style="margin-bottom:48px"></div>
-
-  <div class="g2" style="gap:24px;margin-bottom:48px" id="proto-track">
-    <div class="card">
-      <div class="flex aic g8 mb16" style="justify-content:space-between"><h3>Track / Submit Activity</h3><span class="sim-tag">Prototype Simulation</span></div>
-      <div class="flex fw g8 mb16" role="group" aria-label="Activity type">
-        ${['Walking','Running','Cycling','Other'].map(t=>`<button class="btn ${p.activityType===t?'btn-p':'btn-s'}" style="font-size:12px" aria-pressed="${p.activityType===t}" onclick="setPrototypeActivityType('${t}')">${t}</button>`).join('')}
-      </div>
-      <div style="background:var(--bg-elevated);border-radius:8px;padding:14px;font-size:12.5px;color:var(--text-muted);display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
-        <div>Steps: <strong style="color:var(--text)">6,240</strong></div>
-        <div>Duration: <strong style="color:var(--text)">28 min</strong></div>
-        <div>Distance: <strong style="color:var(--text)">3.8 km</strong></div>
-        <div>Calories: <strong style="color:var(--text)">220 kcal</strong></div>
-      </div>
-      <button class="btn btn-p" style="width:100%;justify-content:center" onclick="submitPrototypeActivity()">Submit Activity</button>
-    </div>
-
-    <div class="card">
-      <div class="flex aic g8 mb16" style="justify-content:space-between"><h3>Health Connect</h3><span class="badge b-green">Connected</span></div>
-      <p class="tm" style="font-size:13px;margin-bottom:14px">Sync fitness data from your connected health platform.</p>
-      <div style="background:var(--bg-elevated);border-radius:8px;padding:14px;font-size:12.5px;color:var(--text-muted);display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
-        <div>Steps: <strong style="color:var(--text)">${p.health.steps.toLocaleString()}</strong></div>
-        <div>Active Time: <strong style="color:var(--text)">${p.health.active} min</strong></div>
-        <div>Distance: <strong style="color:var(--text)">${p.health.dist} km</strong></div>
-      </div>
-      <button class="btn btn-leaf" style="width:100%;justify-content:center" onclick="syncPrototypeFitness()" ${p.health.syncing?'disabled aria-busy="true"':''}>${p.health.syncing?'Syncing…':'Sync Fitness Data'}</button>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:48px" id="proto-integrity">
-    <div class="flex aic g8 mb16" style="justify-content:space-between"><h3>Activity Integrity Check</h3><span class="sim-tag">Prototype Simulation</span></div>
-    <p class="tm" style="font-size:13px;margin-bottom:20px">StepUp verifies submitted activity to reduce fake or suspicious activity.</p>
-    <div class="pipe" style="margin-bottom:24px">
-      ${['Activity Submitted','Data Validation','Integrity Check','Verified Activity','XP / Badge Reward'].map((s,i,a)=>`<div class="pipe-step ${i===2&&p.integ.checking?'hl':''}">${s}</div>${i<a.length-1?'<div class="pipe-arr"></div>':''}`).join('')}
-    </div>
-    <div class="g3" style="margin-bottom:20px">
-      <div><div class="lbl" style="font-size:9px">Activity</div><div style="font-weight:700">${p.integ.activity}</div></div>
-      <div><div class="lbl" style="font-size:9px">Duration / Distance</div><div style="font-weight:700">${p.integ.duration} min · ${p.integ.distance} km</div></div>
-      <div><div class="lbl" style="font-size:9px">Integrity Score</div><div style="font-weight:700">${p.integ.checking?'Checking…':p.integ.score+'%'}</div></div>
-    </div>
-    <div class="flex aic g12 fw">
-      <span class="badge ${p.integ.status==='Verified'?'b-green':'b-earth'}">${p.integ.checking?'⏳ Checking':p.integ.status==='Verified'?'✓ Verified':'⚠ Suspicious'}</span>
-      <button class="btn btn-s" onclick="runIntegrityCheck()" ${p.integ.checking?'disabled':''}>${p.integ.checking?'Checking…':'Run Integrity Check'}</button>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:48px" id="proto-buddy">
-    <h3 style="margin-bottom:6px">Find Your Sport Buddy</h3>
-    <p class="tm" style="font-size:13px;margin-bottom:16px">Match with compatible students by sport, skill level, time, and campus area.</p>
-    <div class="g4" style="margin-bottom:16px">
-      <select class="proto-select" aria-label="Sport" onchange="setBuddyField('buddySport',this.value)">${['Football','Cricket','Basketball','Badminton','Running','Gym','Cycling','Other'].map(s=>`<option ${p.buddySport===s?'selected':''}>${s}</option>`).join('')}</select>
-      <select class="proto-select" aria-label="Skill level" onchange="setBuddyField('buddySkill',this.value)">${['Beginner','Intermediate','Advanced'].map(s=>`<option ${p.buddySkill===s?'selected':''}>${s}</option>`).join('')}</select>
-      <select class="proto-select" aria-label="Preferred time" onchange="setBuddyField('buddyTime',this.value)">${['Morning','Afternoon','Evening'].map(s=>`<option ${p.buddyTime===s?'selected':''}>${s}</option>`).join('')}</select>
-      <select class="proto-select" aria-label="Campus area" onchange="setBuddyField('buddyArea',this.value)">${['Main Campus','Hostel Area','Sports Complex'].map(s=>`<option ${p.buddyArea===s?'selected':''}>${s}</option>`).join('')}</select>
-    </div>
-    <button class="btn btn-p" style="margin-bottom:16px" onclick="findPrototypeBuddy()" ${p.buddySearching?'disabled':''}>${p.buddySearching?'Searching…':'Find Sport Buddy'}</button>
-    ${p.buddyResults?`<div class="g2" style="gap:14px">
-      ${p.buddyResults.map((b,i)=>`<div class="buddy-card">
-        <div class="flex aic g8" style="justify-content:space-between;margin-bottom:8px"><strong>${b.name}</strong><span class="badge b-forest">${b.match}% Match</span></div>
-        <div class="tm" style="font-size:12.5px;line-height:1.8">${b.sport} · ${b.skill}<br>${b.time} · ${b.area}</div>
-        <button class="btn ${b.connected?'btn-leaf':'btn-s'}" style="width:100%;justify-content:center;font-size:12px;margin-top:8px" ${b.connected?'disabled':''} onclick="connectPrototypeBuddy(${i})">${b.connected?'Request Sent ✓':'Connect'}</button>
-      </div>`).join('')}
-    </div>`:''}
-  </div>
-
-  <div class="g2" style="gap:24px;margin-bottom:48px" id="proto-gamification">
-    <div class="card">
-      <h3 style="margin-bottom:14px">Challenges</h3>
-      ${p.challenges.map(c=>`<div style="margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border-sub)">
-        <div class="flex aic g8" style="justify-content:space-between"><strong style="font-size:13px">${c.title}</strong><span class="badge b-sage">+${c.xp} XP</span></div>
-        ${pbar(c.progress/c.goal*100)}
-        <div class="flex aic g8 fw" style="justify-content:space-between">
-          <span class="tm" style="font-size:11.5px">${c.progress.toLocaleString()} / ${c.goal.toLocaleString()} ${c.unit}</span>
-          <button class="btn ${c.joined?'btn-leaf':'btn-s'}" style="font-size:11.5px;padding:5px 12px" ${c.joined?'disabled':''} onclick="joinPrototypeChallenge('${c.id}')">${c.joined?'Joined ✓':'Join'}</button>
-        </div>
-      </div>`).join('')}
-    </div>
-    <div class="card">
-      <h3 style="margin-bottom:14px">Step Battle</h3>
-      <div class="flex" style="justify-content:space-between;font-size:13px;margin-bottom:6px"><span>You</span><strong>${p.battleYou.toLocaleString()} steps</strong></div>
-      ${pbar(p.battleYou/(p.battleYou+p.battleOpp)*100)}
-      <div class="flex" style="justify-content:space-between;font-size:13px;margin:14px 0 6px"><span>Opponent</span><strong>${p.battleOpp.toLocaleString()} steps</strong></div>
-      ${pbar(p.battleOpp/(p.battleYou+p.battleOpp)*100)}
-      <div class="badge b-green" style="margin:14px 0 16px">${p.battleYou>p.battleOpp?'You are leading!':'Opponent is leading'}</div>
-      <button class="btn ${p.battleJoined?'btn-leaf':'btn-p'}" style="width:100%;justify-content:center;display:block" ${p.battleJoined?'disabled':''} onclick="joinStepBattle()">${p.battleJoined?'Battle Joined ✓':'Join Step Battle'}</button>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:48px">
-    <h3 style="margin-bottom:14px">Campus Leaderboard</h3>
-    <div style="overflow-x:auto">
-      ${PROTO_LB.map((r,i)=>`<div class="lb-row ${r.you?'you':''}">
-        <span class="mono" style="width:24px;color:var(--text-dim)">#${i+1}</span>
-        <span style="flex:1;font-weight:${r.you?'700':'500'};min-width:120px">${r.name}${r.you?' (You)':''}</span>
-        <span class="mono" style="font-size:12px;color:var(--forest);white-space:nowrap">${r.xp.toLocaleString()} XP</span>
-        <span class="mono" style="font-size:11px;color:var(--text-dim);white-space:nowrap">🔥${r.streak}d</span>
-      </div>`).join('')}
-    </div>
-  </div>
-
-  <div class="g2" style="gap:24px;margin-bottom:48px">
-    <div class="card">
-      <h3 style="margin-bottom:14px">XP, Level & Streak</h3>
-      <div class="g3">
-        <div><div class="proto-stat-val" style="font-size:1.3rem">${p.xp.toLocaleString()}</div><div class="proto-stat-lbl">XP</div></div>
-        <div><div class="proto-stat-val" style="font-size:1.3rem">Lvl 7</div><div class="proto-stat-lbl">Active Walker</div></div>
-        <div><div class="proto-stat-val" style="font-size:1.3rem">${p.streak}d</div><div class="proto-stat-lbl">Streak</div></div>
-      </div>
-    </div>
-    <div class="card">
-      <h3 style="margin-bottom:14px">Badges</h3>
-      <div class="g4" style="gap:10px">${PROTO_BADGES.map(b=>`<div class="badge-chip"><div class="ic" aria-hidden="true">${b.ic}</div><div class="nm">${b.nm}</div></div>`).join('')}</div>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:48px">
-    <h3 style="margin-bottom:10px">Recent Activity</h3>
-    ${p.feed.slice(0,8).map(f=>`<div class="feed-item"><span>${f.ic} ${f.t}</span><span class="mono" style="color:var(--forest);white-space:nowrap">+${f.x} XP</span></div>`).join('')}
-  </div>
-
-  <div class="card">
-    <h3 style="margin-bottom:16px">Analytics</h3>
-    <div class="g4" style="margin-bottom:24px">
-      <div class="proto-stat"><div class="proto-stat-val">${p.weeklySteps.toLocaleString()}</div><div class="proto-stat-lbl">Weekly Steps</div></div>
-      <div class="proto-stat"><div class="proto-stat-val">6/7</div><div class="proto-stat-lbl">Active Days</div></div>
-      <div class="proto-stat"><div class="proto-stat-val">14</div><div class="proto-stat-lbl">Activities</div></div>
-      <div class="proto-stat"><div class="proto-stat-val">2,840</div><div class="proto-stat-lbl">Calories (kcal)</div></div>
-    </div>
-    <div class="lbl mb8" style="font-size:9px">Weekly Activity</div>
-    <div class="wkc-grid">
-      ${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((d,i)=>`<div class="wkc-bar"><div class="wkc-fill" style="height:${p.weekVals[i]/12*100}%"></div><div class="wkc-lbl">${d}</div></div>`).join('')}
-    </div>
-  </div>`;
-}
-
-function rProtoAdmin(){
-  const a=PROTO_ADMIN;
-  return `
-  <div class="lbl mb16">Admin Dashboard</div>
-  <div class="g4" style="margin-bottom:48px">
-    <div class="proto-stat"><div class="proto-stat-val">${a.students}</div><div class="proto-stat-lbl">Active Students</div></div>
-    <div class="proto-stat"><div class="proto-stat-val">${a.activities.toLocaleString()}</div><div class="proto-stat-lbl">Activities This Week</div></div>
-    <div class="proto-stat"><div class="proto-stat-val" style="color:var(--rust)">${a.suspicious}</div><div class="proto-stat-lbl">Suspicious Activities</div></div>
-    <div class="proto-stat"><div class="proto-stat-val">${a.challenges}</div><div class="proto-stat-lbl">Active Challenges</div></div>
-  </div>
-  <div class="g2" style="gap:24px">
-    ${[['Monitor Activities','Review live activity submissions and flag anomalies across campus.'],
-       ['Verify Suspicious Activities','Manually review activities flagged by the integrity pipeline.'],
-       ['Create / Manage Challenges','Configure new campus-wide challenges and edit active ones.'],
-       ['Manage Users','View and manage student and admin accounts.'],
-       ['View Campus Analytics','Explore aggregate step, XP, and engagement trends.']].map(([t,d])=>`
-    <div class="card"><h3 style="margin-bottom:6px">${t}</h3><p class="tm" style="font-size:13px;margin-bottom:14px">${d}</p><button class="btn btn-s" style="font-size:12px" onclick="showPrototypeToast('${t} — Prototype Simulation ✓')">Open ${I.arr}</button></div>`).join('')}
-  </div>`;
 }
 
 // 404
@@ -2320,6 +2463,7 @@ document.addEventListener('click',e=>{
 // Seed initial history entry so back-to-here works
 history.replaceState({page:curPage,member:curMember},'',location.hash||'#home');
 loadFromHash();
+
 </script>
 </body>
 </html>
