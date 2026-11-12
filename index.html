@@ -355,7 +355,7 @@ function showError(id, msg) {
 //  DATA LAYER
 // ══════════════════════════════════════════════
 
-const PS = { week:3, phase:"Website & Project Setup", progress:17, status:"In Progress" };
+const PS = { week:13, phase:"Social Features, Rewards & Sessions", progress:87, status:"Weeks 1–13 Complete" };
 
 // ORDER: Disha, Kashish, Anvi, Raghav
 const TEAM = [
@@ -364,15 +364,15 @@ const TEAM = [
     bio:"Team Leader and Flutter Mobile App Development Lead. Passionate about mobile engineering, system design, and cross-functional team coordination. Building StepUp's Android & iOS app using Flutter.",
     github:"https://github.com/DishaGoyal16", ghUser:"DishaGoyal16",
     linkedin:"https://linkedin.com/in/disha-goyal-155417326", portfolio:"#",
-    resp:["Overall team coordination and project planning","Flutter mobile application (Android & iOS)","Mobile application architecture & navigation","Health Connect integration surface","Weekly progress coordination","Project documentation & website"],
+    resp:["Overall team coordination and project planning","Flutter mobile application (Android & iOS)","Mobile application architecture & navigation","Health Connect integration & data analysis","Weekly progress coordination","Project documentation & website"],
     leadership:"As Team Leader, Disha coordinates task distribution, sprint planning, and integration across all sub-teams — mobile, backend, and AI/ML — ensuring weekly deliverables stay on track.",
     mobileDev:"Building StepUp's mobile application using Flutter for cross-platform deployment on Android and iOS. Responsible for app architecture, navigation, Health Connect integration, and mobile UX." },
   { id:"kashish", name:"Kashish", full:"Kashish Singhal", roll:"1024170076", email:"ksinghal_be24@thapar.edu",
     role:"AI/ML & Activity Integrity Lead", leader:false, init:"KS", color:"#1E5C1E",
-    bio:"AI/ML & Activity Integrity Lead for StepUp. Focused on dataset creation, rule-based baselines, Health Connect data analysis, and training an on-device integrity detector.",
+    bio:"AI/ML & Activity Integrity Lead for StepUp. Focused on dataset creation, rule-based baselines, and training an on-device integrity detector.",
     github:"https://github.com/kashishsinghal011", ghUser:"kashishsinghal011",
     linkedin:"https://www.linkedin.com/in/kashish-singhal-8a7752345/", portfolio:"#",
-    resp:["Activity-integrity dataset creation","Health Connect data analysis","Rule-based baseline detector","On-device activity-integrity ML model","AI/ML evaluation metrics & experiments","Train/test split by participant (no leakage)"] },
+    resp:["Activity-integrity dataset creation","Rule-based baseline detector","On-device activity-integrity ML model","AI/ML evaluation metrics & experiments","Train/test split by participant (no leakage)"] },
   { id:"anvi", name:"Anvi", full:"Anvi Nagpal", roll:"1024170417", email:"aanvi2_be24@thapar.edu",
     role:"Backend & Matching Engine Lead", leader:false, init:"AN", color:"#3A7D9E",
     bio:"Backend & Matching Engine Lead for StepUp. Designing scalable REST APIs, formulating the sport-group matching problem, and building evaluation logging infrastructure.",
@@ -388,45 +388,29 @@ const TEAM = [
 ];
 
 const ROADMAP = [
-  { phase:"Idea Submission, Planning & Website", weeks:"1–3", color:"#1E5C1E",
-    tasks:["Project idea submission","Planning presentation V1 & V2","Team website launch","Dev environment setup","Architecture finalization"],
-    pct:90, active:true },
-  { phase:"Basic App POC & Pipeline Foundation", weeks:"4–7", color:"#2A7A2A",
-    tasks:["Flutter app POC screens","Health Connect integration","Rule-based integrity baseline","Initial dataset collection","Backend API skeleton","Matching algorithm V1"],
-    pct:0, active:false },
-  { phase:"Matching Engine + Full App", weeks:"8–10", color:"#3A7D9E",
-    tasks:["Matching engine V1","Full Flutter UI","Backend API completion","Integrity detector V1","Integration testing"],
-    pct:0, active:false },
-  { phase:"Integration + Dashboard", weeks:"11–13", color:"#7A5C1E",
-    tasks:["Full-stack integration","Web dashboard","Analytics pipeline","End-to-end testing"],
-    pct:0, active:false },
-  { phase:"Pilot Study", weeks:"14–16", color:"#B04A1E",
-    tasks:["Controlled pilot","Data collection","Evaluation & analysis","Bug fixes"],
-    pct:0, active:false },
-  { phase:"Evaluation & Final Report", weeks:"17", color:"#5C3A7A",
-    tasks:["Final evaluation","Report writing","Final presentation","Submission"],
-    pct:0, active:false }
+  {"phase": "Ideation, Research & Architecture", "weeks": "1–3", "color": "#1E5C1E", "tasks": ["Problem identification", "Requirement analysis", "Architecture & technology selection"], "pct": 100, "active": false},
+  {"phase": "App Foundation", "weeks": "4–6", "color": "#2A7A2A", "tasks": ["UI/UX and navigation", "Authentication & student profile", "Dashboard & activity tracking"], "pct": 100, "active": false},
+  {"phase": "Step Integrity & Health Connect", "weeks": "7–9", "color": "#3A7D9E", "tasks": ["Sensor integration", "Six-layer anti-fraud validation", "Health Connect sync"], "pct": 100, "active": false},
+  {"phase": "Social Fitness & Rewards", "weeks": "10–13", "color": "#7A5C1E", "tasks": ["Leaderboard", "Buddy & individual challenges", "Rewards, wallet, sessions, notifications"], "pct": 100, "active": true},
+  {"phase": "Integration & Deployment", "weeks": "14–15", "color": "#5C3A7A", "tasks": ["Integration & testing", "Optimization & bug fixing", "Documentation & demo"], "pct": 0, "active": false}
 ];
 
 const WEEKLY = [
-  { week:1, title:"Idea Submission", date:"2026-08-19", status:"done",
-    summary:"Project idea officially submitted. Two problem tracks defined — Activity Integrity Detection and Sport Group Matching. Scope, motivation, and high-level architecture agreed upon.",
-    planned:["Define project idea and tracks","Write problem statement","Submit to instructor","Initial role distribution"],
-    done:["Project idea submitted","Problem statement drafted","Team roles informally assigned","GitHub repository created"],
-    contribs:{ disha:["Coordinated idea submission","Drafted project overview","Set up team communication"], kashish:["Drafted integrity problem statement","Researched existing validation approaches"], anvi:["Researched sport-group matching","Outlined backend requirements"], raghav:["Set up GitHub repository","Researched frontend options"] },
-    next:["Prepare planning presentation","Formalize roles","Set up dev environments"] },
-  { week:2, title:"Planning Presentation", date:"2026-08-26", status:"done",
-    summary:"Planning Presentation V1 and V2 prepared and delivered. Full project plan, architecture, team roles, and 17-week roadmap presented to the instructor.",
-    planned:["Prepare slides","Finalize architecture diagram","Define 17-week roadmap","Assign detailed responsibilities","Present to instructor"],
-    done:["Planning Presentation V1 presented","Planning Presentation V2 refined & submitted","17-week roadmap finalized","Team roles formally assigned","Architecture diagram created"],
-    contribs:{ disha:["Led presentation preparation","Created roadmap slides","Presented to instructor","Coordinated slide content"], kashish:["AI/ML section of presentation","Activity integrity pipeline diagram"], anvi:["Backend & matching engine slides","System architecture diagram"], raghav:["Frontend & integration slides","GitHub repository structure"] },
-    next:["Build team website","Set up dev environments","Begin implementation planning"] },
-  { week:3, title:"Team Website & Project Setup", date:"2026-09-02", status:"current",
-    summary:"Building the team website for semester-long progress documentation. Setting up individual dev environments and initial implementation groundwork.",
-    planned:["Design and build team website","Set up Flutter project","Set up backend skeleton","Plan dataset collection","Configure CI/CD"],
-    done:["Team website designed and launched","All member profiles added","Progress tracking system implemented"],
-    contribs:{ disha:["Team website development & coordination","Flutter project scaffold","Member profiles & content"], kashish:["Dataset collection methodology research","Activity class definition finalized"], anvi:["Backend project structure setup","API endpoint planning"], raghav:["Frontend structure planning","GitHub repository organization"] },
-    next:["Health Connect API integration","Basic Flutter UI screens","Dataset collection protocol"] }
+  {"week": 1, "title": "Project Ideation and Problem Identification", "date": "2026-08-19", "status": "done", "summary": "Identified the problem of inactive lifestyles among students and the need for a gamified fitness application that encourages daily physical activity through genuine step tracking and social competition.", "planned": ["Identify the problem", "Define project goals"], "done": ["Identify the problem", "Define project goals"], "contribs": {}, "next": ["Research and Requirement Analysis"]},
+  {"week": 2, "title": "Research and Requirement Analysis", "date": "2026-08-26", "status": "done", "summary": "Researched existing fitness applications and identified key features including student leaderboards, buddy challenges, individual challenges, rewards, activity sessions and fraud-resistant step counting.", "planned": ["Research existing fitness apps", "Identify key features"], "done": ["Research existing fitness apps", "Identify key features"], "contribs": {}, "next": ["System Architecture and Technology Selection"]},
+  {"week": 3, "title": "System Architecture and Technology Selection", "date": "2026-09-02", "status": "done", "summary": "Designed the application architecture and selected Flutter, Android motion sensors and Health Connect. Planned a multi-layer anti-fraud mechanism for genuine step validation.", "planned": ["Design architecture", "Select Flutter, motion sensors, Health Connect", "Plan multi-layer anti-fraud"], "done": ["Design architecture", "Select Flutter, motion sensors, Health Connect", "Plan multi-layer anti-fraud"], "contribs": {}, "next": ["UI/UX Design and Application Development"]},
+  {"week": 4, "title": "UI/UX Design and Application Development", "date": "2026-09-09", "status": "done", "summary": "Designed the StepUp interface with a modern green theme and developed the main navigation structure, dashboard, challenges, leaderboard, wallet, sessions and profile screens.", "planned": ["Design green-theme interface", "Build navigation, dashboard, challenges, leaderboard, wallet, sessions, profile screens"], "done": ["Design green-theme interface", "Build navigation, dashboard, challenges, leaderboard, wallet, sessions, profile screens"], "contribs": {}, "next": ["User Authentication and Student Profile"]},
+  {"week": 5, "title": "User Authentication and Student Profile", "date": "2026-09-16", "status": "done", "summary": "Developed the user account structure, registration, login and student profile features to support personalized fitness tracking and student participation.", "planned": ["Account structure", "Registration and login", "Student profile"], "done": ["Account structure", "Registration and login", "Student profile"], "contribs": {}, "next": ["Dashboard and Personal Activity Tracking"]},
+  {"week": 6, "title": "Dashboard and Personal Activity Tracking", "date": "2026-09-23", "status": "done", "summary": "Developed the main dashboard displaying daily steps, distance, calories, activity progress, personal goals and fitness summaries.", "planned": ["Daily steps, distance, calories", "Goals and fitness summaries"], "done": ["Daily steps, distance, calories", "Goals and fitness summaries"], "contribs": {}, "next": ["Genuine Step Detection and Sensor Integration"]},
+  {"week": 7, "title": "Genuine Step Detection and Sensor Integration", "date": "2026-09-30", "status": "done", "summary": "Integrated smartphone accelerometer and gyroscope sensors to collect motion data and detect potential walking steps in real time.", "planned": ["Integrate accelerometer and gyroscope", "Real-time step detection"], "done": ["Integrate accelerometer and gyroscope", "Real-time step detection"], "contribs": {}, "next": ["Multi-Layer Anti-Fraud Validation"]},
+  {"week": 8, "title": "Multi-Layer Anti-Fraud Validation", "date": "2026-10-07", "status": "done", "summary": "Worked on the six-layer step validation architecture to identify genuine walking patterns and reject fake steps caused by phone shaking, irregular movement and vehicle travel.", "planned": ["Six-layer validation architecture", "Reject shaking, irregular movement, vehicle travel"], "done": ["Six-layer validation architecture", "Reject shaking, irregular movement, vehicle travel"], "contribs": {}, "next": ["Health Connect Integration and Data Synchronization"]},
+  {"week": 9, "title": "Health Connect Integration and Data Synchronization", "date": "2026-10-14", "status": "done", "summary": "Worked on integrating Android Health Connect to retrieve available step records, manage permissions and synchronize health activity data with the application.", "planned": ["Retrieve Health Connect step records", "Manage permissions and sync"], "done": ["Retrieve Health Connect step records", "Manage permissions and sync"], "contribs": {"disha": ["Health Connect integration"]}, "next": ["Student Leaderboard and Ranking System"]},
+  {"week": 10, "title": "Student Leaderboard and Ranking System", "date": "2026-10-21", "status": "done", "summary": "Developed the student leaderboard to display rankings, compare genuine step counts and encourage healthy competition among students through individual and group performance.", "planned": ["Rankings", "Compare genuine step counts"], "done": ["Rankings", "Compare genuine step counts"], "contribs": {}, "next": ["Buddy Challenges and Social Fitness"]},
+  {"week": 11, "title": "Buddy Challenges and Social Fitness", "date": "2026-10-28", "status": "done", "summary": "Developed the Buddy Challenge concept to allow students to participate in fitness challenges with friends, compete against each other, track shared progress and encourage one another to achieve daily step goals.", "planned": ["Buddy challenges", "Shared progress tracking"], "done": ["Buddy challenges", "Shared progress tracking"], "contribs": {}, "next": ["Individual Challenges, Rewards and Achievement System"]},
+  {"week": 12, "title": "Individual Challenges, Rewards and Achievement System", "date": "2026-11-04", "status": "done", "summary": "Worked on daily and weekly challenges, fitness milestones, achievement badges and reward points to motivate students to maintain consistent physical activity.", "planned": ["Daily and weekly challenges", "Milestones, badges, reward points"], "done": ["Daily and weekly challenges", "Milestones, badges, reward points"], "contribs": {}, "next": ["Wallet, Activity Sessions and Notifications"]},
+  {"week": 13, "title": "Wallet, Activity Sessions and Notifications", "date": "2026-11-11", "status": "done", "summary": "Developed the wallet interface for earned points and rewards, activity session tracking, session history and notifications for challenges, goals and achievements.", "planned": ["Wallet for points and rewards", "Session tracking and history", "Notifications"], "done": ["Wallet for points and rewards", "Session tracking and history", "Notifications"], "contribs": {}, "next": ["Application Integration and Testing"]},
+  {"week": 14, "title": "Application Integration and Testing", "date": "2026-11-18", "status": "upcoming", "summary": "Integrated the major application modules, including genuine step detection, Health Connect, student leaderboard, buddy challenges, rewards, wallet and activity sessions. Tested application functionality and resolved identified issues.", "planned": ["Integrate all modules", "Test and resolve issues"], "done": [], "contribs": {}, "next": ["Final Optimization, Documentation and Deployment"]},
+  {"week": 15, "title": "Final Optimization, Documentation and Deployment", "date": "2026-11-25", "status": "upcoming", "summary": "Performed final application testing, improved UI/UX, fixed bugs, optimized performance, prepared technical documentation and project presentation, and finalized the application for demonstration.", "planned": ["Final testing and UI/UX polish", "Optimize performance", "Documentation and presentation"], "done": [], "contribs": {}, "next": []}
 ];
 
 // PRESENTATIONS — set url to Google Drive share link or GitHub raw URL to embed
@@ -438,7 +422,7 @@ const PPTS = [
     gdrive: null // ← Paste Google Drive view link here for download button
   },
   { id:"p2", title:"Planning Presentation V2", date:"2026-09-01", type:"Planning", status:"done",
-    desc:"Revised planning presentation: refined architecture, updated 17-week roadmap, detailed responsibilities, clearer problem framing.",
+    desc:"Revised planning presentation: refined architecture, updated 15-week roadmap, detailed responsibilities, clearer problem framing.",
     authors:["Disha","Kashish","Anvi","Raghav"],
     url: null, gdrive: null
   },
@@ -448,9 +432,9 @@ const PPTS = [
     desc:"Demo of basic Flutter POC, Health Connect integration, and rule-based integrity baseline.", authors:["Disha","Kashish","Anvi","Raghav"], url:null, gdrive:null },
   { id:"p5", title:"Mid-Semester Review", date:"Upcoming (Weeks 8–10)", type:"Review", status:"upcoming",
     desc:"Matching engine, full app development, and integration progress.", authors:["Disha","Kashish","Anvi","Raghav"], url:null, gdrive:null },
-  { id:"p6", title:"Pilot Results", date:"Upcoming (Weeks 14–16)", type:"Results", status:"upcoming",
+  { id:"p6", title:"Pilot Results", date:"Upcoming (Weeks 14–15)", type:"Results", status:"upcoming",
     desc:"Results from controlled pilot study, AI/ML metrics, and matching evaluation.", authors:["Disha","Kashish","Anvi","Raghav"], url:null, gdrive:null },
-  { id:"p7", title:"Final Presentation", date:"Upcoming (Week 17)", type:"Final", status:"upcoming",
+  { id:"p7", title:"Final Presentation", date:"Upcoming (Week 15)", type:"Final", status:"upcoming",
     desc:"Complete StepUp system, evaluation results, learnings, and future work.", authors:["Disha","Kashish","Anvi","Raghav"], url:null, gdrive:null }
 ];
 
@@ -458,7 +442,7 @@ const CHANGELOG = [
   { date:"2026-09-02", title:"Team Website Launched (Week 3)", type:"added", items:[
     "Nature-themed light fitness website designed and deployed",
     "All four member profiles with real roll numbers & contact details",
-    "Full 17-week progress tracker with weekly contribution logs",
+    "Full 15-week progress tracker with weekly contribution logs",
     "GitHub live integration — DishaGoyal16/StepUp",
     "Presentations archive with V1 & V2 planning decks",
     "Team order updated: Disha → Kashish → Anvi → Raghav everywhere"
@@ -466,7 +450,7 @@ const CHANGELOG = [
   { date:"2026-08-26", title:"Planning Presentation Delivered (Week 2)", type:"milestone", items:[
     "Planning Presentation V1 prepared and presented to Sukhpal Singh Sir",
     "Planning Presentation V2 refined and submitted",
-    "17-week roadmap formally agreed",
+    "15-week roadmap formally agreed",
     "Team roles officially assigned",
     "Architecture diagram created and approved"
   ]},
@@ -604,7 +588,7 @@ function rHome(){
       <div class="hero-pill"><span class="dot"></span><span>UCS503 · TIET PATIALA · SEMESTER 2026</span></div>
       <div class="hero-big">Step<em>Up</em></div>
       <div class="hero-tagline">Move more. Move honestly. Move together.</div>
-      <div class="hero-sub">Activity Integrity Detection & Sport Group Matching · Team of 4 · 17 Weeks</div>
+      <div class="hero-sub">Student Fitness, Social Challenges & Genuine Step Detection · Team of 4 · 15 Weeks</div>
       <div class="hero-ctas">
         <button class="btn btn-p" onclick="go('project')">Explore Project ${I.arr}</button>
         <button class="btn btn-s" onclick="go('progress')">Weekly Progress</button>
@@ -613,14 +597,14 @@ function rHome(){
       </div>
       <div class="hero-badge">
         <span class="pulse"></span>
-        <span>Week ${PS.week} of 17 · ${PS.phase} · ${PS.status}</span>
+        <span>Week ${PS.week} of 15 · ${PS.phase} · ${PS.status}</span>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-val">${PS.week}</div><div class="hero-stat-lbl">Current Week</div></div>
         <div class="hero-stat"><div class="hero-stat-val">${PS.progress}%</div><div class="hero-stat-lbl">Complete</div></div>
         <div class="hero-stat"><div class="hero-stat-val">2</div><div class="hero-stat-lbl">Problem Tracks</div></div>
         <div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-lbl">Team Members</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">17</div><div class="hero-stat-lbl">Total Weeks</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">15</div><div class="hero-stat-lbl">Total Weeks</div></div>
       </div>
     </div>
   </div>
@@ -715,7 +699,7 @@ function rHome(){
     <div class="wrap">
       <div class="sec-hdr">
         <div class="lbl">04 — Roadmap</div>
-        <h2>17-Week Journey</h2>
+        <h2>15-Week Journey</h2>
         <p>Semester-long plan from idea submission through evaluation.</p>
       </div>
       ${ROADMAP.map(r=>`
@@ -820,49 +804,11 @@ function rArch(){
     <div class="lbl mb8">Architecture</div>
     <h1 style="margin-bottom:8px">System Architecture</h1>
     <p class="tm" style="margin-bottom:48px">Conceptual design reference for the StepUp system.</p>
-    <div class="arch-wrap">
-      <svg viewBox="0 0 720 580" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;width:100%">
-        <defs>
-          <marker id="a" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1E5C1E" opacity=".65"/></marker>
-          <marker id="b" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3A7D9E" opacity=".65"/></marker>
-        </defs>
-        <rect x="260" y="20" width="200" height="52" rx="10" fill="#EDF4E9" stroke="#1E5C1E" stroke-width="1.5"/>
-        <text x="360" y="43" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Mobile App</text>
-        <text x="360" y="59" text-anchor="middle" fill="#4E8B4E" font-family="JetBrains Mono" font-size="9">Flutter · Android + iOS</text>
-        <rect x="60" y="120" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#3A7D9E" stroke-width="1.5"/>
-        <text x="150" y="143" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Health Connect</text>
-        <text x="150" y="159" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9">Steps · Cadence · Distance</text>
-        <rect x="480" y="120" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#3A7D9E" stroke-width="1.5"/>
-        <text x="570" y="143" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">SensorManager</text>
-        <text x="570" y="159" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9">Accel · Gyro · StepCounter</text>
-        <rect x="260" y="225" width="200" height="52" rx="10" fill="#EDF4E9" stroke="#1E5C1E" stroke-width="2"/>
-        <text x="360" y="248" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Activity Integrity</text>
-        <text x="360" y="264" text-anchor="middle" fill="#1E5C1E" font-family="JetBrains Mono" font-size="9">AI/ML · On-device Classifier</text>
-        <rect x="260" y="325" width="200" height="52" rx="10" fill="#F3F7F0" stroke="#7A5C1E" stroke-width="1.5"/>
-        <text x="360" y="348" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Backend API</text>
-        <text x="360" y="364" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9">REST · Auth · Data Layer</text>
-        <rect x="60" y="425" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#2A7A2A" stroke-width="1.5"/>
-        <text x="150" y="448" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Matching Engine</text>
-        <text x="150" y="464" text-anchor="middle" fill="#2A7A2A" font-family="JetBrains Mono" font-size="9">Constraints · Optimize</text>
-        <rect x="480" y="425" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#2A7A2A" stroke-width="1.5"/>
-        <text x="570" y="448" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Database</text>
-        <text x="570" y="464" text-anchor="middle" fill="#2A7A2A" font-family="JetBrains Mono" font-size="9">PostgreSQL · Persistent</text>
-        <rect x="260" y="525" width="200" height="45" rx="10" fill="#F3F7F0" stroke="#5C3A7A" stroke-width="1.5"/>
-        <text x="360" y="547" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Analytics Dashboard</text>
-        <text x="360" y="561" text-anchor="middle" fill="#5C3A7A" font-family="JetBrains Mono" font-size="9">Web · Monitoring · Eval</text>
-        <line x1="260" y1="46" x2="150" y2="120" stroke="#1E5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="460" y1="46" x2="570" y2="120" stroke="#1E5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="200" y1="160" x2="305" y2="225" stroke="#3A7D9E" stroke-width="1" stroke-opacity=".5" marker-end="url(#b)"/>
-        <line x1="520" y1="160" x2="415" y2="225" stroke="#3A7D9E" stroke-width="1" stroke-opacity=".5" marker-end="url(#b)"/>
-        <line x1="360" y1="277" x2="360" y2="325" stroke="#1E5C1E" stroke-width="1.5" stroke-opacity=".6" marker-end="url(#a)"/>
-        <line x1="305" y1="360" x2="200" y2="425" stroke="#7A5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="415" y1="360" x2="520" y2="425" stroke="#7A5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="200" y1="460" x2="305" y2="525" stroke="#2A7A2A" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="520" y1="460" x2="415" y2="525" stroke="#2A7A2A" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-      </svg>
+    <div class="arch-wrap" style="overflow-x:auto">
+      <svg viewBox="0 64 1040 556" xmlns="http://www.w3.org/2000/svg" style="max-width:1040px;width:100%" role="img" aria-label="StepUp system architecture"><defs><marker id="h" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#2F6B2F"/></marker><marker id="h2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#3A7D9E"/></marker><marker id="h3" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0,0 L7,3.5 L0,7 z" fill="#7A5C1E"/></marker></defs><rect x="278" y="84" width="344" height="524" rx="14" fill="#F6F9F3" stroke="#C9D8C4" stroke-width="1" /><text x="298" y="110" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="10" font-weight="600" letter-spacing="1.6">ON-DEVICE · STEP INTEGRITY ENGINE</text><rect x="662" y="84" width="348" height="188" rx="14" fill="#F6F9F3" stroke="#C9D8C4" stroke-width="1" /><text x="682" y="110" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="10" font-weight="600" letter-spacing="1.6">FLUTTER APP · ANDROID</text><rect x="662" y="324" width="348" height="284" rx="14" fill="#FAF8F2" stroke="#DCCFAE" stroke-width="1" /><text x="682" y="350" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="10" font-weight="600" letter-spacing="1.6">BACKEND & DATA</text><text x="30" y="110" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="10" font-weight="600" letter-spacing="1.6">DEVICE DATA SOURCES</text><rect x="30" y="130" width="206" height="54" rx="8" fill="#FFFFFF" stroke="#3A7D9E" stroke-width="1.2" /><text x="133" y="153" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Health Connect</text><text x="133" y="170" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >Step records · origin · permissions</text><rect x="30" y="196" width="206" height="54" rx="8" fill="#FFFFFF" stroke="#3A7D9E" stroke-width="1.2" /><text x="133" y="219" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Accelerometer + Gyroscope</text><text x="133" y="236" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >Raw motion @ sensor rate</text><rect x="30" y="262" width="206" height="54" rx="8" fill="#FFFFFF" stroke="#3A7D9E" stroke-width="1.2" /><text x="133" y="285" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Step Counter sensor</text><text x="133" y="302" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >Hardware cumulative steps</text><rect x="298" y="130" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="157" r="12" fill="#1E5C1E"/><text x="326" y="161.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >1</text><text x="348" y="154" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Source & Origin Check</text><text x="348" y="170" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >recordingMethod · origin · duplicates</text><path d="M450 184 V196" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="196" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="223" r="12" fill="#1E5C1E"/><text x="326" y="227.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >2</text><text x="348" y="220" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Noise & Shake Filter</text><text x="348" y="236" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >irregular motion · phone shaking</text><path d="M450 250 V262" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="262" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="289" r="12" fill="#1E5C1E"/><text x="326" y="293.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >3</text><text x="348" y="286" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Step Detection</text><text x="348" y="302" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >peak detection on motion signal</text><path d="M450 316 V328" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="328" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="355" r="12" fill="#1E5C1E"/><text x="326" y="359.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >4</text><text x="348" y="352" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Walking Validation</text><text x="348" y="368" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >periodicity · consistency · cadence</text><path d="M450 382 V394" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="394" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="421" r="12" fill="#1E5C1E"/><text x="326" y="425.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >5</text><text x="348" y="418" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Vehicle Rejection</text><text x="348" y="434" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >smooth vibration · travel patterns</text><path d="M450 448 V460" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="460" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="487" r="12" fill="#1E5C1E"/><text x="326" y="491.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >6</text><text x="348" y="484" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Cross-Validation & Credit</text><text x="348" y="500" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >min(HC Δ, 1.15 × IMU steps)</text><rect x="298" y="534" width="304" height="54" rx="8" fill="#1E5C1E" stroke="#1E5C1E" stroke-width="1" /><text x="450" y="558" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="13" font-weight="700" >Verified Genuine Steps</text><text x="450" y="575" text-anchor="middle" fill="#CFE5CB" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >fake · shaken · vehicle steps discarded</text><path d="M450 520 V534" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><path d="M236 157 H296" stroke="#3A7D9E" stroke-width="1.4" marker-end="url(#h2)"/><path d="M236 223 H296" stroke="#3A7D9E" stroke-width="1.4" marker-end="url(#h2)"/><path d="M236 289 H296" stroke="#3A7D9E" stroke-width="1.4" marker-end="url(#h2)"/><rect x="30" y="346" width="206" height="128" rx="8" fill="#FFFFFF" stroke="#C9D8C4" stroke-width="1" stroke-dasharray="4 3"/><text x="44" y="368" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9" font-weight="600" letter-spacing="1.2">HOW CREDIT IS GIVEN</text><text x="44" y="388" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >Health Connect gives the</text><text x="44" y="403" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >step delta Δ per time bucket.</text><text x="44" y="418" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >IMU evidence caps it at</text><text x="44" y="433" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >1.15 × IMU steps, so steps</text><text x="44" y="448" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >cannot be inflated by fake</text><text x="44" y="463" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >or injected records.</text><path d="M133 184 V346" stroke="#3A7D9E" stroke-width="0" /><path d="M602 561 H640 V176 H660" fill="none" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><path d="M640 470 H660" fill="none" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><text x="631" y="360" text-anchor="middle" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" transform="rotate(-90 631 360)">verified steps only</text><rect x="680" y="128" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="730" y="158" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Dashboard</text><rect x="788" y="128" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="838" y="158" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Challenges</text><rect x="896" y="128" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="946" y="158" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Leaderboard</text><rect x="680" y="188" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="730" y="218" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Buddy Challenges</text><rect x="788" y="188" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="838" y="218" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Wallet & Rewards</text><rect x="896" y="188" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="946" y="218" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Activity Sessions</text><text x="836" y="254" text-anchor="middle" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >Profile · Notifications · Step engine runs here</text><path d="M836 272 V322" stroke="#7A5C1E" stroke-width="1.4" marker-start="url(#h3)" marker-end="url(#h3)"/><text x="848" y="302" text-anchor="start" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >REST · sync</text><rect x="680" y="366" width="312" height="48" rx="8" fill="#FFFFFF" stroke="#DCCFAE" stroke-width="1" /><text x="836" y="387" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Auth & Student Profiles</text><text x="836" y="403" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >registration · login · profile</text><path d="M836 414 V424" stroke="#7A5C1E" stroke-width="1.2" marker-end="url(#h3)"/><rect x="680" y="424" width="312" height="48" rx="8" fill="#FFFFFF" stroke="#DCCFAE" stroke-width="1" /><text x="836" y="445" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Challenge Service</text><text x="836" y="461" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >buddy & individual challenges</text><path d="M836 472 V482" stroke="#7A5C1E" stroke-width="1.2" marker-end="url(#h3)"/><rect x="680" y="482" width="312" height="48" rx="8" fill="#FFFFFF" stroke="#DCCFAE" stroke-width="1" /><text x="836" y="503" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Leaderboard & Rewards</text><text x="836" y="519" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >rankings · points · achievements</text><path d="M836 530 V540" stroke="#7A5C1E" stroke-width="1.2" marker-end="url(#h3)"/><rect x="680" y="540" width="312" height="48" rx="8" fill="#FFFFFF" stroke="#B99B55" stroke-width="1.4" /><text x="836" y="561" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >PostgreSQL</text><text x="836" y="577" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >users · steps · challenges · wallet</text></svg>
     </div>
     <div class="g3 mt48">
-      ${[['Mobile App','Flutter','Cross-platform Android & iOS. Health Connect surface and SensorManager sessions.','#1E5C1E'],['Activity Integrity','AI/ML','On-device classifier: genuine vs. suspicious. Returns confidence scores.','#2A7A2A'],['Backend API','REST','Auth, matching, session verification, evaluation logging.','#7A5C1E'],['Matching Engine','Algorithm','Constraint-based formation with reliability scoring.','#2A7A2A'],['Database','PostgreSQL','Profiles, match history, session records, analytics.','#2A7A2A'],['Analytics','Web Dashboard','Monitoring and evaluation interface for metrics.','#5C3A7A']].map(([t,tag,d,c])=>`
+      ${[['Device Sources','Input','Health Connect step records plus accelerometer, gyroscope and the hardware step counter.','#3A7D9E'],['Layers 1–3','Filtering','Reject untrusted sources and shaking, then detect steps from motion peaks.','#1E5C1E'],['Layers 4–6','Validation','Confirm walking patterns, reject vehicle travel and cap credit against Health Connect.','#2A7A2A'],['Flutter App','Client','Dashboard, challenges, leaderboard, buddy challenges, wallet and sessions.','#1E5C1E'],['Backend & Data','Server','Auth, challenges, leaderboard and rewards services backed by PostgreSQL.','#7A5C1E']].map(([t,tag,d,c])=>`
         <div class="card"><div class="flex aic g8 mb8"><span style="font-weight:700">${t}</span><span class="badge b-forest" style="color:${c};border-color:${c}33;background:${c}12">${tag}</span></div><p class="tm" style="font-size:12px">${d}</p></div>`).join('')}
     </div>
   </div></div></div>`;
@@ -874,22 +820,22 @@ function rArch(){
 function rProgress(){
   return `<div class="page"><div class="section"><div class="wrap">
     <div class="lbl mb8">Progress</div>
-    <h1 style="margin-bottom:8px">Project Journal</h1>
-    <p class="tm" style="margin-bottom:40px">Week-by-week record. Updated every week throughout the semester.</p>
+    <h1 style="margin-bottom:8px">Project Development Timeline</h1>
+    <p class="tm" style="margin-bottom:40px">StepUp – Student Fitness, Social Challenges and Genuine Step Detection Platform. Week-by-week record of the project.</p>
 
     <div class="card mb24" style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px">
       <div><div class="stat-val">${PS.week}</div><div class="stat-lbl">Current Week</div></div>
-      <div><div class="stat-val" style="color:var(--sage)">17</div><div class="stat-lbl">Total Weeks</div></div>
+      <div><div class="stat-val" style="color:var(--sage)">15</div><div class="stat-lbl">Total Weeks</div></div>
       <div><div class="stat-val" style="color:#2A7A2A">${PS.progress}%</div><div class="stat-lbl">Progress</div></div>
       <div><div class="stat-val" style="font-size:1rem;color:var(--earth);max-width:200px">${PS.phase}</div><div class="stat-lbl">Current Phase</div></div>
     </div>
 
     <div class="wk-grid">
-      ${Array.from({length:17},(_,i)=>{const w=i+1,ia=w===PS.week,id=w<PS.week,u=WEEKLY.find(x=>x.week===w);return`<button class="wk-btn ${ia?'active':id?'done':''}" onclick="toWeek(${w})" title="Week ${w}${u?' — '+u.title:''}">W${w}</button>`}).join('')}
+      ${Array.from({length:15},(_,i)=>{const w=i+1,ia=w===PS.week,id=w<PS.week,u=WEEKLY.find(x=>x.week===w);return`<button class="wk-btn ${ia?'active':id?'done':''}" onclick="toWeek(${w})" title="Week ${w}${u?' — '+u.title:''}">W${w}</button>`}).join('')}
     </div>
 
     <div class="timeline">
-      ${Array.from({length:17},(_,i)=>{
+      ${Array.from({length:15},(_,i)=>{
         const w=i+1,u=WEEKLY.find(x=>x.week===w),ia=w===PS.week,id=w<PS.week;
         return`<div class="tl-item" id="wk${w}">
           <div class="tl-dot ${ia?'active':id?'done':''}"></div>
@@ -929,7 +875,7 @@ function rTeam(){
     ['Documentation',      ['★','','','']],
     ['AI/ML Dataset',      ['','★','','']],
     ['Activity Integrity', ['','★','','']],
-    ['Health Connect',     ['','★','','']],
+    ['Health Connect',     ['★','','','']],
     ['Backend API',        ['','','★','']],
     ['Matching Engine',    ['','','★','']],
     ['Frontend',           ['','','','★']],
@@ -1524,7 +1470,7 @@ function rHome(){
       <div class="hero-pill"><span class="dot"></span><span>UCS503 · TIET PATIALA · SEMESTER 2026</span></div>
       <div class="hero-big">Step<em>Up</em></div>
       <div class="hero-tagline">Move more. Move honestly. Move together.</div>
-      <div class="hero-sub">Activity Integrity Detection & Sport Group Matching · Team of 4 · 17 Weeks</div>
+      <div class="hero-sub">Student Fitness, Social Challenges & Genuine Step Detection · Team of 4 · 15 Weeks</div>
       <div class="hero-ctas">
         <button class="btn btn-p" onclick="go('project')">Explore Project ${I.arr}</button>
         <button class="btn btn-s" onclick="go('progress')">Weekly Progress</button>
@@ -1533,14 +1479,14 @@ function rHome(){
       </div>
       <div class="hero-badge">
         <span class="pulse"></span>
-        <span>Week ${PS.week} of 17 · ${PS.phase} · ${PS.status}</span>
+        <span>Week ${PS.week} of 15 · ${PS.phase} · ${PS.status}</span>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-val">${PS.week}</div><div class="hero-stat-lbl">Current Week</div></div>
         <div class="hero-stat"><div class="hero-stat-val">${PS.progress}%</div><div class="hero-stat-lbl">Complete</div></div>
         <div class="hero-stat"><div class="hero-stat-val">2</div><div class="hero-stat-lbl">Problem Tracks</div></div>
         <div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-lbl">Team Members</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">17</div><div class="hero-stat-lbl">Total Weeks</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">15</div><div class="hero-stat-lbl">Total Weeks</div></div>
       </div>
     </div>
   </div>
@@ -1635,7 +1581,7 @@ function rHome(){
     <div class="wrap">
       <div class="sec-hdr">
         <div class="lbl">04 — Roadmap</div>
-        <h2>17-Week Journey</h2>
+        <h2>15-Week Journey</h2>
         <p>Semester-long plan from idea submission through evaluation.</p>
       </div>
       ${ROADMAP.map(r=>`
@@ -1740,49 +1686,11 @@ function rArch(){
     <div class="lbl mb8">Architecture</div>
     <h1 style="margin-bottom:8px">System Architecture</h1>
     <p class="tm" style="margin-bottom:48px">Conceptual design reference for the StepUp system.</p>
-    <div class="arch-wrap">
-      <svg viewBox="0 0 720 580" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;width:100%">
-        <defs>
-          <marker id="a" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1E5C1E" opacity=".65"/></marker>
-          <marker id="b" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3A7D9E" opacity=".65"/></marker>
-        </defs>
-        <rect x="260" y="20" width="200" height="52" rx="10" fill="#EDF4E9" stroke="#1E5C1E" stroke-width="1.5"/>
-        <text x="360" y="43" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Mobile App</text>
-        <text x="360" y="59" text-anchor="middle" fill="#4E8B4E" font-family="JetBrains Mono" font-size="9">Flutter · Android + iOS</text>
-        <rect x="60" y="120" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#3A7D9E" stroke-width="1.5"/>
-        <text x="150" y="143" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Health Connect</text>
-        <text x="150" y="159" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9">Steps · Cadence · Distance</text>
-        <rect x="480" y="120" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#3A7D9E" stroke-width="1.5"/>
-        <text x="570" y="143" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">SensorManager</text>
-        <text x="570" y="159" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9">Accel · Gyro · StepCounter</text>
-        <rect x="260" y="225" width="200" height="52" rx="10" fill="#EDF4E9" stroke="#1E5C1E" stroke-width="2"/>
-        <text x="360" y="248" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Activity Integrity</text>
-        <text x="360" y="264" text-anchor="middle" fill="#1E5C1E" font-family="JetBrains Mono" font-size="9">AI/ML · On-device Classifier</text>
-        <rect x="260" y="325" width="200" height="52" rx="10" fill="#F3F7F0" stroke="#7A5C1E" stroke-width="1.5"/>
-        <text x="360" y="348" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="13" font-weight="700">Backend API</text>
-        <text x="360" y="364" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9">REST · Auth · Data Layer</text>
-        <rect x="60" y="425" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#2A7A2A" stroke-width="1.5"/>
-        <text x="150" y="448" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Matching Engine</text>
-        <text x="150" y="464" text-anchor="middle" fill="#2A7A2A" font-family="JetBrains Mono" font-size="9">Constraints · Optimize</text>
-        <rect x="480" y="425" width="180" height="52" rx="10" fill="#F3F7F0" stroke="#2A7A2A" stroke-width="1.5"/>
-        <text x="570" y="448" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Database</text>
-        <text x="570" y="464" text-anchor="middle" fill="#2A7A2A" font-family="JetBrains Mono" font-size="9">PostgreSQL · Persistent</text>
-        <rect x="260" y="525" width="200" height="45" rx="10" fill="#F3F7F0" stroke="#5C3A7A" stroke-width="1.5"/>
-        <text x="360" y="547" text-anchor="middle" fill="#142814" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Analytics Dashboard</text>
-        <text x="360" y="561" text-anchor="middle" fill="#5C3A7A" font-family="JetBrains Mono" font-size="9">Web · Monitoring · Eval</text>
-        <line x1="260" y1="46" x2="150" y2="120" stroke="#1E5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="460" y1="46" x2="570" y2="120" stroke="#1E5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="200" y1="160" x2="305" y2="225" stroke="#3A7D9E" stroke-width="1" stroke-opacity=".5" marker-end="url(#b)"/>
-        <line x1="520" y1="160" x2="415" y2="225" stroke="#3A7D9E" stroke-width="1" stroke-opacity=".5" marker-end="url(#b)"/>
-        <line x1="360" y1="277" x2="360" y2="325" stroke="#1E5C1E" stroke-width="1.5" stroke-opacity=".6" marker-end="url(#a)"/>
-        <line x1="305" y1="360" x2="200" y2="425" stroke="#7A5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="415" y1="360" x2="520" y2="425" stroke="#7A5C1E" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="200" y1="460" x2="305" y2="525" stroke="#2A7A2A" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-        <line x1="520" y1="460" x2="415" y2="525" stroke="#2A7A2A" stroke-width="1" stroke-opacity=".5" marker-end="url(#a)"/>
-      </svg>
+    <div class="arch-wrap" style="overflow-x:auto">
+      <svg viewBox="0 64 1040 556" xmlns="http://www.w3.org/2000/svg" style="max-width:1040px;width:100%" role="img" aria-label="StepUp system architecture"><defs><marker id="h" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#2F6B2F"/></marker><marker id="h2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#3A7D9E"/></marker><marker id="h3" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0,0 L7,3.5 L0,7 z" fill="#7A5C1E"/></marker></defs><rect x="278" y="84" width="344" height="524" rx="14" fill="#F6F9F3" stroke="#C9D8C4" stroke-width="1" /><text x="298" y="110" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="10" font-weight="600" letter-spacing="1.6">ON-DEVICE · STEP INTEGRITY ENGINE</text><rect x="662" y="84" width="348" height="188" rx="14" fill="#F6F9F3" stroke="#C9D8C4" stroke-width="1" /><text x="682" y="110" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="10" font-weight="600" letter-spacing="1.6">FLUTTER APP · ANDROID</text><rect x="662" y="324" width="348" height="284" rx="14" fill="#FAF8F2" stroke="#DCCFAE" stroke-width="1" /><text x="682" y="350" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="10" font-weight="600" letter-spacing="1.6">BACKEND & DATA</text><text x="30" y="110" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="10" font-weight="600" letter-spacing="1.6">DEVICE DATA SOURCES</text><rect x="30" y="130" width="206" height="54" rx="8" fill="#FFFFFF" stroke="#3A7D9E" stroke-width="1.2" /><text x="133" y="153" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Health Connect</text><text x="133" y="170" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >Step records · origin · permissions</text><rect x="30" y="196" width="206" height="54" rx="8" fill="#FFFFFF" stroke="#3A7D9E" stroke-width="1.2" /><text x="133" y="219" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Accelerometer + Gyroscope</text><text x="133" y="236" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >Raw motion @ sensor rate</text><rect x="30" y="262" width="206" height="54" rx="8" fill="#FFFFFF" stroke="#3A7D9E" stroke-width="1.2" /><text x="133" y="285" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Step Counter sensor</text><text x="133" y="302" text-anchor="middle" fill="#3A7D9E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >Hardware cumulative steps</text><rect x="298" y="130" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="157" r="12" fill="#1E5C1E"/><text x="326" y="161.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >1</text><text x="348" y="154" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Source & Origin Check</text><text x="348" y="170" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >recordingMethod · origin · duplicates</text><path d="M450 184 V196" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="196" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="223" r="12" fill="#1E5C1E"/><text x="326" y="227.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >2</text><text x="348" y="220" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Noise & Shake Filter</text><text x="348" y="236" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >irregular motion · phone shaking</text><path d="M450 250 V262" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="262" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="289" r="12" fill="#1E5C1E"/><text x="326" y="293.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >3</text><text x="348" y="286" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Step Detection</text><text x="348" y="302" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >peak detection on motion signal</text><path d="M450 316 V328" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="328" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="355" r="12" fill="#1E5C1E"/><text x="326" y="359.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >4</text><text x="348" y="352" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Walking Validation</text><text x="348" y="368" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >periodicity · consistency · cadence</text><path d="M450 382 V394" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="394" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="421" r="12" fill="#1E5C1E"/><text x="326" y="425.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >5</text><text x="348" y="418" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Vehicle Rejection</text><text x="348" y="434" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >smooth vibration · travel patterns</text><path d="M450 448 V460" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><rect x="298" y="460" width="304" height="54" rx="8" fill="#FFFFFF" stroke="#2F6B2F" stroke-width="1.2" /><circle cx="326" cy="487" r="12" fill="#1E5C1E"/><text x="326" y="491.5" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >6</text><text x="348" y="484" text-anchor="start" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700" >Cross-Validation & Credit</text><text x="348" y="500" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >min(HC Δ, 1.15 × IMU steps)</text><rect x="298" y="534" width="304" height="54" rx="8" fill="#1E5C1E" stroke="#1E5C1E" stroke-width="1" /><text x="450" y="558" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans" font-size="13" font-weight="700" >Verified Genuine Steps</text><text x="450" y="575" text-anchor="middle" fill="#CFE5CB" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >fake · shaken · vehicle steps discarded</text><path d="M450 520 V534" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><path d="M236 157 H296" stroke="#3A7D9E" stroke-width="1.4" marker-end="url(#h2)"/><path d="M236 223 H296" stroke="#3A7D9E" stroke-width="1.4" marker-end="url(#h2)"/><path d="M236 289 H296" stroke="#3A7D9E" stroke-width="1.4" marker-end="url(#h2)"/><rect x="30" y="346" width="206" height="128" rx="8" fill="#FFFFFF" stroke="#C9D8C4" stroke-width="1" stroke-dasharray="4 3"/><text x="44" y="368" text-anchor="start" fill="#52704F" font-family="JetBrains Mono" font-size="9" font-weight="600" letter-spacing="1.2">HOW CREDIT IS GIVEN</text><text x="44" y="388" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >Health Connect gives the</text><text x="44" y="403" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >step delta Δ per time bucket.</text><text x="44" y="418" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >IMU evidence caps it at</text><text x="44" y="433" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >1.15 × IMU steps, so steps</text><text x="44" y="448" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >cannot be inflated by fake</text><text x="44" y="463" text-anchor="start" fill="#3C4F3C" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="500" >or injected records.</text><path d="M133 184 V346" stroke="#3A7D9E" stroke-width="0" /><path d="M602 561 H640 V176 H660" fill="none" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><path d="M640 470 H660" fill="none" stroke="#2F6B2F" stroke-width="1.4" marker-end="url(#h)"/><text x="631" y="360" text-anchor="middle" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" transform="rotate(-90 631 360)">verified steps only</text><rect x="680" y="128" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="730" y="158" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Dashboard</text><rect x="788" y="128" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="838" y="158" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Challenges</text><rect x="896" y="128" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="946" y="158" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Leaderboard</text><rect x="680" y="188" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="730" y="218" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Buddy Challenges</text><rect x="788" y="188" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="838" y="218" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Wallet & Rewards</text><rect x="896" y="188" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#B9CDB5" stroke-width="1" /><text x="946" y="218" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" >Activity Sessions</text><text x="836" y="254" text-anchor="middle" fill="#52704F" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >Profile · Notifications · Step engine runs here</text><path d="M836 272 V322" stroke="#7A5C1E" stroke-width="1.4" marker-start="url(#h3)" marker-end="url(#h3)"/><text x="848" y="302" text-anchor="start" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >REST · sync</text><rect x="680" y="366" width="312" height="48" rx="8" fill="#FFFFFF" stroke="#DCCFAE" stroke-width="1" /><text x="836" y="387" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Auth & Student Profiles</text><text x="836" y="403" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >registration · login · profile</text><path d="M836 414 V424" stroke="#7A5C1E" stroke-width="1.2" marker-end="url(#h3)"/><rect x="680" y="424" width="312" height="48" rx="8" fill="#FFFFFF" stroke="#DCCFAE" stroke-width="1" /><text x="836" y="445" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Challenge Service</text><text x="836" y="461" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >buddy & individual challenges</text><path d="M836 472 V482" stroke="#7A5C1E" stroke-width="1.2" marker-end="url(#h3)"/><rect x="680" y="482" width="312" height="48" rx="8" fill="#FFFFFF" stroke="#DCCFAE" stroke-width="1" /><text x="836" y="503" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >Leaderboard & Rewards</text><text x="836" y="519" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >rankings · points · achievements</text><path d="M836 530 V540" stroke="#7A5C1E" stroke-width="1.2" marker-end="url(#h3)"/><rect x="680" y="540" width="312" height="48" rx="8" fill="#FFFFFF" stroke="#B99B55" stroke-width="1.4" /><text x="836" y="561" text-anchor="middle" fill="#1B2B1B" font-family="Plus Jakarta Sans" font-size="12" font-weight="700" >PostgreSQL</text><text x="836" y="577" text-anchor="middle" fill="#7A5C1E" font-family="JetBrains Mono" font-size="9.5" font-weight="500" >users · steps · challenges · wallet</text></svg>
     </div>
     <div class="g3 mt48">
-      ${[['Mobile App','Flutter','Cross-platform Android & iOS. Health Connect surface and SensorManager sessions.','#1E5C1E'],['Activity Integrity','AI/ML','On-device classifier: genuine vs. suspicious. Returns confidence scores.','#2A7A2A'],['Backend API','REST','Auth, matching, session verification, evaluation logging.','#7A5C1E'],['Matching Engine','Algorithm','Constraint-based formation with reliability scoring.','#2A7A2A'],['Database','PostgreSQL','Profiles, match history, session records, analytics.','#2A7A2A'],['Analytics','Web Dashboard','Monitoring and evaluation interface for metrics.','#5C3A7A']].map(([t,tag,d,c])=>`
+      ${[['Device Sources','Input','Health Connect step records plus accelerometer, gyroscope and the hardware step counter.','#3A7D9E'],['Layers 1–3','Filtering','Reject untrusted sources and shaking, then detect steps from motion peaks.','#1E5C1E'],['Layers 4–6','Validation','Confirm walking patterns, reject vehicle travel and cap credit against Health Connect.','#2A7A2A'],['Flutter App','Client','Dashboard, challenges, leaderboard, buddy challenges, wallet and sessions.','#1E5C1E'],['Backend & Data','Server','Auth, challenges, leaderboard and rewards services backed by PostgreSQL.','#7A5C1E']].map(([t,tag,d,c])=>`
         <div class="card"><div class="flex aic g8 mb8"><span style="font-weight:700">${t}</span><span class="badge b-forest" style="color:${c};border-color:${c}33;background:${c}12">${tag}</span></div><p class="tm" style="font-size:12px">${d}</p></div>`).join('')}
     </div>
   </div></div></div>`;
@@ -1794,22 +1702,22 @@ function rArch(){
 function rProgress(){
   return `<div class="page"><div class="section"><div class="wrap">
     <div class="lbl mb8">Progress</div>
-    <h1 style="margin-bottom:8px">Project Journal</h1>
-    <p class="tm" style="margin-bottom:40px">Week-by-week record. Updated every week throughout the semester.</p>
+    <h1 style="margin-bottom:8px">Project Development Timeline</h1>
+    <p class="tm" style="margin-bottom:40px">StepUp – Student Fitness, Social Challenges and Genuine Step Detection Platform. Week-by-week record of the project.</p>
 
     <div class="card mb24" style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px">
       <div><div class="stat-val">${PS.week}</div><div class="stat-lbl">Current Week</div></div>
-      <div><div class="stat-val" style="color:var(--sage)">17</div><div class="stat-lbl">Total Weeks</div></div>
+      <div><div class="stat-val" style="color:var(--sage)">15</div><div class="stat-lbl">Total Weeks</div></div>
       <div><div class="stat-val" style="color:#2A7A2A">${PS.progress}%</div><div class="stat-lbl">Progress</div></div>
       <div><div class="stat-val" style="font-size:1rem;color:var(--earth);max-width:200px">${PS.phase}</div><div class="stat-lbl">Current Phase</div></div>
     </div>
 
     <div class="wk-grid">
-      ${Array.from({length:17},(_,i)=>{const w=i+1,ia=w===PS.week,id=w<PS.week,u=WEEKLY.find(x=>x.week===w);return`<button class="wk-btn ${ia?'active':id?'done':''}" onclick="toWeek(${w})" title="Week ${w}${u?' — '+u.title:''}">W${w}</button>`}).join('')}
+      ${Array.from({length:15},(_,i)=>{const w=i+1,ia=w===PS.week,id=w<PS.week,u=WEEKLY.find(x=>x.week===w);return`<button class="wk-btn ${ia?'active':id?'done':''}" onclick="toWeek(${w})" title="Week ${w}${u?' — '+u.title:''}">W${w}</button>`}).join('')}
     </div>
 
     <div class="timeline">
-      ${Array.from({length:17},(_,i)=>{
+      ${Array.from({length:15},(_,i)=>{
         const w=i+1,u=WEEKLY.find(x=>x.week===w),ia=w===PS.week,id=w<PS.week;
         return`<div class="tl-item" id="wk${w}">
           <div class="tl-dot ${ia?'active':id?'done':''}"></div>
@@ -1849,7 +1757,7 @@ function rTeam(){
     ['Documentation',      ['★','','','']],
     ['AI/ML Dataset',      ['','★','','']],
     ['Activity Integrity', ['','★','','']],
-    ['Health Connect',     ['','★','','']],
+    ['Health Connect',     ['★','','','']],
     ['Backend API',        ['','','★','']],
     ['Matching Engine',    ['','','★','']],
     ['Frontend',           ['','','','★']],
