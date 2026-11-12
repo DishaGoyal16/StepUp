@@ -1320,10 +1320,24 @@ function escHtml(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
 //      this site (add a file there and it appears automatically).
 // ══════════════════════════════════════════════════════════════════
 const PPT_FOLDER = "presentations";
+const PPT_BRANCH = "Team_Website";
 const PRESENTATIONS = [
-  // Example (remove the // to use):
-  // { title:"Week 3 — Project Setup", date:"2026-11-10", authors:["IRIS Team"],
-  //   description:"Kick-off deck: scope, architecture and plan.", url:"presentations/week3.pdf" },
+  {
+    title:"Planning Presentation V1",
+    authors:["Disha", "Kashish", "Anvi", "Raghav"],
+    description:"StepUp project planning presentation.",
+    url:"presentations/Planning_Presentation_V1.pptx",
+    ext:"PPTX",
+    direct:true
+  },
+  {
+    title:"Planning Presentation V2",
+    authors:["Disha", "Kashish", "Anvi", "Raghav"],
+    description:"Updated StepUp project planning presentation.",
+    url:"presentations/Planning_Presentation_V2.pptx",
+    ext:"PPTX",
+    direct:true
+  },
 ];
 
 function pEsc(s) {
@@ -1352,38 +1366,12 @@ function rPptsApi() {
   </div></div></div>`;
 }
 
-async function initPptsApi() {
-  const listEl = document.getElementById("ppts-api-list");
-  if (!listEl) return;
-  const items = PRESENTATIONS.map(p => ({ ...p }));
-  let note = "";
-  const info = pptRepoInfo();
-
-  try {
-    const res = await fetch(`https://api.github.com/repos/${info.owner}/${info.repo}/contents/${PPT_FOLDER}`);
-    if (res.ok) {
-      const files = await res.json();
-      (Array.isArray(files) ? files : [])
-        .filter(f => f.type === "file" && !f.name.startsWith(".") && !/^readme/i.test(f.name))
-        .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))
-        .forEach(f => {
-          const url = info.same ? `${PPT_FOLDER}/${encodeURIComponent(f.name)}` : f.html_url;
-          if (!items.some(i => i.url === url)) {
-            items.push({ title: pptTitleFromFile(f.name), url, size: f.size, ext: (f.name.split(".").pop() || "").toUpperCase(), direct: info.same });
-          }
-        });
-    } else if (res.status === 403) {
-      note = "GitHub's request limit was reached, so only the built-in list is shown. Please try again later.";
-    } // 404 simply means the folder does not exist yet.
-  } catch (e) {
-    note = "Could not reach GitHub, so only the built-in list is shown.";
-  }
-
+function renderPptItems(listEl, items, note = "") {
   if (!items.length) {
     listEl.innerHTML = `<div class="card" style="text-align:center;padding:40px">
       <div style="font-size:40px;margin-bottom:12px">📄</div>
       <p class="td">No presentations have been added yet.</p>
-      <p class="td" style="font-size:12px;margin-top:8px">Team: put your slides (PDF or PPTX) in the <code class="mono">${PPT_FOLDER}/</code> folder of the repository and they will show up here automatically.</p>
+      <p class="td" style="font-size:12px;margin-top:8px">Team: put your slides (PDF or PPTX) in the <code class="mono">${PPT_FOLDER}/</code> folder and add them to the <code class="mono">PRESENTATIONS</code> list in <code class="mono">index.html</code>.</p>
       ${note ? `<p class="td" style="font-size:12px;margin-top:8px">${pEsc(note)}</p>` : ""}
     </div>`;
     return;
@@ -1405,10 +1393,44 @@ async function initPptsApi() {
         ${p.description ? `<p class="tm" style="font-size:13px;margin-bottom:12px">${pEsc(p.description)}</p>` : ""}
         <div class="flex g8" style="flex-wrap:wrap">
           <a href="${safeUrl}" target="_blank" rel="noopener" class="btn btn-p" style="font-size:12px">Open</a>
-          ${p.direct !== false && p.url && !/^https?:/i.test(p.url) || p.direct ? `<a href="${safeUrl}" download class="btn btn-s" style="font-size:12px">⬇ Download</a>` : ""}
+          ${(p.direct !== false && p.url && !/^https?:/i.test(p.url)) || p.direct ? `<a href="${safeUrl}" download class="btn btn-s" style="font-size:12px">⬇ Download</a>` : ""}
         </div>
       </div>`;
     }).join("");
+}
+
+async function initPptsApi() {
+  const listEl = document.getElementById("ppts-api-list");
+  if (!listEl) return;
+  const items = PRESENTATIONS.map(p => ({ ...p }));
+  let note = "";
+  const info = pptRepoInfo();
+
+  // Local files cannot be enumerated by a browser. Show the explicit list
+  // immediately, then merge in any additional files found on GitHub.
+  renderPptItems(listEl, items);
+
+  try {
+    const res = await fetch(`https://api.github.com/repos/${info.owner}/${info.repo}/contents/${PPT_FOLDER}?ref=${encodeURIComponent(PPT_BRANCH)}`);
+    if (res.ok) {
+      const files = await res.json();
+      (Array.isArray(files) ? files : [])
+        .filter(f => f.type === "file" && !f.name.startsWith(".") && !/^readme/i.test(f.name))
+        .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))
+        .forEach(f => {
+          const url = info.same ? `${PPT_FOLDER}/${encodeURIComponent(f.name)}` : f.html_url;
+          if (!items.some(i => i.url === url)) {
+            items.push({ title: pptTitleFromFile(f.name), url, size: f.size, ext: (f.name.split(".").pop() || "").toUpperCase(), direct: info.same });
+          }
+        });
+    } else if (res.status === 403) {
+      note = "GitHub's request limit was reached, so only the built-in list is shown. Please try again later.";
+    } // 404 simply means the folder does not exist yet.
+  } catch (e) {
+    note = "Could not reach GitHub, so only the built-in list is shown.";
+  }
+
+  renderPptItems(listEl, items, note);
 }
 
 // ── TEAM CARDS ──
