@@ -1,0 +1,155 @@
+rules_version = '2';
+
+// StepUp - Firestore security rules.
+// DEFAULT DENY. Clients never write any collection directly, except `notifications/{id}.read` on their own docs.
+// All other mutations are callable Cloud Functions using the Admin SDK (which bypasses these rules).
+// "Eligible" = Firebase Auth token with a verified email at exactly @thapar.edu.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function eligible() {
+      return signedIn()
+        && request.auth.token.email_verified == true
+        && request.auth.token.email != null
+        && request.auth.token.email.lower().matches('^[^@\\s]+@thapar\\.edu$');
+    }
+
+    function isAdmin() {
+      return eligible() && request.auth.token.admin == true;
+    }
+
+    function ownsUid(uid) {
+      return eligible() && request.auth.uid == uid;
+    }
+
+    function ownsDoc() {
+      return eligible() && resource.data.uid == request.auth.uid;
+    }
+
+    // ---- users (private) --------------------------------------------------------------------------------------
+    match /users/{uid} {
+      allow read: if ownsUid(uid);
+      allow write: if false;
+
+      match /devices/{deviceId} {
+        allow read: if ownsUid(uid);
+        allow write: if false;
+      }
+    }
+
+    // ---- public reference data ------------------------------------------------------------------------------
+    match /publicProfiles/{uid} {
+      allow read: if eligible();
+      allow write: if false;
+    }
+
+    match /hostels/{hostelId} {
+      allow read: if eligible();
+      allow write: if false;
+    }
+
+    match /leaderboards/{boardId} {
+      allow read: if eligible();
+      allow write: if false;
+
+      match /entries/{entryId} {
+        allow read: if eligible();
+        allow write: if false;
+      }
+    }
+
+    match /adminSettings/{docId} {
+      allow read: if (docId in ['global', 'badges'] && eligible()) || isAdmin();
+      allow write: if false;
+    }
+
+    // ---- owner-only step / points data ----------------------------------------------------------------------
+    match /stepBuckets/{id} {
+      allow read: if ownsDoc();
+      allow write: if false;
+    }
+
+    match /dailyStepSummaries/{id} {
+      allow read: if ownsDoc();
+      allow write: if false;
+    }
+
+    match /virtualPointsLedger/{id} {
+      allow read: if ownsDoc();
+      allow write: if false;
+    }
+
+    match /achievements/{id} {
+      allow read: if ownsDoc();
+      allow write: if false;
+    }
+
+    match /challengeParticipants/{id} {
+      allow read: if ownsDoc();
+      allow write: if false;
+    }
+
+    // ---- notifications: owner reads; owner may flip ONLY `read` ---------------------------------------------
+    match /notifications/{id} {
+      allow read: if ownsDoc();
+      allow create, delete: if false;
+      allow update: if ownsDoc()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read'])
+        && request.resource.data.read is bool;
+    }
+
+    // ---- social ---------------------------------------------------------------------------------------------
+    match /buddyRequests/{id} {
+      allow read: if eligible()
+        && (resource.data.fromUid == request.auth.uid || resource.data.toUid == request.auth.uid);
+      allow write: if false;
+    }
+
+    match /buddyConnections/{id} {
+      allow read: if eligible() && request.auth.uid in resource.data.uids;
+      allow write: if false;
+    }
+
+    match /stepBets/{id} {
+      allow read: if eligible()
+        && (resource.data.challengerUid == request.auth.uid || resource.data.opponentUid == request.auth.uid);
+      allow write: if false;
+    }
+
+    // ---- challenges: BUDDY challenges only visible to their participants -----------------------------------------
+    match /challenges/{id} {
+      allow read: if eligible()
+        && (resource.data.type != 'BUDDY' || request.auth.uid in resource.data.participantUids);
+      allow write: if false;
+    }
+
+    match /challengeResults/{id} {
+      allow read: if eligible()
+        && (resource.data.type != 'BUDDY' || request.auth.uid in resource.data.participantUids);
+      allow write: if false;
+    }
+
+    // ---- admin only -----------------------------------------------------------------------------------------
+    match /reports/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    match /riskEvents/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    match /adminAudit/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    // Everything else: no rule => denied.
+  }
+}

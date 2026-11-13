@@ -1,0 +1,16 @@
+# KNOWN_LIMITATIONS.md
+
+1. **Step verification is unproven against several fake types** (slow shake, leg bounce, pendulum, vehicle, cycling) — see `GENUINE_STEP_ENGINE.md`. Server re-validation can only downgrade; it cannot re-observe the sensor stream.
+2. **No device attestation / Play Integrity / signed batches (v2 L6)** — a rooted or instrumented phone can fabricate bucket evidence. Out of scope here; documented risk.
+3. **No Firebase project is bundled.** Everything backend-side is verified against the local Firebase Emulator Suite (`demo-stepup`), not a production project.
+4. `beforeUserCreated` blocking function needs Firebase Authentication with Identity Platform (Blaze) in production; Firestore rules + callable checks are the always-on layers.
+5. Google sign-in needs an OAuth client / SHA-1 registered in the Firebase project; until then it is hidden behind `AppConfig.googleSignInEnabled`.
+6. Leaderboards/challenge progress are recomputed from daily summaries (eventual consistency, usually seconds). Steps synced after a challenge/bet is finalized (grace window) do not change its result.
+7. Daily/weekly boundaries use `Asia/Kolkata`; changing the device clock does not affect server-side days.
+8. FCM push requires a Firebase project with FCM enabled; in-app notifications work without it.
+9. Account deletion is a request processed by an admin (no automatic erasure of ledger history).
+10. Android only; iOS/web not built.
+11. **One reward device per account.** The server keeps an account's first registered device as its reward device; a second device (a new phone, or the same phone after a reinstall, which creates a new install id) records steps but they are not reward-eligible until the old one has been unseen for `rewardDeviceTakeoverDays` (14, admin-configurable). This is deliberate anti-fraud behaviour, but it means a student who reinstalls gets no leaderboard/challenge/bet credit for up to 14 days. There is no self-service "make this my reward device" action yet.
+12. **The automated E2E test cannot grant permissions on the realme RMX3990.** `adb shell pm grant` is refused there (`SecurityException: GRANT_RUNTIME_PERMISSIONS`) unless the developer option "USB debugging (Security settings)" is on, so `integration_test/e2e_a_*` needs a person to tap **Allow** on the app's two permission dialogs (physical activity, notifications) within 150 s. With the taps made, tracking started and `adb` showed `SensorWitnessService` running as a foreground service with its notification (passed in 3 of the 6 runs that reached that step; in the one failed run that was probed, both permissions were `granted=false` and nobody had tapped; the other 2 failures showed the same symptom but were not probed). Not an app defect as far as can be told, but step tracking was only exercised with a person present and with SYNTHETIC steps, never a real walk.
+13. Firestore live listeners can deliver an empty first snapshot right after the signed-in user changes (seen for the buddy list and "my challenges"). The app screens listen continuously, so the list fills in a moment later; code that takes only the first event would miss it.
+14. The Firebase emulator does not enforce composite indexes, so index coverage in `firestore.indexes.json` is unverified until a real project is used.
