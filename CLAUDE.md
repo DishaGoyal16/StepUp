@@ -90,3 +90,8 @@ Never kill processes by name; only touch package `edu.thapar.stepup` on the phon
 
 ## 13. Current progress & known limitations
 See `IMPLEMENTATION_PROGRESS.md` and `KNOWN_LIMITATIONS.md`. Nothing is marked "tested" without a real test run recorded there.
+
+## Classifier update, 14 November 2026
+The copied engine is no longer identical to the original prototype: a bounded stride-corroborated impact alternative was added after a live walk was falsely rejected. See LowImpactWalkTest and latest GENUINE_STEP_ENGINE.md. Existing 164 regressions plus four new tests passed (168 total), including optional private raw replay run with STEPUP_RECORDINGS. Latest walk improves 0 -> 37/56 in-sample; reliable genuine retention is still unresolved. Never convert those old rejected buckets into eligible reward steps. diagnostics-local/ and .demo-data/ are private, ignored files; exclude both from archives and GitHub.
+
+Recent UI fixes are recorded in IMPLEMENTATION_PROGRESS.md. Local demo avatar URLs require emulator-aware HTTP validation; production URLs require HTTPS. Route notifications into the existing tab shell using go.

@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_theme.dart';
 
-/// Credits shown at the bottom of Home. TEXT ONLY - these names are not
-/// accounts, roles or permissions. Kashish is intentionally shown smaller and
-/// lighter than the rest of the team.
+/// Display-only project credits.
 class TeamCredits extends StatelessWidget {
   const TeamCredits({super.key});
 
-  static const List<String> team = ['Disha', 'Raghav', 'Bhavya', 'Sanveer', 'Anvi'];
-  static const String lowProminenceMember = 'Kashish';
+  static const List<String> team = ['Disha', 'Raghav', 'Anvi', 'Kashish'];
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +32,6 @@ class TeamCredits extends StatelessWidget {
                 n,
                 style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.text),
               ),
-            Text(
-              lowProminenceMember,
-              style: const TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w400,
-                color: Color(0xFF6F8277),
-              ),
-            ),
           ],
         ),
       ],

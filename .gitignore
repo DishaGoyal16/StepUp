@@ -1,4 +1,6 @@
 # Miscellaneous
+/.demo-data/
+/diagnostics-local/
 *.class
 *.log
 *.pyc

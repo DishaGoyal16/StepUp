@@ -242,15 +242,12 @@ class WitnessPipeline(
 
     private fun classifyHops(start: Long, arReason: String?): Pair<List<Hop>, CarryMode> {
         val end = start + bucketMs
-        val out = ArrayList<Hop>()
-        var carryMode = CarryMode.UNKNOWN
-        for ((_, entry) in hops.subMap(start, true, end, false)) {
-            val (h, c) = entry
-            carryMode = c
-            val ctx = ClassifyContext(counterCadenceSpm = counterCadenceSpm(h.startMs), carry = c, arVehicle = arReason != null)
-            out += Hop(h.startMs, classifier.classify(h, ctx).label, h.imuSteps)
+        val rows = hops.subMap(start, true, end, false).values.map { (h, carry) ->
+            h to ClassifyContext(counterCadenceSpm(h.startMs), carry, arReason != null)
         }
-        return out to carryMode
+        val verdicts = classifier.classifyInterval(rows, hopMs)
+        val out = rows.mapIndexed { i, (h, _) -> Hop(h.startMs, verdicts[i].label, h.imuSteps) }
+        return out to (rows.lastOrNull()?.second?.carry ?: CarryMode.UNKNOWN)
     }
 
     /** One hop with its final label and the evidence trace, for CSV export and the replay confusion matrix. */
@@ -277,12 +274,19 @@ class WitnessPipeline(
     fun classifiedHops(fromMs: Long, toMs: Long): List<ClassifiedHop> {
         if (fromMs >= toMs) return emptyList()
         val out = ArrayList<ClassifiedHop>()
-        for ((_, entry) in allHops.subMap(fromMs, true, toMs, false)) {
-            val (h, c) = entry
-            val ar = arTracker.reasonFor(h.startMs, h.startMs + hopMs)
-            val cad = counterCadenceSpm(h.startMs)
-            val v = classifier.classify(h, ClassifyContext(counterCadenceSpm = cad, carry = c, arVehicle = ar != null))
-            out += ClassifiedHop(h.startMs, v.label, v.trace, h.imuSteps, c, cad, h.hasGyro, h.features)
+        val starts = allHops.subMap(fromMs, true, toMs, false).keys.map { it - it % bucketMs }.distinct()
+        for (start in starts) {
+            val ar = arTracker.reasonFor(start, start + bucketMs)
+            val rows = allHops.subMap(start, true, start + bucketMs, false).values.map { (h, carry) ->
+                h to ClassifyContext(counterCadenceSpm(h.startMs), carry, ar != null)
+            }
+            val verdicts = classifier.classifyInterval(rows, hopMs)
+            rows.forEachIndexed { i, (h, ctx) ->
+                if (h.startMs >= fromMs && h.startMs < toMs) {
+                    val v = verdicts[i]
+                    out += ClassifiedHop(h.startMs, v.label, v.trace, h.imuSteps, ctx.carry, ctx.counterCadenceSpm, h.hasGyro, h.features)
+                }
+            }
         }
         return out
     }

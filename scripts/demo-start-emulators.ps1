@@ -12,5 +12,12 @@ if (Test-Path $devEnv) { . $devEnv | Out-Null } else {
 }
 Set-Location (Join-Path $root 'functions')
 npm run build
+if ($LASTEXITCODE -ne 0) { throw 'Backend build failed' }
 Set-Location $root
-& "$root\functions\node_modules\.bin\firebase.cmd" emulators:start --project demo-stepup --config firebase.demo.json
+$savedData = Join-Path $root '.demo-data'
+$emulatorArgs = @('emulators:start', '--project', 'demo-stepup', '--config', 'firebase.demo.json', "--export-on-exit=$savedData")
+if (Test-Path (Join-Path $savedData 'firebase-export-metadata.json')) {
+  $emulatorArgs += "--import=$savedData"
+}
+Write-Host 'Demo data is saved on clean shutdown (Ctrl+C). Do not reset it before every presentation.'
+& "$root\functions\node_modules\.bin\firebase.cmd" @emulatorArgs

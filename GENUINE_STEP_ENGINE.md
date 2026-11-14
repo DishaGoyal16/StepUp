@@ -15,3 +15,10 @@ Replay of all recordings with the final settings:
 * Fast phone shaking (~7 runs): 0 of 562 counter steps credited. Sitting still: counter counted nothing.
 **Not tested on hardware:** slow rhythmic shake, leg bounce, pendulum, vehicle, cycling, bag, stairs, running, other phones/people.
 Treat reward use as provisional until those are tested.
+
+## 14 November 2026: low-impact walk correction
+The first fresh hotspot walk reported by the user was 50 manually counted steps; counter 56, IMU peaks 55, credited 0 (NOT_GAIT in all four buckets).
+Added a bounded alternative to the heel-impact gate: independent stride alternation, cadence agreement (35% tolerance for batching), >=2 IMU peaks/hop, gyro coverage, low high-frequency fraction, limited motion/rotation, and non-pure spectrum. The original shake veto, AR downgrade, coverage and bucket-majority rules, independent IMU credit cap, and server caps remain.
+Private feature replay of that same walk: 0 -> 37/56 credited (74% of reported manual 50; NOT an overall accuracy figure). Training-data result, not a fresh validation walk. Start/end buckets still undercount. Historical settled buckets and server records are NOT rewritten.
+All 168 engine tests pass, including a sanitized feature fixture (timestamps shifted to zero), missing-data/adversarial checks, and synthetic shake/bounce tests with matching counter cadence. Existing private raw replays: one pocket-like recording 16 -> 32/62; other genuine recordings unchanged; recorded violent-shake sessions 0/378 and 0/84 credited. Raw recordings are local only.
+Broader synthetic testing exposed a pre-existing vehicle false-WALK with matching counter cadence; the new path introduces no additional vehicle false accepts in that set. Vehicle rejection is therefore still NOT proven. Slow rhythmic shake/leg bounce on hardware and other users/phones remain untested. Do not present 100% walking or fake rejection as established.

@@ -32,6 +32,40 @@ data class HopVerdict(
  */
 class HopClassifier(private val cfg: ClassifierConfig = ClassifierConfig()) {
 
+    /** At settlement, two consecutive independent gait verdicts can corroborate nearby
+     * ambiguous footfalls at the same cadence. Recovered hops never act as anchors. */
+    fun classifyInterval(rows: List<Pair<HopFeatures, ClassifyContext>>, hopMs: Long): List<HopVerdict> {
+        val verdicts = rows.map { (h, c) -> classify(h, c) }
+        if (verdicts.any { it.label == HopLabel.SHAKE } || rows.any { it.second.arVehicle }) return verdicts
+        fun gait(index: Int) = verdicts[index].label in setOf(HopLabel.WALK, HopLabel.RUN)
+        val anchors = (1 until rows.size).filter { i ->
+            gait(i - 1) && gait(i) && rows[i].first.startMs - rows[i - 1].first.startMs == hopMs
+        }
+        if (anchors.isEmpty()) return verdicts
+        return rows.mapIndexed { i, (h, ctx) ->
+            val v = verdicts[i]
+            val f = h.features
+            if (v.label != HopLabel.UNKNOWN || f == null || !h.hasGyro ||
+                h.imuSteps !in 2.0..5.0 || f.dynRms !in 0.5..5.0 || f.churnDegPerS !in 0.0..120.0 ||
+                f.rotRatio !in 0.0..1.2 || f.hfFraction !in 0.0..0.5 || f.purity !in 0.0..0.8 ||
+                ctx.counterCadenceSpm !in 30.0..210.0 || f.f0Hz !in cfg.f0MinHz..cfg.f0MaxHz) return@mapIndexed v
+            // Short windows may contain an extra detected peak. Require the hardware
+            // cadence to corroborate the spectral cadence before tolerating that difference.
+            val peakRateError = abs(h.imuSteps * 1000 / hopMs - f.f0Hz)
+            val corroboratedCadence = f.r0 >= cfg.r0Floor && f.hfFraction <= 0.20 &&
+                abs(ctx.counterCadenceSpm - 60 * f.f0Hz) <= cfg.cadenceAgreeMax * 60 * f.f0Hz
+            if (peakRateError > 0.5 && !(corroboratedCadence && peakRateError <= 0.75)) return@mapIndexed v
+            val supported = anchors.any { end ->
+                val near = if (i < end) end - 1 else end
+                val distance = abs(i - near)
+                distance in 1..2 && abs(h.startMs - rows[near].first.startMs) == distance * hopMs &&
+                    (minOf(i, near)..maxOf(i, near)).all { j -> verdicts[j].label == HopLabel.UNKNOWN || gait(j) } &&
+                    (end - 1..end).all { j -> abs(rows[j].first.features!!.f0Hz - f.f0Hz) <= 0.25 }
+            }
+            if (supported) v.copy(label = HopLabel.WALK, trace = v.trace + " -> WALK (adjacent gait cadence)") else v
+        }
+    }
+
     fun classify(h: HopFeatures, ctx: ClassifyContext = ClassifyContext()): HopVerdict {
         val f = h.features
             ?: return HopVerdict(HopLabel.UNKNOWN, "no features: ${h.unknownReason ?: "UNAVAILABLE"}", 0.0, 0.0)
@@ -76,6 +110,15 @@ class HopClassifier(private val cfg: ClassifierConfig = ClassifierConfig()) {
 
         val inBand = !f.f0Hz.isNaN() && f.f0Hz >= cfg.f0MinHz && f.f0Hz <= cfg.f0MaxHz
         val periodic = f.r0 >= cfg.r0Gait && inBand
+        // A pocket can damp heel impacts. Accept an alternative only when stride alternation,
+        // body/counter cadence, gyro coverage and a non-mechanical spectrum corroborate it.
+        // Counter agreement alone is never evidence enough (rhythmic shakes also fool the counter).
+        val cadenceError = if (ctx.counterCadenceSpm > 0 && ctx.counterCadenceSpm.isFinite())
+            abs(60.0 * f.f0Hz - ctx.counterCadenceSpm) / ctx.counterCadenceSpm else Double.NaN
+        val strideCorroborated = cfg.strideImpactAlternative && inBand && f.r0 >= cfg.r0Floor && h.hasGyro && h.imuSteps >= 2.0 &&
+            cadenceError <= 0.35 && f.subHarmonic >= cfg.subHarmWalkMin &&
+            f.hfFraction <= 0.20 && f.purity < 0.90 &&
+            f.dynRms in 0.5..5.0 && f.churnDegPerS <= 120.0 && f.rotRatio <= 1.2
         // Weak periodicity (real pocket/bag gait often has r0 0.2-0.35): not a veto by itself, but walk evidence
         // must then beat shake evidence by an extra margin. Below r0Floor (or out of band) it stays a hard veto.
         // Vehicle-like broadband spectra (high-frequency fraction) are never allowed through the weak path.
@@ -114,13 +157,13 @@ class HopClassifier(private val cfg: ClassifierConfig = ClassifierConfig()) {
         if (!f.subHarmonic.isNaN() && f.subHarmonic >= cfg.subHarmWalkMin) w("subHarm", f.subHarmonic, 1.0)
         if (!f.asymmetry.isNaN()) {
             if (f.asymmetry >= cfg.asymWalkMin) w("asym", f.asymmetry, 2.0)
-            else if (f.asymmetry <= cfg.asymShakeMax) s("asym", f.asymmetry, 1.5)
+            else if (f.asymmetry <= cfg.asymShakeMax && !strideCorroborated) s("asym", f.asymmetry, 1.5)
         }
         if (!f.purity.isNaN()) {
             if (f.purity >= cfg.purityShakeMin) {
                 s("purity", f.purity, 1.0)
                 // pure tone AND symmetric = mechanical oscillator signature
-                if (!f.asymmetry.isNaN() && f.asymmetry <= cfg.asymShakeMax) s("mechanical", 1.0, 2.0)
+                if (!f.asymmetry.isNaN() && f.asymmetry <= cfg.asymShakeMax && !strideCorroborated) s("mechanical", 1.0, 2.0)
             } else if (f.purity <= cfg.purityWalkMax) w("purity", f.purity, 1.0)
         }
         if (f.dynRms >= cfg.shakeRmsHigh) s("rms", f.dynRms, 1.0)
@@ -131,7 +174,8 @@ class HopClassifier(private val cfg: ClassifierConfig = ClassifierConfig()) {
         if (shake - walk >= cfg.scoreMargin) {
             return HopVerdict(HopLabel.SHAKE, "$trace$tail -> SHAKE", walk, shake)
         }
-        val impactGate = cfg.asymGateMin <= 0.0 || (!f.asymmetry.isNaN() && f.asymmetry >= cfg.asymGateMin)
+        if (strideCorroborated) trace.append("strideCorroborated ")
+        val impactGate = strideCorroborated || cfg.asymGateMin <= 0.0 || (!f.asymmetry.isNaN() && f.asymmetry >= cfg.asymGateMin)
         val needed = margin + if (weaklyPeriodic) cfg.weakPeriodicityExtraMargin else 0.0
         if ((periodic || weaklyPeriodic) && walk - shake >= needed && impactGate) {
             val label = if (f.f0Hz >= cfg.runCadenceHz) HopLabel.RUN else HopLabel.WALK

@@ -17,7 +17,10 @@ import { DEVICE_ID_PATTERN } from '../steps/syncStepBuckets';
 
 const PRIVACY_KEYS = ['discoverable', 'showHostel', 'showWeeklySteps', 'showOnLeaderboards'] as const;
 const NOTIF_KEYS = ['buddy', 'challenges', 'bets', 'leaderboard', 'reminders'] as const;
-const URL_PATTERN = /^https:\/\/[^\s]+$/;
+// HTTP download URLs are issued only by the local Storage emulator.
+const URL_PATTERN = process.env.FUNCTIONS_EMULATOR === 'true'
+  ? /^(https:\/\/[^\s]+|http:\/\/(localhost|127\.0\.0\.1|10\.0\.2\.2|192\.168\.137\.1):9199\/v0\/b\/[^\s]+)$/
+  : /^https:\/\/[^\s]+$/;
 
 export const EDITABLE_FIELDS = [
   'displayName',

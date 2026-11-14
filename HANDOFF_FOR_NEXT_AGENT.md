@@ -19,7 +19,7 @@ unless you run the check yourself.
 | Is step counting proven on a real walk with this app? | **No.** Every step in the on-device tests is a hand-built ("SYNTHETIC") bucket sent through the real server path. Nobody has walked with the Flutter app. Accuracy numbers come only from the earlier Kotlin prototype (see §3). |
 | Is it "fully functional"? | **Not yet.** What is missing is listed in §9 (real Firebase project, real-walk validation, release build, FCM/Google sign-in verification, etc.). |
 
-Deliverables on the user's Desktop (`<Desktop>\steps\`): `StepUp_Complete_Flutter_App.zip`,
+Deliverables on the user's Desktop (`C:\Users\Disha Goyal\Desktop\steps\`): `StepUp_Complete_Flutter_App.zip`,
 `StepUp_Complete_Flutter_App-debug.apk` (NO backend configured: opens to a "Backend not configured" screen — by design, it never fakes a backend).
 
 ---------------------------------------------------------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ limited to package `edu.thapar.stepup` (no phone settings changes; the user expl
 ## 2. History in two parts
 
 ### Part A — evaluate and improve the Kotlin genuine-step prototype (before the Flutter work)
-Prototype folder (NOT in the zip, left in place on the Desktop): `<Desktop>\steps\StepUp_Genuine_Step_Detection_v2`
+Prototype folder (NOT in the zip, left in place on the Desktop): `C:\Users\Disha Goyal\Desktop\steps\StepUp_Genuine_Step_Detection_v2`
 (pure-JVM `core` + Android `app`; spec `..\DOCS\StepUp_AntiFraud_Architecture_v2.md`). The user tested on a realme RMX3990 and pasted CSV
 exports (hops/diagnostics/tests/counters/buckets/sensors). I analysed them, found the first test procedure was flawed, ran replays of the
 recordings, and improved the engine with no further user testing. Findings and changes:
@@ -246,7 +246,7 @@ challenge, audit entry; **e** buddies request/accept, individual challenge join,
 
 ## 10. Environment and traps (Windows 11, PowerShell 5.1; Git Bash also present)
 
-* Flutter: `C:\src\flutter\flutter\bin` (add to PATH). JDK 17 (Temurin). `ANDROID_HOME=%LOCALAPPDATA%\Android\Sdk`.
+* Flutter: `C:\src\flutter\flutter\bin` (add to PATH). JDK 17 (Temurin). `ANDROID_HOME=C:\Users\Disha Goyal\AppData\Local\Android\Sdk`.
   **Gradle/emulator socket workaround:** set `JAVA_TOOL_OPTIONS=-Djdk.net.unixdomain.tmpdir=C:/jt` (create `C:\jt`). The project docs call
   `. ..\StepUp_Genuine_Step_Detection_v2\scripts\dev-env.ps1` which does this — **that script lives outside the zip**; recreate it if the prototype folder is absent.
 * `firebase-tools` is pinned `^14` (v15 needs Java 21). Emulator project id `demo-stepup`. Ports: auth 9099, firestore 8080, functions 5001, storage 9199.
@@ -291,3 +291,6 @@ Supabase free tier (full rewrite of backend + `lib/data`), or self-hosting.
 3. Virtual points only — no real money, ever. Team names are display text, never privileges.
 4. Don't fake a backend or ship mock data as proof. Fakes belong in tests only.
 5. When something is flaky, find the cause (probe the real state) before changing the test; several "failures" here were test-harness problems, one was a real bug.
+
+## Latest engine change, 14 November 2026
+See GENUINE_STEP_ENGINE.md for the stride-corroborated alternative impact gate and the 168 passing JVM tests. The fresh 50-step walk (counter 56) originally rejected all steps; candidate replay credits 37. This is partial progress, not solved accuracy. No historical ledger correction was made. The hotspot APK was rebuilt. Existing raw fast-shake replays still credit zero. New synthetic adversarial tests check matching counter cadence. A pre-existing synthetic vehicle false-positive is documented and must not be concealed. Continue with additional calibration and a fresh walk; never label this version 100% accurate.

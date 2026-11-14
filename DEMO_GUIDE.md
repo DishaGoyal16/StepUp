@@ -30,11 +30,11 @@ server rules). Step accuracy has only been measured on one phone with one person
 
 ```powershell
 # window 1 - leave open all day
-cd "<path-to>\StepUp_Complete_Flutter_App"
+cd "C:\Users\Disha Goyal\Desktop\steps\StepUp_Complete_Flutter_App"
 .\scripts\demo-start-emulators.ps1
 
 # window 2 - fresh data for today (wipes the emulators, seeds hostels + demo accounts)
-$env:PRESENTER_EMAIL = 'presenter@thapar.edu'; $env:PRESENTER_PASSWORD = '<your password>'
+$env:PRESENTER_EMAIL = 'disha@thapar.edu'; $env:PRESENTER_PASSWORD = '<your password>'
 .\scripts\demo-reset-and-seed.ps1
 
 # check everything (read-only)
@@ -48,7 +48,7 @@ Never run `npm run test:*` while the demo emulators are up (port clash).
 
 | Account | Password | Use it for |
 |---|---|---|
-| `presenter@thapar.edu` (you) | the one you chose | **Part 1: real steps.** Onboarded, no step history. 1 incoming buddy request (Riya), 1 buddy (Aarav), 0 points. |
+| `disha@thapar.edu` (you) | the one you chose | **Part 1: real steps.** Onboarded, no step history. 1 incoming buddy request (Riya), 1 buddy (Aarav), 0 points. |
 | `demo.student@thapar.edu` | `Demo@12345` | **Part 2: pre-loaded.** 3 days of SAMPLE steps, ~50 points, an active bet with Aarav. Log in as this one to show bets. |
 | `demo.admin@thapar.edu` | `Demo@12345` | **Admin panel** (Profile → Settings → Admin). |
 | `aarav/riya/kabir/meera.sample@thapar.edu` | `Demo@12345` | Sample classmates (labelled "(sample)"). |
@@ -111,3 +111,19 @@ Three ways out, easiest first:
 
 `scripts/demo-start-emulators.ps1` · `demo-reset-and-seed.ps1` · `seed-demo.js` · `demo-preflight.ps1` · `demo-verify-email.ps1` · `demo-build-apk.ps1` · `firebase.demo.json`.
 The demo seed refuses to run against anything but the local emulators. No password is stored in the repo except the demo-only `Demo@12345`.
+
+## Hotspot recovery — 14 November 2026
+
+The demo launcher now imports `.demo-data` when present and exports on clean shutdown.
+Run `powershell -ExecutionPolicy Bypass -File .\scripts\demo-save-data.ps1` before restarting Windows; an abrupt process kill may prevent export-on-exit.
+This folder contains emulator account data and is excluded by `.gitignore`. Do not publish it.
+Do not reset-and-seed before every demonstration: that removes real walking history and changes user IDs.
+The hotspot APK uses `192.168.137.1`. The phone must join the laptop's Mobile hotspot; college Wi-Fi cannot reach that address.
+The laptop remains the backend and must stay awake while syncing. Cloud deployment is not configured.
+Fresh local demo login: `disha@thapar.edu`, password `Demo@12345` (demo only). Presenter has no seeded step history.
+Use `demo.student@thapar.edu` with the same demo password for synthetic history and the sample bet.
+
+### Wi-Fi check completed — 14 November 2026
+The phone directly logged into Auth and called getLeaderboard over the laptop hotspot (five entries), without adb reverse.
+You can now unplug USB while keeping Wi-Fi connected. Keep laptop awake and the demo server running.
+Use disha@thapar.edu / Demo@12345 for this local demo, then allow physical activity and notifications and test a counted walk.

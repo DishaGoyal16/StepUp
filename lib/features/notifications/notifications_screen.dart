@@ -59,7 +59,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     // Mark read in the background; navigation never waits for it.
     final marked = vm.markRead(n.id);
     if (route != null) {
-      context.push(route);
+      context.go(route);
     }
     await marked;
     if (mounted) _showActionError(vm);

@@ -75,6 +75,8 @@ data class ClassifierConfig(
     // 19 hops to this gate. Safe on the 4 real recordings only because H3 (shake veto) now catches violent shakes;
     // symmetric slow shake / leg bounce are NOT TESTED on hardware yet, so re-validate before relaxing further.
     val asymGateMin: Double = 0.10,
+    /** Provisional alternative impact evidence; gated by independent stride and spectrum checks. */
+    val strideImpactAlternative: Boolean = true,
     val purityShakeMin: Double = 0.80,
     val purityWalkMax: Double = 0.50,
     val shakeRmsHigh: Double = 6.0,
@@ -118,6 +120,7 @@ data class ClassifierConfig(
         var c = this
         for ((k, v) in map) {
             c = when (k) {
+                "strideImpactAlternative" -> c.copy(strideImpactAlternative = v != 0.0)
                 "gravityCutoffHz" -> c.copy(gravityCutoffHz = v)
                 "maxInterpGapMs" -> c.copy(maxInterpGapMs = v)
                 "minHopValidFraction" -> c.copy(minHopValidFraction = v)

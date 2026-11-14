@@ -330,20 +330,20 @@ void main() {
       await settle(tester);
       expect(find.textContaining('Built for a healthier campus'), findsOneWidget);
       expect(find.textContaining('Project Lead: Disha'), findsOneWidget);
-      for (final n in ['Disha', 'Raghav', 'Bhavya', 'Sanveer', 'Anvi', 'Kashish']) {
+      for (final n in ['Disha', 'Raghav', 'Anvi', 'Kashish']) {
         expect(find.text(n), findsOneWidget, reason: n);
       }
     });
 
-    testWidgets('Kashish is visibly lower prominence than the other team members', (tester) async {
+    testWidgets('Kashish has the same prominence as the other team members', (tester) async {
       await tester.pumpWidget(const MaterialApp(home: Scaffold(body: TeamCredits())));
       TextStyle styleOf(String n) => tester.widget<Text>(find.text(n)).style!;
       final kashish = styleOf('Kashish');
-      for (final n in ['Disha', 'Raghav', 'Bhavya', 'Sanveer', 'Anvi']) {
+      for (final n in ['Disha', 'Raghav', 'Anvi']) {
         final other = styleOf(n);
-        expect(kashish.fontSize!, lessThan(other.fontSize!), reason: '$n font size');
-        expect(kashish.fontWeight!.value, lessThan(other.fontWeight!.value), reason: '$n weight');
-        expect(kashish.color!.computeLuminance(), greaterThan(other.color!.computeLuminance()),
+        expect(kashish.fontSize!, equals(other.fontSize!), reason: '$n font size');
+        expect(kashish.fontWeight!.value, equals(other.fontWeight!.value), reason: '$n weight');
+        expect(kashish.color!.computeLuminance(), equals(other.color!.computeLuminance()),
             reason: '$n is darker/stronger');
       }
     });

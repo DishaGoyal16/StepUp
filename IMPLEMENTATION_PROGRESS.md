@@ -72,3 +72,39 @@ Re-run after the fix: `flutter analyze` No issues; `flutter test` **907 passed**
 NOT verified: a real 50-step walk with this app; shake/vehicle/bounce with this app; boot restore and killing the app mid-walk on hardware; step accuracy beyond `GENUINE_STEP_ENGINE.md`;
 real Firebase project (deploy, FCM, Identity Platform blocking); Firestore composite-index coverage (the emulator does not enforce indexes); visual polish on a device; Google sign-in;
 the on-device tests were not all run in ONE unbroken sequence on the final build (A passed in a separate later run; lib code unchanged between them).
+
+## Hotspot recovery — 14 November 2026
+- Restarted demo backend and installed existing hotspot APK on RMX3990.
+- Added import/export persistence and `scripts/demo-save-data.ps1`; `.demo-data` ignored by git.
+- Recreated local demo accounts because the previous emulator state was lost.
+- Phone Wi-Fi was still on college subnet 172.16.145.x; direct request to 192.168.137.1 failed with No route to host. Awaiting phone joining laptop hotspot before Wi-Fi login can be verified.
+- No real-walk accuracy result or production deployment claimed.
+
+### Hotspot connection verified — 14 November 2026
+Phone RMX3990 at 192.168.137.103 reached laptop 192.168.137.1 directly over Wi-Fi.
+Verified from the phone shell: Auth config HTTP 200, disha@thapar.edu password login, and authenticated getLeaderboard returned five entries.
+No adb reverse port forwarding was used for these network requests; USB was used to execute the diagnostic commands.
+Hotspot APK installed and StepUp opened. Manual app-screen login and a fresh real walk remain to be checked.
+Demo accounts were recreated with the documented demo password; the presenter has no synthetic step history.
+Saved `.demo-data` export exists. Launcher imports it and exports on clean shutdown; demo-save-data.ps1 can save explicitly.
+
+## Walking fix — 14 November 2026
+Added the stride-corroborated alternative impact path, LowImpactWalkTest and sanitized low-impact-walk.tsv feature fixture.
+Engine suite: 168 tests, 0 failures. Private replay details and limitations: GENUINE_STEP_ENGINE.md (latest section).
+New test walk improves from 0 to 37/56 in replay; not fully corrected. Old settled rejections preserved. Build and live walk verification pending installation.
+
+### Pocket walk from zero daily totals
+
+Manual count 50, Android counter 44, verified 10. The four settled intervals credited 0/9, 0/12, 10/13 and 0/10 with full motion coverage. A de-identified feature replay is stored in pocket-walk-50.tsv. Two candidate classifier adjustments failed to improve credit and were discarded. This session remains an open walking-retention defect.
+
+### Paired normal walk and 20-second shake calibration
+
+The recorded walk had 53 hardware counts for 50 manual steps. Original interval credits were 0/15, 14/14, 12/12 and 0/12. Settlement now allows two consecutive gait windows to support nearby ambiguous windows with contiguous timing, matching cadence, gyro and motion evidence. An explicit shake vetoes this recovery throughout its interval. Feature replay credited 53 on this walk (three above the manual count), zero of 24 on the paired shake, and 10 of 44 on the earlier pocket walk. These results are recording-specific. Existing settled credits are immutable.
+
+### Follow-up normal walk with 54 raw counts
+
+Device credits were 14/20, 9/12, 12/12 and 0/10. Allowing a bounded peak-rate discrepancy during adjacent-gait recovery when spectral periodicity, frequency distribution and counter cadence corroborate the motion recovered the last interval. Replay credits 45/54, compared with 35/54 on device. The other nine counts exceed the motion-based credit limits of their intervals. The matched shake replay credits 0/24 and the older pocket walk credits 10/44. No independent manual count was supplied for the 54-count test.
+
+### Profile, home credits and notification fixes
+
+Disha's local demo profile was updated through updateProfile to hostel ID vahni (Vahni Hall). Home credits now list Disha, Raghav, Anvi and Kashish with matching name styles and retain Disha as project lead. Notification navigation now uses go to enter the existing destination tab instead of pushing another stateful navigation shell. Profile URL validation accepts Storage emulator HTTP download URLs on the known demo hosts only when FUNCTIONS_EMULATOR is true; deployed validation still requires HTTPS. Flutter analysis passes and 102 relevant home/profile/notification tests pass. Backend TypeScript and hotspot APK builds pass. Manual photo selection and notification interaction on the phone still need confirmation.
