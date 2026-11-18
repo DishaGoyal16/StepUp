@@ -1,0 +1,64 @@
+// Target schema for PostgreSQL (AWS RDS). NOT wired in yet: the API currently runs on an
+// in-memory demo store (src/data/store.ts). To adopt:
+//   1. npm i prisma @prisma/client   2. set DATABASE_URL   3. npx prisma migrate dev
+//   4. replace src/data/store.ts functions with Prisma queries.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  city         String   @default("")
+  bio          String   @default("")
+  dailyGoal    Int      @default(10000)
+  units        String   @default("km")
+  createdAt    DateTime @default(now())
+
+  activity     DailyActivity[]
+  challenges   ChallengeEntry[]
+}
+
+// One row per user per day, supplied by an external activity source (not generated here).
+model DailyActivity {
+  id            String   @id @default(cuid())
+  userId        String
+  date          DateTime @db.Date
+  steps         Int
+  distanceKm    Float?
+  calories      Int?
+  activeMinutes Int?
+  source        String   @default("manual")
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+}
+
+model Challenge {
+  id           String   @id
+  title        String
+  description  String
+  targetSteps  Int
+  durationDays Int
+  rewardPoints Int
+  entries      ChallengeEntry[]
+}
+
+model ChallengeEntry {
+  id          String    @id @default(cuid())
+  userId      String
+  challengeId String
+  joinedAt    DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge   Challenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, challengeId])
+}
