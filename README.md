@@ -6,6 +6,26 @@ A light, green, modern fitness dashboard (React + Vite + TypeScript + Tailwind) 
 > Nothing is read from a real step counter or health platform. The UI labels this everywhere (`DEMO DATA` chips and banners).
 > Real activity records can be plugged in later through `frontend/src/services/activityService.ts`.
 
+## Role of this branch
+
+The Git branch is named `steup-website`. It contains the interactive StepUp web dashboard and its optional demonstration API. It is separate from the production-style Flutter Android application in [`Complete_Flutter_App`](https://github.com/DishaGoyal16/StepUp/tree/Complete_Flutter_App), which contains the Kotlin genuine-step engine and Firebase backend. It is also separate from [`Team_Website`](https://github.com/DishaGoyal16/StepUp/tree/Team_Website), which contains the earlier static project website, presentations, and UML diagrams.
+
+## What this branch contains
+
+| Path | Contents and purpose |
+|---|---|
+| `frontend/` | React, Vite and TypeScript dashboard with responsive pages for overview, activity, challenges, step battles, leaderboard, buddy discovery, rewards, profile, and authentication. |
+| `frontend/src/data/demo.ts` | Central sample dataset used by the browser demonstration. |
+| `frontend/src/services/` | Data-access boundary that selects local demo behavior or the optional API. This is the integration point for a future real activity service. |
+| `backend/` | Express and TypeScript demonstration API with authentication, activity, challenge, leaderboard, user, validation, error-handling, and rate-limit routes. Its store is currently in memory. |
+| `backend/prisma/schema.prisma` | Proposed PostgreSQL data model. The running API does not yet persist through Prisma. |
+| `backend/Dockerfile` | Container definition for the optional API. |
+| `AWS_DEPLOYMENT.md` | Deployment guide for a static frontend and optional API infrastructure. It is documentation only; no AWS resources are created by the repository. |
+| `docs/` | Final project report and Gantt chart. |
+| `.env.example`, `frontend/.env.example`, `backend/.env.example` | Environment-variable templates without private credentials. |
+
+This branch is suitable for a browser-based demonstration and continued web development. It does not receive verified step records from the Android genuine-step engine, and its demo accounts, activity, battles, buddies, and rankings should not be presented as real student data.
+
 ## Run it
 
 Requires Node.js 20.19+ (tested on Node 24).
