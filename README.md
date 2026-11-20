@@ -28,6 +28,8 @@ This branch is suitable for a browser-based demonstration and continued web deve
 
 ## Run it
 
+For setup, manual checks, and the commit workflow, see [Contributing](CONTRIBUTING.md).
+
 Requires Node.js 20.19+ (tested on Node 24).
 
 ```bash
