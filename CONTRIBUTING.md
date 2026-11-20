@@ -19,6 +19,8 @@ screens or changing labels.
 
 ## Before committing
 
+- Run `npm test` with Node.js 24 to check display formatting, distance conversion,
+  greeting boundaries, and calendar dates across time zones.
 - Run `npm run build` when changing application code; it checks TypeScript and
   builds both packages. This is a build check, not an automated test suite.
 - For UI changes, check login, navigation, and logout in the browser.

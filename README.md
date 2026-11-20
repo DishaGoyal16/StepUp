@@ -109,7 +109,7 @@ backend/prisma/schema.prisma   target PostgreSQL schema (not wired in yet)
 - **No database.** The API uses an in-memory store (resets on restart). A Prisma/PostgreSQL schema is provided but not wired in.
 - **No social backend.** Battles, buddy requests and joins are stored in the browser (localStorage); other users are sample profiles.
 - Demo-mode auth is **not secure** (browser-only accounts). Use the API for anything beyond a demo.
-- No automated tests yet.
+- Automated formatting-helper tests run with `npm test` on Node.js 24. GitHub Actions runs these tests and builds both packages on pushes and pull requests targeting `steup-website`. Browser and API behavior still need broader test coverage.
 
 ## Backend API
 
