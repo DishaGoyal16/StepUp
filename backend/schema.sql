@@ -85,3 +85,10 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_versions_unique_number_per_deliverable
 ALTER TABLE versions ADD COLUMN IF NOT EXISTS presentation_date DATE;
 ALTER TABLE versions ADD COLUMN IF NOT EXISTS authors JSONB NOT NULL DEFAULT '[]'::jsonb;
 ALTER TABLE versions ADD COLUMN IF NOT EXISTS created_by INTEGER REFERENCES users(id);
+
+CREATE TABLE IF NOT EXISTS public_version_publications (
+    version_id INTEGER PRIMARY KEY REFERENCES versions(id) ON DELETE CASCADE,
+    first_published_at TIMESTAMPTZ,
+    public_since TIMESTAMPTZ NOT NULL DEFAULT now(),
+    revoked_at TIMESTAMPTZ
+);

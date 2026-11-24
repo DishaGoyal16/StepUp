@@ -8,6 +8,7 @@ const { rateLimit } = require("express-rate-limit");
 const path = require("path");
 const pool = require("./db");
 const storage = require("./storage");
+const { createPublicRouter, recordPublication, withdrawPublication, validId } = require("./public-deliverables");
 
 const app = express();
 app.set("trust proxy", "loopback");
@@ -130,7 +131,7 @@ app.get("/api/admin/deliverables", requireAdmin, async (_req, res) => {
 
 app.get("/api/admin/deliverables/:deliverableId/versions", requireAdmin, async (req, res) => {
   try {
-    const result = await pool.query(`SELECT v.id, v.version_number, v.presentation_date, v.authors, v.change_summary, v.published, v.created_at, creator.name AS created_by_name, COALESCE(json_agg(json_build_object('id', f.id, 'originalFilename', f.original_filename, 'mimeType', f.mime_type, 'fileSize', f.file_size, 'url', '/api/admin/files/' || f.id) ORDER BY f.id) FILTER (WHERE f.id IS NOT NULL), '[]') AS files FROM versions v LEFT JOIN users creator ON creator.id = v.created_by LEFT JOIN file_assets f ON f.version_id = v.id WHERE v.deliverable_id = $1 GROUP BY v.id, creator.name ORDER BY v.published DESC, v.created_at DESC, v.id DESC`, [req.params.deliverableId]);
+    const result = await pool.query(`SELECT v.id, v.version_number, v.presentation_date, v.authors, v.change_summary, v.published, v.created_at, CASE WHEN p.version_id IS NULL THEN 'private' WHEN p.revoked_at IS NOT NULL THEN 'withdrawn' ELSE 'eligible' END AS public_status, creator.name AS created_by_name, COALESCE(json_agg(json_build_object('id', f.id, 'originalFilename', f.original_filename, 'mimeType', f.mime_type, 'fileSize', f.file_size, 'url', '/api/admin/files/' || f.id) ORDER BY f.id) FILTER (WHERE f.id IS NOT NULL), '[]') AS files FROM versions v LEFT JOIN public_version_publications p ON p.version_id = v.id LEFT JOIN users creator ON creator.id = v.created_by LEFT JOIN file_assets f ON f.version_id = v.id WHERE v.deliverable_id = $1 GROUP BY v.id, creator.name, p.version_id, p.revoked_at ORDER BY v.published DESC, v.created_at DESC, v.id DESC`, [req.params.deliverableId]);
     res.json({ versions: result.rows });
   } catch (error) { console.error("Version history error:", error.message); res.status(500).json({ message: "Could not load version history" }); }
 });
@@ -144,7 +145,7 @@ app.post("/api/admin/deliverables/upload", requireAdmin, upload.single("file"), 
     const authors = parseAuthors(req.body.authors); let targetId = Number(deliverableId) || null;
     await client.query("BEGIN");
     if (targetId) {
-      const existing = await client.query("SELECT id FROM deliverables WHERE id = $1", [targetId]);
+      const existing = await client.query("SELECT id FROM deliverables WHERE id = $1 FOR UPDATE", [targetId]);
       if (!existing.rows.length) throw new Error("Selected deliverable does not exist.");
     } else {
       const title = String(deliverableName || "").trim(); if (!title) throw new Error("Enter a deliverable name or select an existing deliverable.");
@@ -155,6 +156,7 @@ app.post("/api/admin/deliverables/upload", requireAdmin, upload.single("file"), 
     if (publish) await client.query("UPDATE versions SET published = FALSE WHERE deliverable_id = $1 AND published = TRUE", [targetId]);
     const version = await client.query("INSERT INTO versions (deliverable_id, version_number, presentation_date, authors, change_summary, published, published_by, created_by) VALUES ($1, $2, $3, $4::jsonb, $5, $6, $7, $7) RETURNING id, version_number, published", [targetId, String(versionNumber).trim(), presentationDate, JSON.stringify(authors), changeSummary.trim(), publish, publish ? req.user.id : null]);
     await client.query("INSERT INTO file_assets (version_id, original_filename, storage_key, storage_url, mime_type, file_size) VALUES ($1, $2, $3, $4, $5, $6)", [version.rows[0].id, req.file.originalname, savedFile.storageKey, savedFile.storageUrl, req.file.mimetype, req.file.size]);
+    if (publish) await recordPublication(client, version.rows[0].id);
     if (publish) await client.query("UPDATE deliverables SET presentation_date = $2, version = $3, authors = $4::jsonb, change_summary = $5 WHERE id = $1", [targetId, presentationDate, version.rows[0].version_number, JSON.stringify(authors), changeSummary.trim()]);
     await client.query("COMMIT"); res.status(201).json({ message: "Version uploaded", deliverableId: targetId, version: version.rows[0] });
   } catch (error) {
@@ -170,15 +172,48 @@ app.post("/api/admin/deliverables/upload", requireAdmin, upload.single("file"), 
 app.patch("/api/admin/versions/:versionId/publish", requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
-    await client.query("BEGIN"); const result = await client.query("SELECT * FROM versions WHERE id = $1 FOR UPDATE", [req.params.versionId]);
+    await client.query("BEGIN");
+    const parent = await client.query(
+      "SELECT d.id FROM deliverables d JOIN versions v ON v.deliverable_id = d.id WHERE v.id = $1 FOR UPDATE OF d",
+      [req.params.versionId]
+    );
+    if (!parent.rowCount) throw new Error("Version not found.");
+    const result = await client.query("SELECT * FROM versions WHERE id = $1", [req.params.versionId]);
     if (!result.rows.length) throw new Error("Version not found."); const version = result.rows[0];
     await client.query("UPDATE versions SET published = FALSE WHERE deliverable_id = $1 AND published = TRUE", [version.deliverable_id]);
     await client.query("UPDATE versions SET published = TRUE, published_by = $2 WHERE id = $1", [version.id, req.user.id]);
     await client.query("UPDATE deliverables SET presentation_date = $2, version = $3, authors = $4::jsonb, change_summary = $5 WHERE id = $1", [version.deliverable_id, version.presentation_date, version.version_number, JSON.stringify(version.authors), version.change_summary]);
+    await recordPublication(client, version.id);
     await client.query("COMMIT"); res.json({ message: "Version published" });
   } catch (error) { await client.query("ROLLBACK"); console.error("Publish version error:", error.message); res.status(400).json({ message: error.message || "Could not publish version" }); }
   finally { client.release(); }
 });
+
+app.patch("/api/admin/versions/:versionId/withdraw-public", requireAdmin, async (req, res) => {
+  if (req.user.role !== "admin") return res.status(403).json({ message: "Administrator access required." });
+  const { versionId } = req.params;
+  if (!validId(versionId)) return res.status(404).json({ message: "Publication not found." });
+  const client = await pool.connect();
+  try {
+    await client.query("BEGIN");
+    const parent = await client.query(
+      "SELECT d.id FROM deliverables d JOIN versions v ON v.deliverable_id = d.id WHERE v.id = $1 FOR UPDATE OF d",
+      [versionId]
+    );
+    const withdrawn = parent.rowCount && await withdrawPublication(client, versionId);
+    await client.query("COMMIT");
+    if (!withdrawn) return res.status(404).json({ message: "Publication not found." });
+    res.json({ message: "Public access withdrawn." });
+  } catch (error) {
+    await client.query("ROLLBACK");
+    console.error("Withdraw publication error:", error.name);
+    res.status(500).json({ message: "Could not withdraw public access." });
+  } finally {
+    client.release();
+  }
+});
+
+app.use("/api/public", createPublicRouter({ pool, storage, enabled: process.env.PUBLIC_DELIVERABLES_ENABLED === "true" }));
 
 app.get("/api/admin/files/:assetId", requireAdmin, async (req, res) => {
   try {

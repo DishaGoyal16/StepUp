@@ -1,7 +1,9 @@
 # Copy values into a server-only .env file with mode 0600.
 NODE_ENV=production
-PORT=4001
+PORT=4002
 DATABASE_URL=
 SESSION_SECRET=
 AWS_REGION=
 S3_BUCKET=
+
+PUBLIC_DELIVERABLES_ENABLED=false

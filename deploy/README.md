@@ -18,3 +18,23 @@ This source baseline includes the S3-backed upload and download provider and the
 3. Validate and reload Nginx when switching the upstream. Confirm HTTPS, the public site and protected paths again. Save the verified PM2 process list and retain the previous compatible S3-backed release for rollback.
 4. Maintain encrypted database backups and private object backups with matching keys and checksums. Verify restore in an approved isolated target before relying on a backup. For an app regression, roll back the code and proxy configuration first.
 5. Monitor EC2, EBS, public IPv4, S3, transfer, credits, certificate expiry and application logs. Keep backups, secrets and user uploads outside Git. Obtain approval before changing plan or adding paid resources.
+
+## Public deliverables rollout
+
+Apply the additive migration before running the candidate against the production
+database. Rehearse restoring an encrypted backup first. Keep public access
+disabled until private integration and authorization checks pass. Backfill only
+separately approved legacy version IDs. No legacy records are enrolled by the
+schema migration.
+
+Both publishing paths record publication, while an administrator can withdraw
+anonymous access without deleting the record or private S3 object. Previously
+public versions remain listed when superseded. Drafts and withdrawn versions
+are excluded from every public route.
+
+After validating a proxy change, reload Nginx and allow its old workers to
+drain. Use fresh HTTPS connections and require two consecutive expected catalog
+responses within a bounded interval before replacing the homepage. If critical
+checks fail, restore the prior proxy config and homepage. Keep the previous
+compatible PM2 release available. Disable public reads using the environment flag
+and restart the affected process if public exposure must be stopped.

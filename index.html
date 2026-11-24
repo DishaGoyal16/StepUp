@@ -490,7 +490,7 @@ function render(){
   app.innerHTML=(pages[curPage]||r404)();
   ft.style.display='block';
   if(curPage==='github') fetchGH();
-  if(curPage==='ppts') loadGitHubPresentations();
+  if(curPage==='ppts'){ loadGitHubPresentations(); loadPublishedDeliverables(); }
 }
 
 // ── ICONS ──
@@ -1433,6 +1433,93 @@ function renderPptEmpty(id){
   </div>`;
 }
 
+const PUBLIC_DELIVERABLES_API = '/api/public/deliverables';
+
+function publishedElement(tag, text, className) {
+  const element = document.createElement(tag);
+  if (text !== undefined) element.textContent = text;
+  if (className) element.className = className;
+  return element;
+}
+
+async function loadPublishedPage(container, endpoint, cursorKey, resultKey, renderItem, emptyText) {
+  const status = publishedElement('p', 'Loading…', 'tm');
+  status.setAttribute('role', 'status');
+  const items = publishedElement('div');
+  const more = publishedElement('button', 'Load more', 'btn btn-p');
+  more.type = 'button';
+  more.hidden = true;
+  container.replaceChildren(items, status, more);
+  let cursor = null;
+  async function load() {
+    more.disabled = true;
+    status.textContent = 'Loading…';
+    try {
+      const url = cursor === null ? endpoint : endpoint + '?' + cursorKey + '=' + encodeURIComponent(cursor);
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) throw new Error('Published content unavailable');
+      const page = await response.json();
+      for (const item of page[resultKey]) items.append(renderItem(item));
+      cursor = page.next;
+      more.hidden = cursor == null;
+      more.textContent = 'Load more';
+      status.textContent = items.childElementCount ? '' : emptyText;
+    } catch {
+      status.textContent = 'Published content is temporarily unavailable.';
+      more.textContent = 'Retry';
+      more.hidden = false;
+    } finally {
+      more.disabled = false;
+    }
+  }
+  more.addEventListener('click', load);
+  await load();
+}
+
+function publishedVersionCard(deliverableId, version) {
+  const card = publishedElement('article', undefined, 'card mb20');
+  card.append(publishedElement('h3', 'Version ' + version.versionNumber + (version.current ? ' · Current' : '')));
+  const publicationDate = version.publishedAt
+    ? new Intl.DateTimeFormat('en', { dateStyle: 'medium', timeZone: 'Asia/Kolkata' }).format(new Date(version.publishedAt))
+    : 'Unavailable';
+  card.append(publishedElement('p', 'Publication date: ' + publicationDate, 'tm'));
+  if (version.presentationDate) card.append(publishedElement('p', 'Presentation date: ' + version.presentationDate, 'tm'));
+  card.append(publishedElement('p', 'Authors: ' + ((version.authors || []).join(' · ') || 'Unavailable'), 'tm'));
+  card.append(publishedElement('p', 'Changes: ' + (version.changeSummary || 'Unavailable'), 'tm'));
+  const files = publishedElement('ul');
+  for (const file of version.files) {
+    const item = publishedElement('li');
+    const link = publishedElement('a', file.name, 'btn btn-p');
+    link.href = PUBLIC_DELIVERABLES_API + '/' + encodeURIComponent(deliverableId) +
+      '/versions/' + encodeURIComponent(version.id) + '/files/' + encodeURIComponent(file.id);
+    link.style.maxWidth = '100%';
+    link.style.whiteSpace = 'normal';
+    link.style.overflowWrap = 'anywhere';
+    item.append(link);
+    files.append(item);
+  }
+  card.append(files);
+  return card;
+}
+
+function publishedDeliverableCard(deliverable) {
+  const card = publishedElement('details', undefined, 'card mb20');
+  const summary = publishedElement('summary', deliverable.title + ' · Version history');
+  const versions = publishedElement('div');
+  card.append(summary, versions);
+  card.addEventListener('toggle', () => {
+    if (card.open) loadPublishedPage(versions, PUBLIC_DELIVERABLES_API + '/' + encodeURIComponent(deliverable.id) +
+      '/versions', 'before', 'versions', version => publishedVersionCard(deliverable.id, version), 'No public versions.');
+  });
+  return card;
+}
+
+function loadPublishedDeliverables() {
+  const catalog = document.getElementById('public-deliverable-list');
+  if (catalog) return loadPublishedPage(catalog, PUBLIC_DELIVERABLES_API, 'after', 'deliverables',
+    publishedDeliverableCard, 'No deliverables have been published yet.');
+}
+
 function rPpts(){
   const tBadge={Planning:'b-forest','Progress Review':'b-sage',Demo:'b-sky',Review:'b-earth',Results:'b-earth',Final:'b-forest'};
   const done=PPTS.filter(p=>p.status==='done');
@@ -1455,6 +1542,9 @@ function rPpts(){
 
     <div class="lbl mb16">Files in GitHub /presentations</div>
     <div id="github-presentation-list">${renderPptEmpty('github')}</div>
+
+    <div class="lbl mb16 mt48">Published deliverables</div>
+    <div id="public-deliverable-list" aria-label="Published deliverables"></div>
 
     <div class="lbl mb16 mt48" style="margin-top:48px">Presentation Schedule</div>
     ${done.map(p=>`
