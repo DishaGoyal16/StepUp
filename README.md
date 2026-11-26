@@ -2,6 +2,17 @@
 
 A light, green, modern fitness dashboard (React + Vite + TypeScript + Tailwind) with an optional Express API.
 
+## Live Website
+
+StepUp is hosted on AWS Amplify, providing cloud-based hosting with HTTPS and continuous deployment through GitHub integration.
+
+- **Live Demo:** [Launch StepUp](https://steup-website.d12z126ktahpgc.amplifyapp.com)
+- **Cloud Platform:** Amazon Web Services (AWS)
+- **Hosting Service:** AWS Amplify
+- **Region:** US East (N. Virginia)
+
+
+
 > **Demo data notice.** Every step count, distance, calorie, streak, leaderboard entry and buddy in this build is **sample data**.
 > Nothing is read from a real step counter or health platform. The UI labels this everywhere (`DEMO DATA` chips and banners).
 > Real activity records can be plugged in later through `frontend/src/services/activityService.ts`.
