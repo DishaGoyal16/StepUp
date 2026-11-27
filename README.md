@@ -6,6 +6,8 @@ The project gives special attention to activity integrity. Android's hardware st
 
 Project lead: **Disha**
 
+See [Contributing to StepUp](CONTRIBUTING.md) for branch selection, validation expectations and deployment checks before publishing changes.
+
 ## Repository branches
 
 The branches contain different stages and deliverables of the project. Branch names are case-sensitive.
