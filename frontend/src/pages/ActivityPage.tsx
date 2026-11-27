@@ -7,6 +7,8 @@ import { useAppState } from '../hooks/useApp'
 import { useStats } from '../hooks/useStats'
 import { distance, fmt, shortDate, shortDay } from '../lib/format'
 import { average, sum } from '../lib/stats'
+import { activityHistoryCsv, downloadActivityCsv } from '../lib/activityCsv'
+import { USE_API } from '../services/http'
 
 type Range = '7' | '30' | '90'
 const RANGE_LABEL: Record<Range, string> = { '7': 'Week', '30': 'Month', '90': '3 months' }
@@ -75,10 +77,20 @@ export default function ActivityPage() {
               title="Activity history"
               subtitle={`${rows.length} ${rows.length === 1 ? 'day' : 'days'}`}
               action={
-                <label className="flex items-center gap-2 text-sm font-semibold text-muted">
-                  Goal days only
-                  <Toggle checked={goalOnly} onChange={(v) => { setGoalOnly(v); setShown(PAGE) }} label="Show only days that met the goal" />
-                </label>
+                <div className="flex flex-wrap items-center justify-end gap-3">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    disabled={rows.length === 0}
+                    onClick={() => downloadActivityCsv(activityHistoryCsv(rows, user.dailyGoal, USE_API ? 'api-unverified' : 'demo'))}
+                  >
+                    Export CSV
+                  </Button>
+                  <label className="flex items-center gap-2 text-sm font-semibold text-muted">
+                    Goal days only
+                    <Toggle checked={goalOnly} onChange={(v) => { setGoalOnly(v); setShown(PAGE) }} label="Show only days that met the goal" />
+                  </label>
+                </div>
               }
             />
             {rows.length === 0 ? (
